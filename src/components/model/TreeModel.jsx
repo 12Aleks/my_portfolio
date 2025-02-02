@@ -1,14 +1,21 @@
 "use client"
 // https://github.com/pmndrs/gltfjsx
-import React, { useRef } from 'react'
-
+import  { useRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import {useFrame} from "@react-three/fiber";
 
-export default function TreeModel(props) {
+export default function TreeModel({ onLoadComplete, ...props }) {
+    const modelRef = useRef();
     const { nodes, materials } = useGLTF('/models/tree-transformed.glb');
 
-    const modelRef = useRef();
+
+    useEffect(() => {
+        // Проверяем, передана ли функция обратного вызова
+        if (onLoadComplete) {
+            onLoadComplete();
+        }
+    }, [onLoadComplete]);
+
 
     useFrame((state) => {
        console.log(state.clock)
