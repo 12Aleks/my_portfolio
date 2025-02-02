@@ -14,26 +14,35 @@ module.exports = {
                 muted: 'rgb(var(--muted))',
                 accent: 'rgb(var(--accent))',
             },
+            backgroundImage: {
+                'firefly-radial': 'radial-gradient(50% 50% at 50% 50%, rgba(253, 255, 80, .6) 0%, rgba(217, 217, 217, 0) 100%)',
+                'fire-gradient': 'radial-gradient(circle, rgba(255,165,0,0.8) 20%, rgba(255,0,0,0.2) 60%, transparent 70%)',
+            },
             keyframes: {
                 'spin-reverse': {
                     '0%': {transform: 'rotate(0deg)'},
                     '100%': {transform: 'rotate(-360deg)'},
                 },
                 'petals': {
-                    '0%': { top: '-10%', opacity: '0' },
-                    '20%': { opacity: '0.5' },
-                    '100%': { top: '110%', opacity: '0.8' },
+                    '0%': {top: '-10%', opacity: '0'},
+                    '20%': {opacity: '0.5'},
+                    '100%': {top: '110%', opacity: '0.8'},
                 },
                 'sway': {
-                    '0%': { transform: 'rotate(45deg) translateX(0)' },
-                    '50%': { transform: 'rotate(45deg) translateX(50px)' },
-                    '100%': { transform: 'rotate(45deg) translateX(0)' }
+                    '0%': {transform: 'rotate(45deg) translateX(0)'},
+                    '50%': {transform: 'rotate(45deg) translateX(50px)'},
+                    '100%': {transform: 'rotate(45deg) translateX(0)'}
+                },
+                'flicker': {
+                    '0%': {transform: 'scale(1) translateY(0); opacity: 0.9'},
+                    '100%': {transform: 'scale(1.1) translateY(-5px); opacity: 1 '}
                 }
             },
             animation: {
                 'spin-slow': 'spin 300s infinite linear',
                 'rotate-icons': 'spin-reverse 300s infinite linear',
                 'petals': 'petals linear infinite, sway ease-in-out infinite',
+                'fire': ' flicker 0.1s infinite alternate'
             }
         },
 

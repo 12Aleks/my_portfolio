@@ -18,16 +18,16 @@ export default function TreeModel({ onLoadComplete, ...props }) {
 
 
     useFrame((state) => {
-       console.log(state.clock)
-       modelRef.current.position.y = -1.6 + Math.sin(state.clock.elapsedTime)*0.01; //top-bottom
+       modelRef.current.position.y = -1.7 + Math.sin(state.clock.elapsedTime)*0.01; //top-bottom
        modelRef.current.rotation.y = state.clock.elapsedTime * 0.015; //rotation
     })
 
     return (
         <group
              ref={modelRef}
-             {...props} dispose={null}
-             position={[0, -1.6, 0]}
+             {...props}
+             dispose={null}
+             position={[0, -1.7, 0]}
              scale={[16,16,16]}
         >
             <mesh

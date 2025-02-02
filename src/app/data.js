@@ -16,17 +16,17 @@ Websites:
 
 */
 
-export const projectsData = [
+export const MyProjectsData = [
     {
         id: 1,
-        name: "",
+        name: "Test",
         description: "",
         date: "2022-08-15",
         demoLink: "",
     },
     {
         id: 2,
-        name: "",
+        name: "Test 2",
         description: "Digital art showcase platform",
         date: "2022-06-20",
         demoLink: "",
