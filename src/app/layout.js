@@ -21,7 +21,7 @@ export default function RootLayout({children}) {
     return (
         <html lang="en">
         <body className={clsx(inter.variable, "bg-background text-foreground")}>
-        <Link href="/" className="fixed top-[15px] left-[15px] -z-20 flex items-center justify-center">
+        <Link href="/" className="cursor-pointer top-[15px] left-[15px] fixed flex items-center justify-center z-20">
             <Image src={logo} alt='logo' className="w-[45px] h-[40px] mr-4"/>
             <span className="text-white text-sm border-l-[1px] border-white tracking-widest h-full pl-4 uppercase">Oleksii Koba</span>
         </Link>
