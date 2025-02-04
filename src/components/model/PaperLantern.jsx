@@ -15,6 +15,9 @@ export function PaperLantern({ config = {} }) {
         lightFlickerSpeed = 5,
         position = [0, 1.5, 0],
         rotationSpeed = 0.02,
+        mashYRotation = 0,
+        mashXRotation = 2,
+        bugsPosition = 3
     } = config;
 
     const flyCount = 15;
@@ -51,7 +54,7 @@ export function PaperLantern({ config = {} }) {
             if (fly) {
                 fly.position.x = position[0] + Math.cos(time * speed + offset) * radius;
                 fly.position.z = position[2] + Math.sin(time * speed + offset) * radius;
-                fly.position.y = position[1] - 2.8 + Math.sin(time * speed * 2 + offset) * verticalAmplitude;
+                fly.position.y = position[1] - bugsPosition + Math.sin(time * speed * 2 + offset) * verticalAmplitude;
             }
         });
     });
@@ -64,36 +67,44 @@ export function PaperLantern({ config = {} }) {
             rotation={[0.15, 0, 0]}
             dispose={null}
         >
-            {/* Shadow Plane */}
-            <mesh position={[0, 2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            {/* Плоскость для теней */}
+            <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
                 <planeGeometry args={[10, 10]} />
-                <meshBasicMaterial color="black" opacity={0.7} transparent={true} />
+                <shadowMaterial opacity={0.4} />
             </mesh>
 
-            {/* Lantern */}
+            {/* Лампа */}
             <mesh
                 name="Object_2"
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_2.geometry}
                 material={materials['Material.001']}
-                rotation={[-Math.PI / 2, 0, 0]}
+
+                rotation={[-Math.PI / mashXRotation, 0, mashYRotation]}
             />
 
             <mesh position={[0, 0.8, 0]} ref={refCylinder} castShadow receiveShadow>
-                <cylinderGeometry args={[0.01, 0.01, 1, 16]} />
+                <cylinderGeometry args={[0.01, 0.01, 2.5, 16]} />
                 <meshStandardMaterial color="brown" />
             </mesh>
 
             <pointLight ref={lightRef} position={[0, -1, 0.3]} intensity={1} color="orange" distance={5} decay={2} />
 
             <directionalLight
-                position={[0, -4, 0]}
+                position={[0, 4, 0]} // Свет сверху
                 intensity={-1}
                 castShadow
-                shadowBias={-0.5}  // Adjust shadow softness
+                shadow-mapSize-width={2048}
+                shadow-mapSize-height={2048}
+                shadow-camera-far={10}
+                shadow-camera-left={-5}
+                shadow-camera-right={5}
+                shadow-camera-top={5}
+                shadow-camera-bottom={-5}
             />
 
+            {/* "Мухи" */}
             {flies.map((fly, idx) => (
                 <mesh key={idx} ref={(el) => (flyRefs.current[idx] = el)}>
                     <sphereGeometry args={[0.01, 8, 8]} />

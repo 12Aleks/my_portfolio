@@ -30,8 +30,11 @@ const ProjectsPage = () => {
                         floatAmplitude: 0.01,
                         floatSpeed: 1,
                         lightFlickerSpeed: 4,
-                        position: [0, 1.5, 0],
+                        position: [0, 0.4, 0],
                         rotationSpeed: 0.03,
+                        mashYRotation: 0.8,
+                        mashXRotation: 1.8,
+                        bugsPosition: 2
                     }} />
                 </RenderModel>
             </div>
