@@ -10,7 +10,6 @@ export default function TreeModel({ onLoadComplete, ...props }) {
 
 
     useEffect(() => {
-        // Проверяем, передана ли функция обратного вызова
         if (onLoadComplete) {
             onLoadComplete();
         }

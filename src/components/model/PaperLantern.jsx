@@ -1,11 +1,14 @@
 "use client"
-import { useRef, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 
 export function PaperLantern({ config = {} }) {
     const ref = useRef();
     const refCylinder = useRef();
+    const bottomLightRef = useRef();
+    const topLightRef = useRef();
     const lightRef = useRef();
     const { nodes, materials } = useGLTF('/models/paper-lantern-transformed.glb');
 
@@ -17,7 +20,8 @@ export function PaperLantern({ config = {} }) {
         rotationSpeed = 0.02,
         mashYRotation = 0,
         mashXRotation = 2,
-        bugsPosition = 3
+        bugsPosition = 3,
+        lightIntensity = 1,
     } = config;
 
     const flyCount = 15;
@@ -44,8 +48,16 @@ export function PaperLantern({ config = {} }) {
             refCylinder.current.position.y = 0.8 + Math.sin(time * floatSpeed) * 0.01;
         }
 
+        if (topLightRef.current) {
+            topLightRef.current.intensity = .7 + Math.sin(time * lightFlickerSpeed) * 0.5;
+        }
+
+        if (bottomLightRef.current) {
+            bottomLightRef.current.intensity = 1 + Math.sin(time * lightFlickerSpeed) * 0.5;
+        }
+
         if (lightRef.current) {
-            lightRef.current.intensity = 1 + Math.sin(time * lightFlickerSpeed) * 0.5;
+            lightRef.current.intensity = 5 + lightIntensity + Math.sin(time * lightFlickerSpeed) * 0.9;
         }
 
         flyRefs.current.forEach((fly, idx) => {
@@ -67,20 +79,30 @@ export function PaperLantern({ config = {} }) {
             rotation={[0.15, 0, 0]}
             dispose={null}
         >
-            {/* Плоскость для теней */}
+
             <mesh position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
                 <planeGeometry args={[10, 10]} />
                 <shadowMaterial opacity={0.4} />
             </mesh>
 
-            {/* Лампа */}
+            <pointLight
+                ref={lightRef}
+                position={[0, .6, 0]}
+                intensity={lightIntensity}
+                color={new THREE.Color('#1e1d1d')}
+                distance={80}
+                decay={2}
+                castShadow
+            />
+
+            <pointLight ref={topLightRef} position={[0, .9, 0.1]} intensity={1} color="orange" distance={5} decay={1} />
+
             <mesh
                 name="Object_2"
                 castShadow
                 receiveShadow
                 geometry={nodes.Object_2.geometry}
                 material={materials['Material.001']}
-
                 rotation={[-Math.PI / mashXRotation, 0, mashYRotation]}
             />
 
@@ -89,20 +111,7 @@ export function PaperLantern({ config = {} }) {
                 <meshStandardMaterial color="brown" />
             </mesh>
 
-            <pointLight ref={lightRef} position={[0, -1, 0.3]} intensity={1} color="orange" distance={5} decay={2} />
-
-            <directionalLight
-                position={[0, 4, 0]} // Свет сверху
-                intensity={-1}
-                castShadow
-                shadow-mapSize-width={2048}
-                shadow-mapSize-height={2048}
-                shadow-camera-far={10}
-                shadow-camera-left={-5}
-                shadow-camera-right={5}
-                shadow-camera-top={5}
-                shadow-camera-bottom={-5}
-            />
+            <pointLight ref={bottomLightRef} position={[0, -1, 0.3]} intensity={1} color="orange" distance={5} decay={2} />
 
             {/* "Мухи" */}
             {flies.map((fly, idx) => (

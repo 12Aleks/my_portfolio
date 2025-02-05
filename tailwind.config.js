@@ -18,6 +18,11 @@ module.exports = {
                 'firefly-radial': 'radial-gradient(50% 50% at 50% 50%, rgba(253, 255, 80, .6) 0%, rgba(217, 217, 217, 0) 100%)',
                 'fire-gradient': 'radial-gradient(circle, rgba(255,165,0,0.8) 20%, rgba(255,0,0,0.2) 60%, transparent 70%)',
             },
+            opacity:  {
+               '8': '0.08',
+               '9': '0.09',
+
+            },
             keyframes: {
                 'spin-reverse': {
                     '0%': {transform: 'rotate(0deg)'},
