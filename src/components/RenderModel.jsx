@@ -13,7 +13,7 @@ const RenderModel = ({children, className, light}) => {
           </Suspense>
 
           {
-              light &&  <Environment preset={light}/>
+              light &&  <Environment preset={light} />
           }
       </Canvas>
     );

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bg from "../../../../public/background/japan_castel3.png";
+import bg from "../../../../public/background/japan_castel3.webp";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
@@ -16,9 +16,12 @@ const ProjectsPage = () => {
                 alt="background"
                 layout="intrinsic"
                 className="fixed object-cover top-0 left-0 w-full h-screen opacity-8 bg-fixed z-0 blur-sm"
+                loading="lazy"
             />
 
-
+            <div className="relative w-full flex lex-col items-center justify-center my-20">
+                <h1 className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-7xl text-amber-600">Projecty</h1>
+            </div>
             {/* Project List */}
             <ProjectList projects={workProjects} petprojects={petProjects}/>
 

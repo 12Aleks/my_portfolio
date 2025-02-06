@@ -1,5 +1,6 @@
 "use client"
 import React, { useRef, useMemo } from 'react';
+
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -7,6 +8,7 @@ import * as THREE from 'three';
 export function BambooModel({ config = {} }) {
     const ref = useRef();
     const lightRef = useRef();
+    const moonRef = useRef();
     const { nodes, materials } = useGLTF('/models/bamboo-transformed.glb');
 
     const {
@@ -33,14 +35,21 @@ export function BambooModel({ config = {} }) {
         if (lightRef.current) {
             lightRef.current.intensity = 5 + lightIntensity + Math.sin(time * flickerSpeed) * 0.9;
         }
+
+        if (moonRef.current) {
+            const t = (Math.sin(time * 0.5) + 1) / 2;
+            const color1 = new THREE.Color(0x9ecfff);
+            const color2 = new THREE.Color(0xb3a6ff);
+            const blendedColor = color1.clone().lerp(color2, t);
+            moonRef.current.material.color.set(blendedColor);
+        }
     });
 
     return (
         <>
-            {/* Лунный свет ВНЕ группы */}
             <pointLight
                 ref={lightRef}
-                position={[0, 1, 0]} // Теперь свет находится точно над моделью
+                position={[0, 1, 0]}
                 intensity={lightIntensity}
                 color={new THREE.Color(0x9ecfff)}
                 distance={10}
@@ -48,13 +57,14 @@ export function BambooModel({ config = {} }) {
                 castShadow
             />
 
-            {/* Эффект ореола */}
-            { light && <mesh position={[0, 1, 0]}>
+            { light && <mesh
+                ref={moonRef}
+                position={[0, 1.2, 0]}
+            >
                 <sphereGeometry args={[0.5, 32, 32]} />
-                <meshBasicMaterial color={new THREE.Color(0x9ecfff)} transparent opacity={0.3} />
+                <meshBasicMaterial transparent opacity={0.3} />
             </mesh>}
 
-            {/* Группа с моделью бамбука */}
             <group
                 scale={[0.01, 0.01, 0.01]}
                 position={[0, -4.2, 0]}

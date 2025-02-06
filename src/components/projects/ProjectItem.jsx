@@ -8,7 +8,7 @@ const ProjectItem = ({project, index}) => {
             index % 2 === 0 ? 'flex-row' : 'flex-row-reverse',
             "flex items-center justify-between relative rounded-lg w-full p-5 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
         )}>
-            <Image src={`/projectImages/${project.image}`} alt={project.name} width={260} height={250}
+            <Image src={`/projects/${project.image}`} alt={project.name} width={260} height={250}
                    className="rounded-md aspect-3/2 object-cover" loading="lazy"/>
             <div className={clsx(index % 2 === 0 ? 'ml-3' : 'mr-3',
                 "flex flex-col items-start justify-center space-y-3 w-full")}>

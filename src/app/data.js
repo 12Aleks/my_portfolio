@@ -7,7 +7,7 @@ export const workProjects = [
         description: "Backend i Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML'],
         date: "2024-08-15",
-        image: 'beta.termaheat.png',
+        image: 'beta.termaheat.webp',
         demoLink: "https://beta.termaheat.pl/",
     },
     {
@@ -16,7 +16,7 @@ export const workProjects = [
         description: "Aplikacja webowa do oceny wiedzy po kursach z funkcją tworzenia testów, wyników i raportów",
         technologies: ['Next', 'Nest', 'React', 'Mongoose' , 'SCSS'],
         date: "2023-09",
-        image: 'polcar.png',
+        image: 'polcar.webp',
         demoLink: "https://testing-client-application.herokuapp.com/",
         git: ''
     },
@@ -25,7 +25,7 @@ export const workProjects = [
         name: "Strona korporacyjna Termaheat",
         description: "Podstrony kontaktowe w różnych wersjach językowych na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 7', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML'],
-        image: 'oldtermaheat.png',
+        image: 'oldtermaheat.webp',
         date: "2023-04",
         demoLink: "https://www.termaheat.pl/formularz-kontakowy",
     },
@@ -35,7 +35,7 @@ export const workProjects = [
         description: "Backend i Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML'],
         date: "2022-10",
-        image: 'termaplay.png',
+        image: 'termaplay.webp',
         demoLink: "https://termaplay.pl/pl",
     },
     {
@@ -44,7 +44,7 @@ export const workProjects = [
         description: "Backend i Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML'],
         date: "2022-10",
-        image: "termareh.png",
+        image: "termareh.webp",
         demoLink: "https://termareh.pl/pl",
     },
     {
@@ -52,7 +52,7 @@ export const workProjects = [
         name: "Strona korporacyjna TermaMed",
         description: "Backend i Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 9','Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML'],
-        image: "betatermamed.png",
+        image: "betatermamed.webp",
         date: "2022-10",
         demoLink: "https://beta9.termamed.pl/",
     },
@@ -62,7 +62,7 @@ export const workProjects = [
         description: "Backend i Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML'],
         date: "2022-01",
-        image: 'termaservices.png',
+        image: 'termaservices.webp',
         demoLink: "https://termaservices.pl/",
     },
     {
@@ -71,7 +71,7 @@ export const workProjects = [
         description: "Backend i Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML'],
         date: "2021-08",
-        image: 'termadrilling.png',
+        image: 'termadrilling.webp',
         demoLink: "https://termadrilling.com/",
     },
     {
@@ -80,7 +80,7 @@ export const workProjects = [
         description: "Frontend wielejezycznej strony na podstawie layoutu z Figma",
         technologies: ['Vue2', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML'],
         date: "2020-05",
-        image: 'termafiber.png',
+        image: 'termafiber.webp',
         demoLink: "https://termafiber.pl/pl",
     },
     {
@@ -89,7 +89,7 @@ export const workProjects = [
         description: "Frontend wielejezycznej strony www na podstawie layoutu z Figma",
         technologies: ['JavaScript', 'SCSS', 'HTML', 'Bootstrap'],
         date: "2019-08",
-        image: "termasmart.png",
+        image: "termasmart.webp",
         demoLink: "https://termasmart.pl/",
     },
     {
@@ -98,7 +98,7 @@ export const workProjects = [
         description: "Frontend, przebudowa podstron produktow i listy produktow",
         technologies: ['CMS Drupal 7', 'Bootstrap 4', 'JavaScript', 'SCSS', 'HTML'],
         date: "2019-05",
-        image: "termamed.png",
+        image: "termamed.webp",
         demoLink: "https://termamed.pl/pl",
     },
     {
@@ -107,7 +107,7 @@ export const workProjects = [
         description: "Frontend podstrony na podstawie layoutu z Figma",
         technologies: ['Bootstrap', 'SCSS', 'HTML'],
         date: "2018-06",
-        image: "lux.png",
+        image: "lux.webp",
         demoLink: "https://www.terma24.pl/lux2",
     },
     {
@@ -116,7 +116,7 @@ export const workProjects = [
         description: "Frontend podstrony na podstawie layoutu z Figma",
         technologies: ['Bootstrap', 'SCSS', 'HTML'],
         date: "2018-04",
-        image: "drop.png",
+        image: "drop.webp",
         demoLink: "https://en.termaheat.com/uk-drop-ship-accessories",
     },
     {
@@ -125,7 +125,7 @@ export const workProjects = [
         description: "Frontend i backend strony www na podstawie layoutu z Figma",
         technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML'],
         date: "2017-04",
-        image: "pomorska.png",
+        image: "pomorska.webp",
         demoLink: "https://bracia-mniejsi.pl/",
     }
 ];
@@ -137,6 +137,7 @@ export const petProjects = [
         description: "Platforma webowa do sprzedaży mieszkań z możliwością filtrowania, dodawania ogłoszeń i zarządzania ofertami",
         technologies: ['Next', 'React', 'Kinde', 'Prisma' , 'Tailwind'],
         date: "2024-09",
+        image: "applicataioAppartmets.webp",
         demoLink: "https://apartments-pied.vercel.app/",
         git: 'https://github.com/12Aleks/apartments'
     },
@@ -146,7 +147,7 @@ export const petProjects = [
         description: "Pet project wykorzystujący JavaScript/Node.js do automatycznej konwersji wartości np. z px na rem",
         technologies: ['Next', 'React', 'React Bootstrap', 'Redux Toolkit', 'SCSS'],
         date: "2022-08-15",
-        image: "pixem.png",
+        image: "pixem.webp",
         demoLink: "https://pixem.vercel.app/",
         git: 'https://github.com/12Aleks/pixem'
     },
@@ -156,7 +157,7 @@ export const petProjects = [
         description: "Wielejezyczna aplikacja pogody z wykorzystaniem danych z openweathermap.org",
         technologies: ['React', 'React Bootstrap', 'Mobx', 'SCSS'],
         date: "2020-09",
-        image: 'weather.png',
+        image: 'weather.webp',
         demoLink: "https://weather-97994.web.app/",
         git: 'https://github.com/12Aleks/Weather-app'
     },
@@ -166,7 +167,7 @@ export const petProjects = [
         description: "Aplikacja do zarządzania i porównywania wynagrodzeń w zespołach",
         technologies: ['Vue 2', 'Vue-cli', 'vuex', 'SCSS', 'Firebase'],
         date: "2019-09",
-        image: "departments.png",
+        image: "departments.webp",
         demoLink: "https://departments-1c007.web.app/login?message=logout",
         git: 'https://github.com/12Aleks/organizational_department'
     },

@@ -38,7 +38,7 @@ export default function RootLayout({children}) {
             <meta name="twitter:description" content="Hi, I am Oleksii. I work as a Full Stack Developer in Gdańsk, Poland, and I am currently looking for a full-time remote job." />
             <meta name="twitter:image" content="https://example.com/image.jpg" />
         </Head>
-        <body className={clsx(inter.variable, "bg-background text-foreground min-h-screen flex flex-col relative")}>
+        <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}>
 
         <Navbar />
         <main className="flex-grow">
