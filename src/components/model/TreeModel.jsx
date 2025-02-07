@@ -1,3 +1,6 @@
+// Model "Tree" by zackmillot (https://sketchfab.com/zackmillot)
+// Licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
 "use client"
 // https://github.com/pmndrs/gltfjsx
 import { useRef, useEffect } from 'react';
@@ -18,8 +21,12 @@ export default function TreeModel({ onLoadComplete, ...props }) {
 
     useFrame((state) => {
         // Floating animation
-        modelRef.current.position.y = -3.1 + Math.sin(state.clock.elapsedTime) * 0.01;
-        modelRef.current.rotation.y = state.clock.elapsedTime * 0.015;
+        modelRef.current.position.y = -3.4 + Math.sin(state.clock.elapsedTime) * 0.01;
+        modelRef.current.rotation.set(
+            -0.29,
+            -state.clock.elapsedTime * 0.015,
+            0
+        );
 
         // Pulsating shadow effect
         if (lightRef.current) {
@@ -28,7 +35,14 @@ export default function TreeModel({ onLoadComplete, ...props }) {
     });
 
     return (
-        <group ref={modelRef} {...props} dispose={null} position={[0, -3.1, 0]} scale={[28, 28, 28]}>
+        <group
+            ref={modelRef}
+            {...props}
+            dispose={null}
+            position={[0, -3.4, 0]}
+            scale={[33, 33, 33]}
+            rotation={[-0.29, 0, 0]}
+        >
             {/* Pulsating Shadow Light */}
             <directionalLight
                 ref={lightRef}
@@ -36,13 +50,13 @@ export default function TreeModel({ onLoadComplete, ...props }) {
                 intensity={2}
                 color={new THREE.Color('black')}
                 castShadow
-                shadow-mapSize-width={1024}
-                shadow-mapSize-height={1024}
-                shadow-camera-near={0.5}
+                shadow-mapSize-width={600}
+                shadow-mapSize-height={600}
+                shadow-camera-near={0.8}
                 shadow-camera-far={50}
                 shadow-camera-left={-10}
                 shadow-camera-right={10}
-                shadow-camera-top={10}
+                shadow-camera-top={1}
                 shadow-camera-bottom={-10}
             />
 

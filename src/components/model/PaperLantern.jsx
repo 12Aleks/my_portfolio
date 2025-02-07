@@ -1,5 +1,9 @@
+// Model "Japanese paper lantern" by Abel Gamero (https://sketchfab.com/abelGB)
+// Licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+
 "use client"
-import React, { useRef, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";

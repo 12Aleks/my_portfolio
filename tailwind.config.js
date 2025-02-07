@@ -45,11 +45,15 @@ module.exports = {
                 'flicker': {
                     '0%': {transform: 'scale(1) translateY(0); opacity: 0.9'},
                     '100%': {transform: 'scale(1.1) translateY(-5px); opacity: 1 '}
-                }
+                },
+                'fadeIn': {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
             },
             animation: {
                 'spin-slow': 'spin 300s infinite linear',
-
+                'fadeIn': 'fadeIn 1s ease-out forwards',
                 'petals': 'petals linear infinite, sway ease-in-out infinite',
                 'fire': ' flicker 0.1s infinite alternate'
             }

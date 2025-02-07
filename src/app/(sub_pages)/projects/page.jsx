@@ -1,11 +1,22 @@
+"use client"
 import Image from "next/image";
 import bg from "../../../../public/background/japan_castel3.webp";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
 import {PaperLantern} from "@/components/model/PaperLantern";
+import {useEffect, useState} from "react";
 
 const ProjectsPage = () => {
+
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        // Добавляем небольшую задержку для плавности
+        const timeout = setTimeout(() => setIsLoaded(true), 500);
+        return () => clearTimeout(timeout);
+    }, []);
+
     return (
         <div className="flex flex-col items-center justify-between min-h-screen">
 
@@ -22,11 +33,12 @@ const ProjectsPage = () => {
             <div className="relative w-full flex lex-col items-center justify-center my-20">
                 <h1 className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-7xl text-amber-600">Projecty</h1>
             </div>
+
             {/* Project List */}
             <ProjectList projects={workProjects} petprojects={petProjects}/>
 
-            {/* 3D Model */}
-            <div className="flex items-center justify-center fixed top-0 -z-10 left-60 h-screen -z-50">
+            {/* Left 3D Model */}
+            <div className={`flex items-center justify-center fixed top-0 left-60 h-screen -z-50 duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
                 <RenderModel light={'night'}>
                     <PaperLantern config={{
                         floatAmplitude: 0.01,
@@ -41,8 +53,8 @@ const ProjectsPage = () => {
                 </RenderModel>
             </div>
 
-
-            <div className="flex items-center justify-center fixed top-30 -z-10 right-96 h-screen -z-50">
+            {/* Right 3D Model */}
+            <div className={`flex items-center justify-center fixed top-30 right-96 h-screen -z-50 duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
                 <RenderModel light={'night'}>
                     <PaperLantern config={{
                         floatAmplitude: 0.005,

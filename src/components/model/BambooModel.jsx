@@ -1,6 +1,8 @@
-"use client"
-import React, { useRef, useMemo } from 'react';
+// Model "Bamboo" by 1-3D.com (https://sketchfab.com/1-3D.com)
+// Licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
 
+"use client"
+import { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';

@@ -1,10 +1,20 @@
+"use client"
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import bg from "../../../../public/background/japan_castel.webp";
 import AboutBlocks from "@/components/about";
 import RenderModel from "@/components/RenderModel";
 import {BambooModel} from "@/components/model/BambooModel";
 
 const AboutPage = () => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        // Добавляем небольшую задержку для плавности
+        const timeout = setTimeout(() => setIsLoaded(true), 500);
+        return () => clearTimeout(timeout);
+    }, []);
+
     return (
         <div className="flex flex-col items-center justify-between min-h-screen">
             <div
@@ -21,8 +31,8 @@ const AboutPage = () => {
                 <h1 className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl text-amber-600">About me</h1>
             </div>
 
-            {/* First Bamboo Model */}
-            <div className="fixed top-0 w-full -left-[42vw] h-screen -z-50">
+            {/* Первая 3D модель */}
+            <div className={`fixed top-0 w-full -left-[42vw] h-screen -z-50 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
                 <RenderModel light="night">
                     <BambooModel config={{
                         floatAmplitude: 0.01,
@@ -30,21 +40,20 @@ const AboutPage = () => {
                         swayAmplitude: 0.004,
                         swaySpeed: 0.5,
                         light: 1
-                    }}/>
+                    }} />
                 </RenderModel>
             </div>
 
-
-            {/* Second Bamboo Model */}
-            <div className="w-full fixed top-0 left-[46vw] h-screen -z-30">
+            {/* Вторая 3D модель */}
+            <div className={`w-full fixed top-0 left-[46vw] h-screen -z-30 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
                 <RenderModel light="night">
                     <BambooModel config={{
-                        floatAmplitude: 0.01,  // Slightly different amplitude
-                        floatSpeed: 0.56,       // Slightly different speed
+                        floatAmplitude: 0.01,
+                        floatSpeed: 0.56,
                         swayAmplitude: 0.005,
                         swaySpeed: 0.5,
                         rotateY: 0
-                    }}/>
+                    }} />
                 </RenderModel>
             </div>
 
