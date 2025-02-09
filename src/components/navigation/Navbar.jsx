@@ -30,7 +30,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Меню для десктопов */}
-                <div className="hidden md:flex space-x-8 mr-3">
+                <div className="hidden md:flex space-x-6 mr-3">
                     <Link href="/" className={`transition-colors duration-200 ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Home</Link>
                     <Link href="/projects" className={`transition-colors duration-200 ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projects</Link>
                     <Link href="/about" className={`transition-colors duration-200 ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>About</Link>
@@ -38,9 +38,8 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Выпадающее меню для мобильных устройств */}
-            <div className={`md:hidden fixed inset-0 bg-black bg-opacity-70 backdrop-blur-md transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
-                <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className={`min-h-full md:hidden fixed left-0 right-0 bottom-0 top-[20vh] xxs:top-[16vh] xs:top-[14vh] sm:top-[14vh] transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
+                <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 backdrop-blur-[10px]">
                     <Link href="/" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Home</Link>
                     <Link href="/projects" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projects</Link>
                     <Link href="/about" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>About</Link>

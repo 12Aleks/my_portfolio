@@ -27,7 +27,7 @@ const FireFlies = () => {
             {
                 fireFlies.map((fireFly, index) => {
                     return <div key={fireFly.id}
-                    className="absolute rounded-full w-[10px] h-[10px] bg-firefly-radial"
+                    className="absolute rounded-full w-[8px] h-[8px] xxs:w-[10px] xxs:h-[10px] bg-firefly-radial"
                     style={{top: fireFly.top, left: fireFly.left, animation: `move ${fireFly.animationDuration} infinite alternate`}}
                     ></div>
                 } )

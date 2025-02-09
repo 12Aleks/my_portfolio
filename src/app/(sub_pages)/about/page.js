@@ -27,7 +27,7 @@ const AboutPage = () => {
                 loading="lazy"
             />
 
-            <div className="relative w-full flex lex-col items-center justify-center my-20">
+            <div className="relative w-full flex lex-col items-center justify-center my-10 sm:my-20">
                 <h1 className="font-bold text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl text-amber-600">About me</h1>
             </div>
 

@@ -4,13 +4,14 @@
 "use client"
 import { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import {useFrame, useLoader} from '@react-three/fiber';
 import * as THREE from 'three';
 
 export function BambooModel({ config = {} }) {
     const ref = useRef();
     const lightRef = useRef();
     const moonRef = useRef();
+    const texture = useLoader(THREE.TextureLoader, '/moon.jpg');
     const { nodes, materials } = useGLTF('/models/bamboo-transformed.glb');
 
     const {
@@ -64,7 +65,13 @@ export function BambooModel({ config = {} }) {
                 position={[0, 1.2, 0]}
             >
                 <sphereGeometry args={[0.5, 32, 32]} />
-                <meshBasicMaterial transparent opacity={0.3} />
+                <meshPhysicalMaterial
+                    map={texture}
+                    roughness={0.8}
+                    metalness={0.1}
+                    emissive={0xaaaaaa}
+                    emissiveIntensity={0.2}
+                />
             </mesh>}
 
             <group

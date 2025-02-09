@@ -9,8 +9,10 @@ module.exports = {
         extend: {
             fontFamily: {inter: 'var(--font-inter)'},
             screens: {
-                '3xl': '1700px',
-                '3xl-only': { min: '1700px', max: '1920px' },
+                'xxs': {min: '414px', max: '479.98px'},
+                'xs': {min: '480px', max: '639.98px'},
+                '3xl': {min: '1700px'},
+                '3xl-only': {min: '1700px', max: '1920px'},
             },
             colors: {
                 background: 'rgb(var(--background))',
@@ -22,9 +24,9 @@ module.exports = {
                 'firefly-radial': 'radial-gradient(50% 50% at 50% 50%, rgba(253, 255, 80, .6) 0%, rgba(217, 217, 217, 0) 100%)',
                 'fire-gradient': 'radial-gradient(circle, rgba(255,165,0,0.8) 20%, rgba(255,0,0,0.2) 60%, transparent 70%)',
             },
-            opacity:  {
-               '8': '0.08',
-               '9': '0.09',
+            opacity: {
+                '8': '0.08',
+                '9': '0.09',
 
             },
             keyframes: {
@@ -47,8 +49,8 @@ module.exports = {
                     '100%': {transform: 'scale(1.1) translateY(-5px); opacity: 1 '}
                 },
                 'fadeIn': {
-                    '0%': { opacity: '0' },
-                    '100%': { opacity: '1' },
+                    '0%': {opacity: '0'},
+                    '100%': {opacity: '1'},
                 },
             },
             animation: {

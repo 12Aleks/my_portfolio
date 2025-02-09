@@ -3,7 +3,7 @@
 import {Suspense} from 'react';
 import {Canvas} from "@react-three/fiber"
 import clsx from "clsx";
-import {Environment, ContactShadows} from "@react-three/drei";
+import {Environment} from "@react-three/drei";
 
 const RenderModel = ({children, className, light}) => {
     return (

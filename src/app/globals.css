@@ -30,3 +30,15 @@
     transform: translate(100px , 100px);
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  background: rgba(255, 255, 255, 0.1) !important; /* Прозрачный фон */
+  transition: background-color 5000s ease-in-out 0s; /* Отключаем резкое изменение */
+  -webkit-text-fill-color: #a3a4aa !important;
+  color: #a3a4aa !important; /* Оставляем цвет текста */
+}

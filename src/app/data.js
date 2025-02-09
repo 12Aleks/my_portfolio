@@ -204,4 +204,32 @@ export const BtnList = [
     },
 ];
 
+export const BtnListSmallLeft = [
+    {
+        label: "LinkedIn",
+        link: "https://www.linkedin.com/in/leszek-koba-78130b140/",
+        icon: "linkedin",
+        newTab: true,
+    },
+    {
+        label: "Facebook",
+        link: "https://www.facebook.com/profile.php?id=100002408135162",
+        icon: "facebook",
+        newTab: true,
+    }
+];
 
+export const BtnListSmallRight = [
+    {
+        label: "Github",
+        link: "https://github.com/12Aleks",
+        icon: "github",
+        newTab: true,
+    },
+    {
+        label: "Resume",
+        link: "/CV_28012025.pdf",
+        icon: "resume",
+        newTab: true,
+    },
+];
