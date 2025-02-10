@@ -9,7 +9,7 @@ export default function TreeModel({ onLoadComplete, ...props }) {
     const lightRef = useRef();
     const groundRef = useRef();
     const texture = useLoader(THREE.TextureLoader, '/ground.webp');
-    const displacementTexture = useLoader(THREE.TextureLoader,'/rocky_terrain_02_disp_4k.jpg');
+
     const { nodes, materials } = useGLTF("/models/tree-transformed.glb");
 
     useEffect(() => {
