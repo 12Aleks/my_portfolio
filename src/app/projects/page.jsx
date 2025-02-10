@@ -3,6 +3,7 @@ import Image from "next/image";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
+import bg from '../../../public/background/japan_castel3.webp'
 import {useEffect, useState} from "react";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
@@ -25,17 +26,17 @@ const ProjectsPage = () => {
 
     return (
 
-            <div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32 py-20 relative">
+            <div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32  py-20 relative">
 
                 <div
                     className={clsx(isNight ? 'opacity-8': 'opacity-[.12]',"absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 opacity-8 z-0 ")}/>
                 <Image
-                    src="/background/japan_castel3.webp"
+                    src={bg}
                     alt="background"
-                    fill
+
                     sizes="100vw"
                     priority
-                    className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "fixed object-cover top-0 left-0 w-full h-screen opacity-8 bg-fixed z-0 blur-sm")}
+                    className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "fixed object-cover top-0 left-0 w-full opacity-8 h-screen bg-fixed z-0 blur-sm")}
                 />
 
                 <div className="relative w-full flex lex-col items-center justify-center my-10  2xl:my-10 3xl:my-20">

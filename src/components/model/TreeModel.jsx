@@ -1,11 +1,11 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import {useFrame, useLoader} from "@react-three/fiber";
 import * as THREE from "three";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
-export default function TreeModel({ ...props }) {
+export default function TreeModel({onLoadComplete, ...props}) {
     const modelRef = useRef();
     const lightRef = useRef();
     const groundRef = useRef();
@@ -17,6 +17,11 @@ export default function TreeModel({ ...props }) {
         loader.setDRACOLoader(dracoLoader);
     });
 
+    useEffect(() => {
+        if (onLoadComplete) {
+            onLoadComplete();
+        }
+    }, [onLoadComplete]);
 
     useFrame((state) => {
         modelRef.current.position.y = -3.3 + Math.sin(state.clock.elapsedTime) * 0.01;
@@ -48,12 +53,12 @@ export default function TreeModel({ ...props }) {
                 color={new THREE.Color(0xFFFFFF)}
                 shadow-mapSize-width={1024}
                 shadow-mapSize-height={1024}
-                shadow-camera-near={0.5}
+                shadow-camera-near={0.9}
                 shadow-camera-far={50}
-                shadow-camera-left={-1000}
-                shadow-camera-right={1000}
-                shadow-camera-top={1000}
-                shadow-camera-bottom={-1000}
+                shadow-camera-left={-100}
+                shadow-camera-right={100}
+                shadow-camera-top={100}
+                shadow-camera-bottom={-100}
             />
 
 
@@ -82,7 +87,8 @@ export default function TreeModel({ ...props }) {
                 geometry={nodes.Oak_Bark_2_SHD_trunk_0.geometry}
                 material={materials.SHD_trunk}
                 scale={0.01}
-            />
+            >
+            </mesh>
             <mesh
                 name="olqeejih_2K_rsSprite1_0"
                 castShadow
@@ -90,7 +96,9 @@ export default function TreeModel({ ...props }) {
                 geometry={nodes.olqeejih_2K_rsSprite1_0.geometry}
                 material={materials.rsSprite1}
                 scale={0.01}
-            />
+            >
+
+            </mesh>
         </group>
     );
 }

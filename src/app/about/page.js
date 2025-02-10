@@ -6,6 +6,7 @@ import RenderModel from "@/components/RenderModel";
 import {BambooModel} from "@/components/model/BambooModel";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import clsx from "clsx";
+import bg from '../../../public/background/japan_castel.webp'
 
 const AboutPage = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -23,9 +24,8 @@ const AboutPage = () => {
             <div
                 className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "absolute top-0 left-0 w-full h-full bg-gradient-to-b opacity-8 from-slate-400 to-stone-950 z-0")}/>
             <Image
-                src="/background/japan_castel.webp"
+                src={bg}
                 alt="background"
-                fill
                 sizes="100vw"
                 priority
                 className={clsx(isNight ? 'opacity-8': 'opacity-[.17]', "fixed object-cover top-0 left-0 w-full h-screen opacity-8 bg-fixed z-0 blur-sm")}

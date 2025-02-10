@@ -7,6 +7,7 @@ import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import {BambooModel} from "@/components/model/BambooModel";
 import {PineModel} from "@/components/model/PineModel";
+import bg from '../../../public/background/japan_castel2_gradient.webp'
 
 
 const ContactPage = () => {
@@ -23,7 +24,7 @@ const ContactPage = () => {
     return (
         <div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32  py-20 relative">
             <div className={clsx(isNight ? 'opacity-8' : 'opacity-[.12]', "absolute top-0 left-0 w-full h-full bg-gradient-to-b opacity-8 from-slate-400 to-stone-950 z-0")}/>
-            <Image src="/background/japan_castel2_gradient.webp"
+            <Image src={bg}
                    alt="background"
                    fill
                    sizes="100vw"

@@ -9,13 +9,13 @@ import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 
 const Petals = dynamic(() => import("@/components/Petals"), {
-    ssr: false,
+    ssr: false
 });
 
 export default function Home() {
     const [isModelLoaded, setIsModelLoaded] = useState(false);
     const isNight = useDayNightMode();
-    const isLoaded = useRef(false); // Храним состояние без перерисовки
+    const isLoaded = useRef(false);
 
     const handleModelLoad = () => {
         setIsModelLoaded(true);
@@ -23,9 +23,10 @@ export default function Home() {
 
     useEffect(() => {
         if (!isLoaded.current) {
-            isLoaded.current = true; // Помечаем, что загрузка уже была
+            isLoaded.current = true;
         }
     }, []);
+
 
     return (
         <main className="flex w-full min-h-screen flex-col items-center justify-between relative">
@@ -40,7 +41,7 @@ export default function Home() {
             />
 
             <div className="w-full min-h-screen flex items-center justify-center">
-                {isModelLoaded && <Petals />}
+                {isModelLoaded &&  <Petals />}
 
                 <Navigation />
 
