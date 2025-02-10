@@ -30,9 +30,9 @@ module.exports = {
 
             },
             keyframes: {
-                'spin-reverse': {
-                    '0%': {transform: 'rotateX(0deg)'},
-                    '100%': {transform: 'rotateX(15deg)'},
+                'spin-reverse':{
+                    '0%': {transform: 'rotate(0deg)'},
+                    '100%': {transform: 'rotate(-360deg)'}
                 },
                 'petals': {
                     '0%': {top: '-10%', opacity: '0'},
@@ -55,6 +55,7 @@ module.exports = {
             },
             animation: {
                 'spin-slow': 'spin 300s infinite linear',
+                'rotate-icons': 'spin-reverse 300s infinite linear',
                 'fadeIn': 'fadeIn 1s ease-out forwards',
                 'petals': 'petals linear infinite, sway ease-in-out infinite',
                 'fire': ' flicker 0.1s infinite alternate'

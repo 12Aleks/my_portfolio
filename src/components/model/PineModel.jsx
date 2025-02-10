@@ -5,7 +5,6 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/japanese-black-pine-f0cb4705f1c446c7bc393fdbfcdf024a
 Title: Japanese Black Pine
 */
-
 "use client"
 import {useMemo, useRef} from 'react'
 import {useGLTF} from '@react-three/drei';

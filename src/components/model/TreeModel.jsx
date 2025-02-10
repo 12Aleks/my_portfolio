@@ -1,17 +1,16 @@
-// Model "Tree" by zackmillot (https://sketchfab.com/zackmillot)
-// Licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-
-"use client"
-// https://github.com/pmndrs/gltfjsx
-import { useRef, useEffect } from 'react';
-import { useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+"use client";
+import { useRef, useEffect } from "react";
+import { useGLTF } from "@react-three/drei";
+import {useFrame, useLoader} from "@react-three/fiber";
 import * as THREE from "three";
 
 export default function TreeModel({ onLoadComplete, ...props }) {
     const modelRef = useRef();
     const lightRef = useRef();
-    const { nodes, materials } = useGLTF('/models/tree-transformed.glb');
+    const groundRef = useRef();
+    const texture = useLoader(THREE.TextureLoader, '/ground.webp');
+    const displacementTexture = useLoader(THREE.TextureLoader,'/rocky_terrain_02_disp_4k.jpg');
+    const { nodes, materials } = useGLTF("/models/tree-transformed.glb");
 
     useEffect(() => {
         if (onLoadComplete) {
@@ -20,8 +19,7 @@ export default function TreeModel({ onLoadComplete, ...props }) {
     }, [onLoadComplete]);
 
     useFrame((state) => {
-        // Floating animation
-        modelRef.current.position.y = -3.4 + Math.sin(state.clock.elapsedTime) * 0.01;
+        modelRef.current.position.y = -3.3 + Math.sin(state.clock.elapsedTime) * 0.01;
         modelRef.current.rotation.set(
             -0.29,
             -state.clock.elapsedTime * 0.015,
@@ -30,7 +28,7 @@ export default function TreeModel({ onLoadComplete, ...props }) {
 
         // Pulsating shadow effect
         if (lightRef.current) {
-            lightRef.current.shadow.radius = 2 + Math.sin(state.clock.elapsedTime * 3) * 1.5; // Pulsation between 0.5 and 3.5
+            lightRef.current.shadow.radius = 2 + Math.sin(state.clock.elapsedTime * 3) * 1.5;
         }
     });
 
@@ -39,26 +37,43 @@ export default function TreeModel({ onLoadComplete, ...props }) {
             ref={modelRef}
             {...props}
             dispose={null}
-            position={[0, -3.4, 0]}
+            position={[0, -3.3, 0]}
             scale={[33, 33, 33]}
             rotation={[-0.29, 0, 0]}
         >
-            {/* Pulsating Shadow Light */}
             <directionalLight
                 ref={lightRef}
-                position={[5, 10, 5]} // Light coming from above
-                intensity={2}
-                color={new THREE.Color('black')}
-                castShadow
-                shadow-mapSize-width={600}
-                shadow-mapSize-height={600}
-                shadow-camera-near={0.8}
+                position={[0, 0.07, 0]}
+                intensity={.1}
+                color={new THREE.Color(0xFFFFFF)}
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
+                shadow-camera-near={0.5}
                 shadow-camera-far={50}
-                shadow-camera-left={-10}
-                shadow-camera-right={10}
-                shadow-camera-top={1}
-                shadow-camera-bottom={-10}
+                shadow-camera-left={-1000}
+                shadow-camera-right={1000}
+                shadow-camera-top={1000}
+                shadow-camera-bottom={-1000}
             />
+
+
+            <mesh
+                position={[0, 0.01, 0.01]} // Подогнано под масштаб
+                rotation={[-0.01, 0, 0]} // Земля будет располагаться с выпуклой стороной вверх
+                scale={[0.185, 0.185, 0.185]} // Масштаб для земли
+                receiveShadow
+                castShadow
+                ref={groundRef}
+            >
+                {/* Конусная форма земли */}
+                <coneGeometry args={[0.20, 0.07, 64]} />
+                <meshStandardMaterial
+                    map={texture}
+                    color="saddlebrown"
+                    roughness={1}
+                    displacementScale={1}
+                />
+            </mesh>
 
             <mesh
                 name="Oak_Bark_2_SHD_trunk_0"
@@ -80,4 +95,4 @@ export default function TreeModel({ onLoadComplete, ...props }) {
     );
 }
 
-useGLTF.preload('/models/tree-transformed.glb');
+useGLTF.preload("/models/tree-transformed.glb");

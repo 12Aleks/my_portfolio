@@ -12,15 +12,11 @@
   }
 }
 
-
-
-
 @layer utilities {
   .pause {
     animation-play-state: paused;
   }
 }
-
 
 @keyframes move {
   0%{
@@ -30,6 +26,43 @@
     transform: translate(100px , 100px);
   }
 }
+
+/* WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина скроллбара */
+  height: 8px; /* Высота для горизонтального скролла */
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e2e; /* Фон трека */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff9800; /* Цвет полосы */
+  border-radius: 10px;
+  border: 2px solid #1e1e2e; /* Граница между треком и ползунком */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5722; /* Цвет при наведении */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* "auto", "thin", "none" */
+  scrollbar-color: #ff9800 #1e1e2e; /* thumb color и track color */
+}
+
+/* Internet Explorer & Edge */
+body {
+  -ms-overflow-style: none; /* Скрыть стандартный скроллбар */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Для Safari */
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

@@ -6,6 +6,7 @@ import FireFlies from "@/components/FireFlies";
 import Navbar from "@/components/navigation/Navbar";
 import dynamic from "next/dynamic";
 
+const Sound = dynamic(() => import("@/components/Sound"))
 const Footer = dynamic(() => import("@/components/navigation/Footer"));
 
 const inter = Inter({
@@ -14,9 +15,13 @@ const inter = Inter({
 });
 
 export const metadata = {
-    title: "Oleksii Koba • Frontend Developer Portfolio | Japan Night Style",
-    description: "Hi, I am Oleksii. I work as a Full Stack Developer in Gdańsk, Poland, and I am currently looking for a full-time remote job.",
-    image: "/imageMeta.png",
+    title: "Oleksii Koba • Full Stack Developer Portfolio",
+    description: "Portfolio of Oleksii Koba, Full Stack Developer specializing in React, Next.js, and Drupal.",
+    openGraph: {
+        title: "Oleksii Koba • Full Stack Developer Portfolio",
+        description: "Portfolio of Oleksii Koba, Full Stack Developer specializing in React, Next.js, and Drupal.",
+        images: [""],
+    },
 };
 
 export default function RootLayout({children}) {
@@ -25,18 +30,14 @@ export default function RootLayout({children}) {
         <Head>
             <link rel="icon" href="/favicone/favicon.ico" />
 
-
-            {/* Open Graph Tags */}
-            <meta property="og:title" content="Oleksii Koba • Frontend Developer Portfolio | Japan Night Style" />
-            <meta property="og:description" content="Hi, I am Oleksii. I work as a Full Stack Developer in Gdańsk, Poland, and I am currently looking for a full-time remote job." />
-            <meta property="og:image" content="https://example.com/image.jpg" />
-            <meta property="og:url" content="https://example.com/page" />
-
-            {/* Twitter Card Tags */}
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Oleksii Koba • Frontend Developer Portfolio | Japan Night Style" />
-            <meta name="twitter:description" content="Hi, I am Oleksii. I work as a Full Stack Developer in Gdańsk, Poland, and I am currently looking for a full-time remote job." />
-            <meta name="twitter:image" content="https://example.com/image.jpg" />
+            {/* Add a default image for social sharing */}
+            <meta property="og:url" content="https://yourwebsite.com"/>
+            <meta name="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:title" content="Oleksii Koba - Full Stack Developer"/>
+            <meta name="twitter:description"
+                  content="Portfolio of Oleksii Koba, a Full Stack Developer specializing in React, Next.js, and Drupal."/>
+            <meta name="twitter:image" content="/path/to/default-image.jpg"/>
+            <link rel="canonical" href="https://yourwebsite.com"/>
         </Head>
         <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}>
 
@@ -45,6 +46,8 @@ export default function RootLayout({children}) {
             {children}
         </main>
         <FireFlies />
+        <Sound />
+        <div id="my-modal" />
         <Footer />
         </body>
         </html>

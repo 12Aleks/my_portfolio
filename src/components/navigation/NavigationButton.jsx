@@ -2,6 +2,7 @@ import {Home, User, FileStack, Mail, Github, Linkedin, Facebook, File} from 'luc
 import Link from "next/link";
 import ResponsiveComponent from "@/components/ResponsiveComponent";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 const getIcon = iconName => {
     switch (iconName) {
@@ -26,7 +27,13 @@ const getIcon = iconName => {
     }
 }
 
-const NavigationButton = ({x, y, z, label, link, icon, newTab, rotation, setIsHovered, labelDirection = 'right'}) => {
+const item = {
+    hidden: { scale: 0 },
+    show: { scale: 1 },
+};
+const NavLink = motion(Link);
+
+const NavigationButton = ({x, y, label, link, icon, newTab, rotation, labelDirection = 'right'}) => {
     const iconRotation = (x === "0px" ? 0 : 180) - rotation;
 
     return (
@@ -36,38 +43,38 @@ const NavigationButton = ({x, y, z, label, link, icon, newTab, rotation, setIsHo
                 ({size}) => {
                     return size && size >= 639 ?
                         <div
-                            className="absolute cursor-pointer backdrop-blur-[6px] rounded-full"
-                            style={{
-                                transform: `translate3d(${x}, ${y}, ${z}) rotateX(0deg) rotateY(${iconRotation}deg)`,
-                            }}
-                            onMouseEnter={() => setIsHovered(true)} // Stop rotation on hover
-                            onMouseLeave={() => setIsHovered(false)} // Resume rotation when mouse leaves
+                            className="absolute cursor-pointer z-50"
+                            style={{ transform: `translate(${x}, ${y})` }}
                         >
-                            <Link
+                            <NavLink
+                                variants={item}
                                 href={link}
                                 target={newTab ? "_blank" : "_self"}
-                                className="rounded-full flex items-center justify-center "
-                                name={label}
+                                className="rounded-full flex items-center justify-center"
                                 aria-label={label}
+                                name={label}
+                                prefetch={false}
+                                scroll={false}
                             >
-                <span
-                    className="relative w-14 h-14 p-3 transition-all
-                    animate-rotate-icons
-                    bg-background/20 backdrop-blur-[6px] rounded-full
-                    duration-500 hover:p-3.5 hover:text-amber-600
-                    group-hover:pause
-                    border-1 border-white hover:border-amber-600 border scale-x-[-1]"
-                >
-                    {getIcon(icon)}
-                    <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"></span>
-                    <span className="absolute hidden peer-hover:block px-2 py-1 mx-2 left-full
-                    top-1/2 -translate-y-1 bg-background text-sm rounded-md shadow-lg whitespace-nowrap">
-                        {label}
-                    </span>
+              <span className="relative w-13 h-13 p-2.5 2xl:w-13 2xl:h-13 2xl:p-2.5 3xl:w-14 3xl:h-14 3xl:p-3 transition-all
+                 animate-rotate-icons
+                 bg-background/20 backdrop-blur-[6px] rounded-full
+                 duration-500 p-3 2xl:hover:p-3 3xl:hover:p-3.5 hover:text-amber-600
+                 group-hover:pause
+                   border-1 border-white text-white hover:border-amber-600 border">
+                {getIcon(icon)}
+
+                  <span className="peer bg-transparent absolute top-0 left-0 w-full h-full" />
+
+                <span className="absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
+                  {label}
                 </span>
-                            </Link>
-                        </div> : <div className="cursor-pointer backdrop-blur-[6px] rounded-full">
-                            <Link
+              </span>
+                            </NavLink>
+                        </div>
+                : <div className="cursor-pointer backdrop-blur-[6px] rounded-full">
+                            <NavLink
+                                variants={item}
                                 href={link}
                                 target={newTab ? "_blank" : "_self"}
                                 className="rounded-full flex items-center justify-center "
@@ -86,7 +93,7 @@ const NavigationButton = ({x, y, z, label, link, icon, newTab, rotation, setIsHo
                         {label}
                     </span>
                 </span>
-                            </Link>
+                            </NavLink>
                         </div>
 
                 }

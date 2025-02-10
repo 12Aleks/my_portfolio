@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 const Petals = () => {
     return (
-        <div className="fixed z-20 h-[550px] w-[350px] flex items-center justify-center mb-0 xxs:mb-0 xs:mb-0 sm:mb-14 md:mb-14">
+        <div className="fixed z-20 h-[360px] w-[390px] xxs:w-[400px] xxs:h-[390px] xs:w-[550px] xs:h-[500px] sm:w-[600px] sm:h-[550px] lg:w-[490px] lg:h-[430px] 2xl:w-[490px] 2xl:h-[390px] 3xl:w-[600px] 3xl:md:h-[550px] flex items-center justify-center mb-0 xxs:mb-0 xs:mb-0 sm:mb-14">
             <div className={clsx( 'flex items-center justify-center relative top-20 left-0 w-72 h-80')}>
                 <div className="absolute top-10 left-10 w-1 h-1 bg-pink-50 opacity-0 rotate-45 animate-petals"
                      style={{borderRadius: '50% 50% 50% 0', animationDuration: '8s, 4s', animationDelay: '0.5s, 0s'}}></div>

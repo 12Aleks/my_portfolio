@@ -2,7 +2,18 @@
 import {useForm} from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Toaster, toast } from 'sonner';
+import { motion } from "framer-motion";
 
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.3,
+            delayChildren: 0.2,
+        },
+    },
+};
 
 const FormComponent = () => {
     const {
@@ -46,9 +57,12 @@ const FormComponent = () => {
     return (
         <>
         <Toaster richColors={true}/>
-            <form
+            <motion.form
+                variants={container}
+                initial="hidden"
+                animate="show"
                 onSubmit={handleSubmit(onSubmit)}
-                className="max-w-lg w-full flex flex-col items-center justify-center space-y-6"
+                className="max-w-lg w-full flex flex-col items-center justify-center space-y-4 2xl:space-y-5 3xl:space-y-6"
             >
                 <div className="w-full">
                     <input
@@ -96,7 +110,6 @@ const FormComponent = () => {
                 <div className="w-full">
             <textarea
                 placeholder="Wiadomość"
-                rows="5"
                 {...register("message", {
                     required: 'To pole jest obowiązkowe!',
                     minLength: {
@@ -108,7 +121,7 @@ const FormComponent = () => {
                         message: "Twój tekst jest za długi, maksymalna długość to 400 znaków."
                     }
                 })}
-                className="appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600 text-white"
+                className="h-32 2xl:h-32 3xl:h-40 appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600 text-white"
             />
                     {
                         errors.message &&
@@ -119,11 +132,11 @@ const FormComponent = () => {
                     type="submit"
                     disabled={isSubmitting}
                     value={isSubmitting ? "Wysyłanie..." : "Wyślij"}
-                    className={`cursor-pointer px-10 py-3 rounded-md shadow-lg border border-accent/30 transition-all focus:outline-none ${
+                    className={`cursor-pointer px-10 py-3 rounded-md shadow-lg border border-amber-700 transition-all focus:outline-none ${
                         isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-amber-600 hover:bg-amber-700"
                     }`}
                 />
-            </form>
+            </motion.form>
         </>
     )
         ;

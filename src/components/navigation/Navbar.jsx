@@ -1,6 +1,6 @@
 "use client";
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
 import { usePathname } from "next/navigation";
@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
+    const closeMenu = () => setIsOpen(false);
     const pathname = usePathname();
 
     return (
@@ -19,6 +20,7 @@ export default function Navbar() {
                     <span className="text-white text-sm border-l border-white tracking-widest pl-4 uppercase">Oleksii Koba</span>
                 </Link>
 
+                {/* Кнопка бургер-меню */}
                 <button
                     onClick={toggleMenu}
                     className="md:hidden text-white focus:outline-none z-20"
@@ -31,21 +33,29 @@ export default function Navbar() {
 
                 {/* Меню для десктопов */}
                 <div className="hidden md:flex space-x-6 mr-3">
-                    <Link href="/" className={`transition-colors duration-200 ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Home</Link>
-                    <Link href="/projects" className={`transition-colors duration-200 ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projects</Link>
-                    <Link href="/about" className={`transition-colors duration-200 ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>About</Link>
-                    <Link href="/contact" className={`transition-colors duration-200 ${pathname === '/contact' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Contact</Link>
+                    <Link href="/" className={`transition-colors duration-200 text-sm 2xl:text-sm 3xl:text-base tracking-widest ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Strona główna</Link>
+                    <Link href="/projects" className={`transition-colors duration-200 text-sm 2xl:text-sm 3xl:text-base tracking-widest ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projekty</Link>
+                    <Link href="/about" className={`transition-colors duration-200 text-sm 2xl:text-sm 3xl:text-base tracking-widest ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>O mnie</Link>
+                    <Link href="/contact" className={`transition-colors duration-200 text-sm 2xl:text-sm 3xl:text-base tracking-widest ${pathname === '/contact' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Kontakt</Link>
                 </div>
             </div>
 
-            <div className={`min-h-full md:hidden fixed left-0 right-0 bottom-0 top-[20vh] xxs:top-[16vh] xs:top-[14vh] sm:top-[14vh] transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out`}>
-                <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 backdrop-blur-[10px]">
-                    <Link href="/" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Home</Link>
-                    <Link href="/projects" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projects</Link>
-                    <Link href="/about" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>About</Link>
-                    <Link href="/contact" onClick={() => setIsOpen(false)} className={`text-white text-xl ${pathname === '/contact' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Contact</Link>
+            {/* Затемнение фона при открытом мобильном меню */}
+            <div
+                className={`fixed inset-0 transition-opacity duration-300 ${isOpen ? "opacity-100 visible z-40" : "opacity-0 invisible z-30"}`}
+                onClick={closeMenu}
+            />
+
+            {/* Мобильное меню */}
+            <div className={`fixed left-0 right-0 bottom-0 top-[8vh] transform ${isOpen ? "translate-x-0 z-50" : "-translate-x-full"} transition-transform duration-300 ease-in-out`}>
+                <div className="flex flex-col items-center justify-center h-auto space-y-6 sm:space-y-8 bg-[#242527]/95 backdrop-blur-md rounded-lg p-8 z-50">
+                    <Link href="/" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Strona główna</Link>
+                    <Link href="/projects" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projekty</Link>
+                    <Link href="/about" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>O mnie</Link>
+                    <Link href="/contact" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/contact' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Kontakt</Link>
                 </div>
             </div>
+
         </nav>
     );
 }
