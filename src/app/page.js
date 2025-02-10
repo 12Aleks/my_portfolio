@@ -1,15 +1,14 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import bg from "../../public/background/japan_gradient.webp";
 import RenderModel from "@/components/RenderModel";
+import TreeModel from '@/components/model/TreeModel';
 import Navigation from "@/components/navigation";
 import dynamic from "next/dynamic";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 
-const Petals = dynamic(() => import("@/components/Petals"));
-const TreeModel = dynamic(() => import('@/components/model/TreeModel'), {
+const Petals = dynamic(() => import("@/components/Petals"), {
     ssr: false,
 });
 
@@ -32,12 +31,12 @@ export default function Home() {
         <main className="flex w-full min-h-screen flex-col items-center justify-between relative">
             <div className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 opacity-10")} />
             <Image
-                src={bg}
+                src="/background/japan_gradient.webp"
                 alt="background"
                 fill
                 sizes="100vw"
+                priority
                 className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "fixed object-cover w-full h-screen opacity-8 bg-fixed z-0 blur-sm")}
-                loading="lazy"
             />
 
             <div className="w-full min-h-screen flex items-center justify-center">

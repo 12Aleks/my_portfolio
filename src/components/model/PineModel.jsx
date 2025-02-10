@@ -10,13 +10,14 @@ import {useMemo, useRef} from 'react'
 import {useGLTF} from '@react-three/drei';
 import {useFrame, useLoader} from "@react-three/fiber";
 import * as THREE from "three";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 
 export function PineModel({ config = {} }) {
     const modelRef = useRef();
     const lightRef = useRef();
     const moonRef = useRef();
-    const texture = useLoader(THREE.TextureLoader, '/moon.jpg');
+    const texture = useLoader(THREE.TextureLoader, '/moon.webp');
     const {
         floatAmplitude = 0.01,
         floatSpeed = 1,
@@ -25,7 +26,11 @@ export function PineModel({ config = {} }) {
         light = 0
     } = config;
 
-    const {nodes, materials} = useGLTF('/models/japanese_black_pine-transformed.glb');
+    const { nodes, materials } = useGLTF("/models/japanese_black_pine-transformed.glb", loader => {
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath("/draco/"); // Указываем путь к декодеру
+        loader.setDRACOLoader(dracoLoader);
+    });
 
     const randomPhaseShift = useMemo(() => Math.random() * Math.PI * 2, []);
 

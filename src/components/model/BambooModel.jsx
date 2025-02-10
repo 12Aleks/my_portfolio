@@ -6,13 +6,20 @@ import { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import {useFrame, useLoader} from '@react-three/fiber';
 import * as THREE from 'three';
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 export function BambooModel({ config = {} }) {
     const ref = useRef();
     const lightRef = useRef();
     const moonRef = useRef();
-    const texture = useLoader(THREE.TextureLoader, '/moon.jpg');
-    const { nodes, materials } = useGLTF('/models/bamboo-transformed.glb');
+    const texture = useLoader(THREE.TextureLoader, '/moon.webp');
+
+
+    const { nodes, materials } = useGLTF("/models/bamboo-transformed.glb", loader => {
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath("/draco/"); // Указываем путь к декодеру
+        loader.setDRACOLoader(dracoLoader);
+    });
 
     const {
         floatAmplitude = 0.01,

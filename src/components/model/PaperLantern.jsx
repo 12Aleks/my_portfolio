@@ -7,6 +7,7 @@ import { useRef, useMemo } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 export function PaperLantern({ config = {} }) {
     const ref = useRef();
@@ -14,7 +15,12 @@ export function PaperLantern({ config = {} }) {
     const bottomLightRef = useRef();
     const topLightRef = useRef();
     const lightRef = useRef();
-    const { nodes, materials } = useGLTF('/models/paper-lantern-transformed.glb');
+
+    const { nodes, materials } = useGLTF("/models/paper-lantern-transformed.glb", loader => {
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath("/draco/"); // Указываем путь к декодеру
+        loader.setDRACOLoader(dracoLoader);
+    });
 
     const {
         floatAmplitude = 0.01,

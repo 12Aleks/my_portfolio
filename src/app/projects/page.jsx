@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image";
-import bg from "../../../public/background/japan_castel3.webp";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
@@ -31,12 +30,12 @@ const ProjectsPage = () => {
                 <div
                     className={clsx(isNight ? 'opacity-8': 'opacity-[.12]',"absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 opacity-8 z-0 ")}/>
                 <Image
-                    src={bg}
+                    src="/background/japan_castel3.webp"
                     alt="background"
-                    layout="intrinsic"
+                    fill
                     sizes="100vw"
+                    priority
                     className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "fixed object-cover top-0 left-0 w-full h-screen opacity-8 bg-fixed z-0 blur-sm")}
-                    loading="lazy"
                 />
 
                 <div className="relative w-full flex lex-col items-center justify-center my-10  2xl:my-10 3xl:my-20">

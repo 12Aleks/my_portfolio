@@ -1,22 +1,22 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import {useFrame, useLoader} from "@react-three/fiber";
 import * as THREE from "three";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
-export default function TreeModel({ onLoadComplete, ...props }) {
+export default function TreeModel({ ...props }) {
     const modelRef = useRef();
     const lightRef = useRef();
     const groundRef = useRef();
     const texture = useLoader(THREE.TextureLoader, '/ground.webp');
 
-    const { nodes, materials } = useGLTF("/models/tree-transformed.glb");
+    const { nodes, materials } = useGLTF("/models/tree-transformed.glb", loader => {
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath("/draco/"); // Указываем путь к декодеру
+        loader.setDRACOLoader(dracoLoader);
+    });
 
-    useEffect(() => {
-        if (onLoadComplete) {
-            onLoadComplete();
-        }
-    }, [onLoadComplete]);
 
     useFrame((state) => {
         modelRef.current.position.y = -3.3 + Math.sin(state.clock.elapsedTime) * 0.01;
