@@ -30,14 +30,10 @@ export default function RootLayout({children}) {
         <Head>
             <link rel="icon" href="/favicone/favicon.ico" />
 
-            {/* Add a default image for social sharing */}
-            <meta property="og:url" content="https://yourwebsite.com"/>
-            <meta name="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:card" content="/imageMeta.png"/>
             <meta name="twitter:title" content="Oleksii Koba - Full Stack Developer"/>
-            <meta name="twitter:description"
-                  content="Portfolio of Oleksii Koba, a Full Stack Developer specializing in React, Next.js, and Drupal."/>
-            <meta name="twitter:image" content="/path/to/default-image.jpg"/>
-            <link rel="canonical" href="https://yourwebsite.com"/>
+            <meta name="twitter:description" content="Portfolio of Oleksii Koba, a Full Stack Developer specializing in React, Next.js, and Drupal."/>
+            <meta name="twitter:image" content="/imageMeta.png"/>
         </Head>
         <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}>
 
