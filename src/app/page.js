@@ -41,7 +41,20 @@ export default function Home() {
             />
 
             <div className="w-full min-h-screen flex items-center justify-center">
-                {isModelLoaded &&  <Petals />}
+                {!isModelLoaded ?
+                    <div
+                        className={`absolute z-10 overflow-hidden h-[360px] w-[390px] xxs:w-[400px] xxs:h-[390px] xs:w-[550px] xs:h-[500px] sm:w-[400px] sm:h-[350px] lg:w-[400px] lg:h-[370px] 2xl:w-[400px] 2xl:h-[390px] 3xl:w-[600px] 3xl:md:h-[550px] mb-0 xxs:mb-0 xs:mb-0 sm:mb-14 transition-opacity duration-500 ${
+                            isModelLoaded ? "opacity-0" : "opacity-100"
+                        }`}
+                    >
+                    <Image
+                            src="/first_screen.webp"
+                            alt="loading"
+                            fill
+                            sizes="100vw"
+                            className="object-cover"
+                        />
+                    </div>  : <Petals />}
 
                 <Navigation />
 

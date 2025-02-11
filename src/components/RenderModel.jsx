@@ -6,7 +6,9 @@ import {Environment} from "@react-three/drei";
 
 const RenderModel = ({children, className, light}) => {
     return (
+
       <Canvas className={clsx("w-screen h-screen -z-10 relative", className)}>
+
           <Suspense fallback={null}>
               {children}
           </Suspense>
