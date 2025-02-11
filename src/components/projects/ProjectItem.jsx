@@ -23,7 +23,7 @@ const ProjectItem = ({ project, index }) => {
                 "flex flex-col text-white sm:flex-col md:flex-col lg:flex-col items-center justify-between relative rounded-lg w-full p-3 sm:p-3 md:p-5 lg:p-5 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
             )}
         >
-            <p className="pb-3 ml-auto block lg:block xl:hidden font-light">{getDate(project.date)}</p>
+            <p className="pb-3 ml-auto block lg:block xl:hidden font-light text-sm">{getDate(project.date)}</p>
             <Image
                 src={`/projects/${project.image}`}
                 alt={project.name}
@@ -36,15 +36,15 @@ const ProjectItem = ({ project, index }) => {
             <div
                 className={clsx(
                     index % 2 === 0 ? "xl:ml-3" : "xl:mr-3",
-                    "flex flex-col items-start justify-between w-full m-0 lg:ml-0 flex-grow" // Added flex-grow for flexible spacing
+                    "flex flex-col items-start justify-between h-full w-full m-0 lg:ml-0 flex-grow" // Added flex-grow for flexible spacing
                 )}
             >
 
-                <p className={clsx(index % 2 === 0 ? "ml-auto" : "mr-auto", "pb-3 hidden sm:hidden lg:hidden xl:block")}>
+                <p className={clsx(index % 2 === 0 ? "ml-auto" : "mr-auto", "text-sm font-light hidden sm:hidden lg:hidden xl:block")}>
                     {getDate(project.date)}
                 </p>
                 <h2 className="text-lg mt-3 mb-2">{project.name}</h2>
-                <p className="text-sm font-light mb-2 xl:mb-3 2xl:mb-4">{project.description}</p>
+                <p className="text-sm font-light mb-2 xl:mb-3 2xl:mb-3">{project.description}</p>
 
                 <div className="flex flex-wrap gap-x-1.5 gap-y-1.5 my-2">
                     {project.technologies.map((tech) => (

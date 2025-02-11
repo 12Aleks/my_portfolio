@@ -33,7 +33,6 @@ const ProjectsPage = () => {
                 <Image
                     src={bg}
                     alt="background"
-
                     sizes="100vw"
                     priority
                     className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "fixed object-cover top-0 left-0 w-full opacity-8 h-screen bg-fixed z-0 blur-sm")}
