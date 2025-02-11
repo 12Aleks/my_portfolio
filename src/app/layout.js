@@ -3,6 +3,7 @@ import "./globals.css";
 import clsx from "clsx";
 import FireFlies from "@/components/FireFlies";
 import Navbar from "@/components/navigation/Navbar";
+import Head from 'next/head';
 import dynamic from "next/dynamic";
 
 const Sound = dynamic(() => import("@/components/Sound"));
@@ -35,6 +36,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+        <Head>
+            {/* Google Verification Meta Tag */}
+            <meta name="google-site-verification" content="v_-x7X5kpJOUjhB5nobmzbxTYpI5xR99uzAXWLs14aU" />
+        </Head>
         <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}>
         <Navbar />
         <main className="flex-grow">

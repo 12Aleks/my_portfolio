@@ -29,7 +29,7 @@ const ProjectItem = ({ project, index }) => {
                 alt={project.name}
                 width={260}
                 height={250}
-                className="rounded-md h-auto w-full sm:h-auto sm:w-full lg:w-full xl:w-auto md:max-w-full lg:max-w-full xl:max-w-[300px] 3xl:max-w-[320px] mb-3 xl:mb-0"
+                className="rounded-md h-auto w-full sm:h-auto sm:w-full lg:w-full xl:w-auto md:max-w-full lg:max-w-full xl:max-w-[300px] 3xl:max-w-[320px] mb-2 xl:mb-0"
                 loading="lazy"
             />
 
@@ -44,7 +44,7 @@ const ProjectItem = ({ project, index }) => {
                     {getDate(project.date)}
                 </p>
                 <h2 className="text-lg mt-3 mb-2">{project.name}</h2>
-                <p className="text-sm font-light mb-4">{project.description}</p>
+                <p className="text-sm font-light mb-2 xl:mb-3 2xl:mb-4">{project.description}</p>
 
                 <div className="flex flex-wrap gap-x-1.5 gap-y-1.5 my-2">
                     {project.technologies.map((tech) => (
@@ -56,7 +56,7 @@ const ProjectItem = ({ project, index }) => {
                         </span>
                     ))}
                 </div>
-                <div className="pt-2 mt-auto text-sm">
+                <div className="pt-2 mt-auto mb-2 text-sm">
                     {project.demoLink && (
                         <Link
                             href={project.demoLink}
