@@ -12,7 +12,7 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <nav className="backdrop-blur-[10px] fixed w-full top-0 left-0 text-white p-4 transition-all duration-300 ease-in-out z-50">
+        <nav className={`${isOpen ? "bg-[#333333f7]/95" : "bg-[#333333f7]/0"} backdrop-blur-[10px] md:bg-[#333333f7]/0 fixed w-full top-0 left-0 text-white p-4 transition-all duration-300 ease-in-out z-50`}>
             <div className="max-w-full mx-auto flex items-center justify-between">
                 {/* Логотип */}
                 <Link href="/" className="cursor-pointer flex items-center z-20">
@@ -47,8 +47,8 @@ export default function Navbar() {
             />
 
             {/* Мобильное меню */}
-            <div className={`fixed left-0 right-0 bottom-0 top-[8vh] transform ${isOpen ? "translate-x-0 z-50" : "-translate-x-full"} transition-transform duration-300 ease-in-out`}>
-                <div className="flex flex-col items-center justify-center h-auto space-y-6 sm:space-y-8 bg-[#242527]/95 backdrop-blur-md rounded-lg p-8 z-50">
+            <div className={`fixed left-0 right-0 bottom-0 top-[74px] transform ${isOpen ? "translate-x-0 z-50" : "-translate-x-full"} transition-transform duration-300 ease-in-out`}>
+                <div className="flex flex-col items-center justify-center h-auto space-y-6 sm:space-y-8 bg-[#333333f7]/95 backdrop-blur-[10px] rounded-lg p-8 z-50">
                     <Link href="/" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Strona główna</Link>
                     <Link href="/projects" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/projects' ? 'text-gray-400' : 'hover:text-gray-400'}`}>Projekty</Link>
                     <Link href="/about" onClick={closeMenu} className={`transition-colors duration-200 tracking-widest ${pathname === '/about' ? 'text-gray-400' : 'hover:text-gray-400'}`}>O mnie</Link>

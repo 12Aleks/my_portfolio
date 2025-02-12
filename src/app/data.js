@@ -109,9 +109,17 @@ export const workProjects = [
         date: "2018-06",
         image: "lux.webp",
         demoLink: "https://www.terma24.pl/lux2",
+    },{
+        id: 13,
+        name: "Podstrona Dotacje Unii Europejskiej",
+        description: "Pracowałem nad frontendem podstrony Kim jesteśmy, Dotacje Unijne.",
+        technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
+        date: "2018-05",
+        image: "podstronaDotacje.webp",
+        demoLink: "https://www.termagroup.pl/whowearepages/dotacje-unijne",
     },
     {
-        id: 13,
+        id: 14,
         name: "Podstrona produktowa DROP SHIP Heating Elements",
         description: "Zrealizowałem frontend podstrony, opierając się na layoutach z Figmy.",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
@@ -120,7 +128,7 @@ export const workProjects = [
         demoLink: "https://en.termaheat.com/uk-drop-ship-accessories",
     },
     {
-        id: 14,
+        id: 15,
         name: "Strona www Pomorska Fundacja Bracia Mniejsi",
         description: "Zrealizowałem pełną stronę – frontend i backend, tworząc ją na WordPressie.",
         technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML'],

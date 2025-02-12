@@ -16,7 +16,7 @@ const Sound = () => {
 
             if (newState) {
                 audioRef.current.play().catch((error) => {
-                    console.warn("Автозапуск аудио заблокирован браузером:", error);
+                    console.warn("Automatyczne odtwarzanie dźwięku zablokowane przez przeglądarkę:", error);
                 });
             } else {
                 audioRef.current.pause();
@@ -44,9 +44,9 @@ const Sound = () => {
                 aria-label="Sound control button"
             >
                 {isPlaying ? (
-                    <Volume2 className="w-full h-full text-neutral-400 hover:text-amber-600 group-hover:text-accent" strokeWidth={1.5} />
+                    <Volume2 className="w-full h-full text-neutral-400 hover:text-amber-600 group-hover:text-amber-600" strokeWidth={1.5} />
                 ) : (
-                    <VolumeX className="w-full h-full text-neutral-400 hover:text-amber-600 group-hover:text-accent" strokeWidth={1.5} />
+                    <VolumeX className="w-full h-full text-neutral-400 hover:text-amber-600 group-hover:text-amber-600" strokeWidth={1.5} />
                 )}
             </motion.button>
         </div>
