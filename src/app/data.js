@@ -206,7 +206,7 @@ export const BtnList = [
     },
     {
         label: "Resume",
-        link: "/CV_28012025.pdf",
+        link: "/CV_Oleksii_Koba.pdf",
         icon: "resume",
         newTab: true,
     },
@@ -236,7 +236,7 @@ export const BtnListSmallRight = [
     },
     {
         label: "Resume",
-        link: "/CV_28012025.pdf",
+        link: "/CV_Oleksii_Koba.pdf",
         icon: "resume",
         newTab: true,
     },
