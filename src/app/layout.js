@@ -4,9 +4,12 @@ import clsx from "clsx";
 import FireFlies from "@/components/FireFlies";
 import Navbar from "@/components/navigation/Navbar";
 import dynamic from "next/dynamic";
+import CookieConsent from "@/components/CookieConsent";
+import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
 
 const Sound = dynamic(() => import("@/components/Sound"));
 const Footer = dynamic(() => import("@/components/navigation/Footer"));
+const GoogleTagManagerScript = dynamic(() => import("@/components/GoogleTagManagerScript"), { ssr: false });
 
 const inter = Inter({
     subsets: ["latin"],
@@ -39,14 +42,14 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
         <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}>
+        <CookieConsent />
         <Navbar />
-        <main className="flex-grow">
-            {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <FireFlies />
         <Sound />
-        <div id="my-modal" />
         <Footer />
+        <GoogleTagManagerScript />
+        <GoogleAnalyticsScript/>
         </body>
         </html>
     );

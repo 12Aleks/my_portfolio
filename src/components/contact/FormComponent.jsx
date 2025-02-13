@@ -132,8 +132,8 @@ const FormComponent = () => {
                     type="submit"
                     disabled={isSubmitting}
                     value={isSubmitting ? "Wysyłanie..." : "Wyślij"}
-                    className={`cursor-pointer px-10 py-3 rounded-md shadow-lg border border-amber-700 transition-all focus:outline-none ${
-                        isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-amber-600 hover:bg-amber-700"
+                    className={`cursor-pointer px-10 py-3 rounded-md shadow-lg border border-amber-700 transition-all focus:outline-none duration-500 ${
+                        isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-amber-600 hover:bg-amber-700 "
                     }`}
                 />
             </motion.form>
