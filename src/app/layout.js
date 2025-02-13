@@ -9,7 +9,7 @@ import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
 
 const Sound = dynamic(() => import("@/components/Sound"));
 const Footer = dynamic(() => import("@/components/navigation/Footer"));
-const GoogleTagManagerScript = dynamic(() => import("@/components/GoogleTagManagerScript"), { ssr: false });
+// const GoogleTagManagerScript = dynamic(() => import("@/components/GoogleTagManagerScript"), { ssr: false });
 
 const inter = Inter({
     subsets: ["latin"],
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
         <FireFlies />
         <Sound />
         <Footer />
-        <GoogleTagManagerScript />
+
         <GoogleAnalyticsScript/>
         </body>
         </html>

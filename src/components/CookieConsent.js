@@ -35,11 +35,11 @@ export default function CookieConsent() {
     if (consent === "granted" || consent === "denied") return null;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 bg-[#333333f7]/40 backdrop-blur-[10px] text-white p-4 flex-col flex lg:flex-row justify-between items-center z-50 space-y-4 lg:space-y-0">
-            <p>Używamy plików cookies w celu poprawy działania naszej strony. <Link href="/cookies-policy" className="text-blue-400">Dowiedz się więcej</Link></p>
+        <div className="fixed bottom-0 left-0 right-0 bg-[#333333f7]/40 backdrop-blur-[10px] text-white p-3 3xl:p-4 flex-col flex lg:flex-row justify-between items-center z-50 space-y-4 lg:space-y-0">
+            <p className="text-sm 2xl:text-md">Używamy plików cookies w celu poprawy działania naszej strony. <Link href="/cookies-policy" className="text-blue-400">Dowiedz się więcej</Link></p>
             <div>
-                <button onClick={handleAccept} className="bg-gray-400 hover:bg-gray-500  transition-all duration-500 px-4 py-2 rounded mr-2">Zaakceptuj</button>
-                <button onClick={handleDecline} className="bg-amber-600 hover:bg-amber-700 transition-all duration-500 px-4 py-2 rounded">Odrzuć</button>
+                <button onClick={handleAccept} className="bg-gray-400 hover:bg-gray-500  transition-all duration-500 px-3 3xl:px-4  py-1 3xl:py-2 rounded mr-2 text-md">Zaakceptuj</button>
+                <button onClick={handleDecline} className="bg-amber-600 hover:bg-amber-700 transition-all duration-500 px-3 3xl:px-4 py-1 3xl:py-2 rounded text-md">Odrzuć</button>
             </div>
         </div>
     );
