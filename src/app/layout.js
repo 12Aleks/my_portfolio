@@ -6,6 +6,7 @@ import Navbar from "@/components/navigation/Navbar";
 import dynamic from "next/dynamic";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
+import GoogleTagManagerScript from "@/components/GoogleTagManagerScript";
 
 const Sound = dynamic(() => import("@/components/Sound"));
 const Footer = dynamic(() => import("@/components/navigation/Footer"));
@@ -48,7 +49,7 @@ export default function RootLayout({ children }) {
         <FireFlies />
         <Sound />
         <Footer />
-
+        <GoogleTagManagerScript/>
         <GoogleAnalyticsScript/>
         </body>
         </html>
