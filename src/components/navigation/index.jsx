@@ -52,20 +52,20 @@ const Navigation = () => {
                                     : isMedium ? "calc(32vw - 1rem)" : "calc(40vw - 1rem)";
                                 const x = `calc(${radius}*${Math.cos(angleRad)})`;
                                 const y = `calc(${radius}*${Math.sin(angleRad)})`;
-                                return <NavigationButton key={btn.label} x={x} y={y} {...btn} />;
+                                return <NavigationButton key={btn.label} x={x} y={y} {...btn} index={index} />;
                             })}
                         </motion.div>
 
                 ) : (
                     <div className="fixed h-screen flex items-center justify-between w-full z-30">
                         <div className="flex flex-col space-y-8 relative text-white group px-3 transform translate-y-24">
-                            {BtnListSmallLeft.map((item) => (
-                                <NavigationButton key={item.label} {...item} />
+                            {BtnListSmallLeft.map((item, index) => (
+                                <NavigationButton key={item.label} {...item} index={index} />
                             ))}
                         </div>
                         <div className="flex flex-col space-y-8 relative text-white group px-3 transform translate-y-24">
-                            {BtnListSmallRight.map((item) => (
-                                <NavigationButton key={item.label} {...item} labelDirection="left"/>
+                            {BtnListSmallRight.map((item, index) => (
+                                <NavigationButton key={item.label} {...item}  index={index}  labelDirection="left"/>
                             ))}
                         </div>
                     </div>

@@ -177,5 +177,9 @@
       "name": "Strona www Pomorska Fundacja Bracia Mniejsi",
       "description": "Zrealizowałem pełną stronę – frontend i backend, tworząc ją na WordPressie."
     }
+  },
+  "footer": "wszelkie prawa zastrzeżone",
+  "menu": {
+    "home": "/en/"
   }
 }
