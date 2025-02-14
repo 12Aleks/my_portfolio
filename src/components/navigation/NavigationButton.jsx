@@ -76,7 +76,7 @@ const NavigationButton = ({x, y, label, link, icon, newTab, rotation, labelDirec
                  bg-background/20 backdrop-blur-[6px] rounded-full
                  duration-500 p-3 2xl:hover:p-3 3xl:hover:p-3.5 hover:text-amber-600
                  group-hover:pause
-                   border-1 border-white text-white hover:border-amber-600 border">
+                   border-1 border-neutral-300 text-neutral-300 hover:border-amber-600 border">
                 {getIcon(icon)}
                   <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
 
@@ -101,7 +101,7 @@ const NavigationButton = ({x, y, label, link, icon, newTab, rotation, labelDirec
                     bg-background/20 backdrop-blur-[6px] rounded-full
                     duration-500 hover:p-2.5 hover:text-amber-600
                     group-hover:pause
-                    border-1 border-white hover:border-amber-600 border"
+                    border-1 border-neutral-400 hover:border-amber-600 border"
                 >
                     {getIcon(icon)}
                     <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"></span>

@@ -37,38 +37,49 @@ const Navigation = () => {
         <ResponsiveComponent>
             {({size}) =>
                 size >= 639 ? (
-
-                        <motion.div
-                            variants={container}
-                            initial="hidden"
-                            animate="show"
-                            className="w-full fixed  h-screen flex items-center justify-center z-30 text-white animate-spin-slow hover:pause group"
-                        >
-                            {BtnList.map((btn, index) => {
-                                const angleRad = (index * angleIncrement * Math.PI) / 180;
-                                const radius = isExtraLarge ? "calc(20vw - 1rem)"
-                                    : isXLLarge ? "calc(17vw - 1rem)"
+                    <motion.div
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                        className="w-full fixed h-screen hidden sm:flex items-center justify-center z-30
+                             animate-spin-slow hover:pause group text-neutral-300"
+                    >
+                        {BtnList.map((btn, index) => {
+                            const angleRad = (index * angleIncrement * Math.PI) / 180;
+                            const radius = isExtraLarge ? "calc(20vw - 1rem)"
+                                : isXLLarge ? "calc(17vw - 1rem)"
                                     : isLarge ? "calc(22vw - 1rem)"
-                                    : isMedium ? "calc(32vw - 1rem)" : "calc(40vw - 1rem)";
-                                const x = `calc(${radius}*${Math.cos(angleRad)})`;
-                                const y = `calc(${radius}*${Math.sin(angleRad)})`;
-                                return <NavigationButton key={btn.label} x={x} y={y} {...btn} index={index} />;
-                            })}
-                        </motion.div>
+                                        : isMedium ? "calc(32vw - 1rem)" : "calc(40vw - 1rem)";
+                            const x = `calc(${radius}*${Math.cos(angleRad)})`;
+                            const y = `calc(${radius}*${Math.sin(angleRad)})`;
+                            return <NavigationButton key={btn.label} x={x} y={y} {...btn} index={index}/>;
+                        })}
+                    </motion.div>
 
                 ) : (
-                    <div className="fixed h-screen flex items-center justify-between w-full z-30">
-                        <div className="flex flex-col space-y-8 relative text-white group px-3 transform translate-y-24">
-                            {BtnListSmallLeft.map((item, index) => (
-                                <NavigationButton key={item.label} {...item} index={index} />
-                            ))}
+
+
+                        <div className="fixed h-screen flex items-center justify-between w-full z-30 sm:hidden">
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: 1 }}
+                                className="flex flex-col space-y-8 relative text-neutral-300 group px-3 transform translate-y-24">
+                                {BtnListSmallLeft.map((item, index) => (
+                                    <NavigationButton key={item.label} {...item} index={index}/>
+                                ))}
+                            </motion.div>
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: 1 }}
+                                className="flex flex-col space-y-8 relative text-neutral-300 group px-3 transform translate-y-24">
+                                {BtnListSmallRight.map((item, index) => (
+                                    <NavigationButton key={item.label} {...item} index={index} labelDirection="left"/>
+                                ))}
+                            </motion.div>
                         </div>
-                        <div className="flex flex-col space-y-8 relative text-white group px-3 transform translate-y-24">
-                            {BtnListSmallRight.map((item, index) => (
-                                <NavigationButton key={item.label} {...item}  index={index}  labelDirection="left"/>
-                            ))}
-                        </div>
-                    </div>
+
                 )
             }
         </ResponsiveComponent>
