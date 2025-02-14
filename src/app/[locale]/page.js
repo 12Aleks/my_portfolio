@@ -7,6 +7,7 @@ import Navigation from "@/components/navigation";
 import dynamic from "next/dynamic";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
+import {useTranslations} from "next-intl";
 
 const Petals = dynamic(() => import("@/components/Petals"), {
     ssr: false
@@ -16,6 +17,7 @@ export default function Home() {
     const [isModelLoaded, setIsModelLoaded] = useState(false);
     const isNight = useDayNightMode();
     const isLoaded = useRef(false);
+    const t = useTranslations("home");
 
     const handleModelLoad = () => {
         setIsModelLoaded(true);
@@ -40,9 +42,7 @@ export default function Home() {
                 className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "fixed object-cover w-full h-screen opacity-8 bg-fixed z-0 blur-sm")}
             />
 
-            <h1 className="sr-only">
-                Cześć! Jestem Oleksii, Front End Developerem z Polski, obecnie poszukuję pełnoetatowej pracy zdalnej. Większość projektów w moim portfolio to projekty zbudowane na CMS Drupal, ale mam także komercyjne doświadczenie w tworzeniu aplikacji webowych z użyciem Next.js i React.
-            </h1>
+            <h1 className="sr-only">{t('title')}</h1>
 
             <div className="w-full min-h-screen flex items-center justify-center">
                 { !isModelLoaded ?

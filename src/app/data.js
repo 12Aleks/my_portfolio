@@ -1,10 +1,7 @@
-import * as project from "framer-motion/m";
-
 export const workProjects = [
     {
         id: 1,
-        name: "Nowa strona korporacyjna Termaheat (produkty grzewcze)",
-        description: "Odpowiadam za frontend oraz wybrane funkcjonalności backendowe w tworzeniu strony, opierając się na layoutach z Figmy.",
+        key: "newTermaheat",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2024-08-15",
         image: 'beta.termaheat.webp',
@@ -12,8 +9,7 @@ export const workProjects = [
     },
     {
         id: 2,
-        name: "Aplikacja webowa do testowania i oceny wiedzy",
-        description: "Zaprojektowałem i wdrożyłem system oceny wiedzy po kursach, umożliwiający tworzenie testów, analizowanie wyników oraz generowanie raportów dla firmy Polkar.",
+        key: "testingApp",
         technologies: ['Next', 'Nest', 'React', 'Mongoose', 'SCSS'],
         date: "2023-09",
         image: 'polcar.webp',
@@ -22,8 +18,7 @@ export const workProjects = [
     },
     {
         id: 3,
-        name: "Strona korporacyjna TermaHeat (produkty grzewcze)",
-        description: "Pracowałem nad frontendem podstron kontaktowych w różnych wersjach językowych na podstawie layoutów z Figmy, implementując interaktywną mapę Polski i Niemiec.",
+        key: "contactTermaheat",
         technologies: ['CMS Drupal 7', 'Bootstrap 4', 'JavaScript', 'SCSS', 'HTML'],
         image: 'oldtermaheat.webp',
         date: "2023-04",
@@ -31,8 +26,7 @@ export const workProjects = [
     },
     {
         id: 4,
-        name: "Strona korporacyjna Termaplay (produkty medyczne)",
-        description: "Odpowiedzialny za pełną realizację projektu – frontend i backend, wielojęzyczność, integracja CMS Drupal 9, oraz dodanie mapy Google z lokalizacją i filtrem urządzeń.",
+        key: "termaplay",
         technologies: ['CMS Drupal 9', 'Bootstrap 5', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2022-10",
         image: 'termaplay.webp',
@@ -40,8 +34,7 @@ export const workProjects = [
     },
     {
         id: 5,
-        name: "Strona korporacyjna TermaReh (urządzenia rehabilitacyjne)",
-        description: "Pełna realizacja projektu – frontend, backend, wielojęzyczność, integracja CMS Drupal 9 oraz implementacja mapy Google z filtrem urządzeń.",
+        key: "termaReh",
         technologies: ['CMS Drupal 9', 'Bootstrap 5', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2022-10",
         image: "termareh.webp",
@@ -49,8 +42,7 @@ export const workProjects = [
     },
     {
         id: 6,
-        name: "Strona korporacyjna TermaMed",
-        description: "Zrealizowałem frontend i backend, implementując wielojęzyczność i integrację z CMS Drupal 9.",
+        key: "newTermaMed",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         image: "betatermamed.webp",
         date: "2022-10",
@@ -58,8 +50,7 @@ export const workProjects = [
     },
     {
         id: 7,
-        name: "Strona korporacyjna TermaServices",
-        description: "Odpowiedzialny za pełną realizację projektu – frontend i backend, wielojęzyczność, integracja CMS Drupal 8 oraz aktualizacja do Drupal 10.",
+        key: "termaServices",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2022-01",
         image: 'termaservices.webp',
@@ -67,8 +58,7 @@ export const workProjects = [
     },
     {
         id: 8,
-        name: "Strona korporacyjna TermaDrilling (maszyny budowlane)",
-        description: "Pełna realizacja projektu – frontend i backend, wielojęzyczność, integracja CMS Drupal 9 oraz aktualizacja strony do Drupal 10.",
+        key: "termaDrilling",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2021-08",
         image: 'termadrilling.webp',
@@ -76,8 +66,7 @@ export const workProjects = [
     },
     {
         id: 9,
-        name: "Strona korporacyjna TermaFiber (maszyny budowlane)",
-        description: "Wielojęzyczna strona zbudowana w Vue 2 na podstawie layoutu z Figmy. Projekt wykonałem w całości samodzielnie.",
+        key: "termaFiber",
         technologies: ['Vue2', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML'],
         date: "2020-05",
         image: 'termafiber.webp',
@@ -85,8 +74,7 @@ export const workProjects = [
     },
     {
         id: 10,
-        name: "Strona docelowa TermaSmart",
-        description: "Stworzenie wielojęzycznej strony docelowej na podstawie layoutu z Figmy. Projekt wykonałem samodzielnie.",
+        key: "termaSmart",
         technologies: ['JavaScript', 'SCSS', 'HTML', 'Bootstrap'],
         date: "2019-08",
         image: "termasmart.webp",
@@ -94,8 +82,7 @@ export const workProjects = [
     },
     {
         id: 11,
-        name: "Strona korporacyjna TermaMed",
-        description: "Zrealizowałem frontend i backend, w tym przebudowę podstron produktów oraz listy produktów, z częściowymi zmianami w backendzie.",
+        key: "oldTermaMed",
         technologies: ['CMS Drupal 7', 'Bootstrap 4', 'JavaScript', 'SCSS', 'HTML'],
         date: "2019-05",
         image: "termamed.webp",
@@ -103,16 +90,14 @@ export const workProjects = [
     },
     {
         id: 12,
-        name: "Podstrona produktowa Lux2",
-        description: "Pracowałem nad frontendem podstrony zgodnie z layoutem z Figmy.",
+        key: "lux2",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-06",
         image: "lux.webp",
         demoLink: "https://www.terma24.pl/lux2",
-    },{
+    }, {
         id: 13,
-        name: "Podstrona Dotacje Unii Europejskiej",
-        description: "Pracowałem nad frontendem podstrony Kim jesteśmy, Dotacje Unijne.",
+        key: "ue",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-05",
         image: "podstronaDotacje.webp",
@@ -120,8 +105,7 @@ export const workProjects = [
     },
     {
         id: 14,
-        name: "Podstrona produktowa DROP SHIP Heating Elements",
-        description: "Zrealizowałem frontend podstrony, opierając się na layoutach z Figmy.",
+        key: "dropShip",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-04",
         image: "drop.webp",
@@ -129,8 +113,7 @@ export const workProjects = [
     },
     {
         id: 15,
-        name: "Strona www Pomorska Fundacja Bracia Mniejsi",
-        description: "Zrealizowałem pełną stronę – frontend i backend, tworząc ją na WordPressie.",
+        key: "fundacion",
         technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML'],
         date: "2017-04",
         image: "pomorska.webp",
@@ -141,45 +124,43 @@ export const workProjects = [
 export const petProjects = [
     {
         id: 1,
-        name: "Apartments",
-        description: "Platforma webowa do sprzedaży mieszkań, z funkcją filtrowania, dodawania ogłoszeń oraz zarządzania ofertami. Aplikacja wykonana z użyciem Next.js, React, Prisma i Tailwind.",
-        technologies: ['Next', 'React', 'Kinde', 'Prisma', 'Tailwind'],
+        key: "apartments",
+        technologies: ["Next", "React", "Kinde", "Prisma", "Tailwind"],
         date: "2024-09",
         image: "applicataioAppartmets.webp",
         demoLink: "https://apartments-pied.vercel.app/",
-        git: 'https://github.com/12Aleks/apartments'
+        git: "https://github.com/12Aleks/apartments"
     },
     {
         id: 2,
-        name: "Pixem",
-        description: "Pet project do automatycznej konwersji wartości, np. z px na rem, zbudowany w Next.js i React.",
-        technologies: ['Next', 'React', 'React Bootstrap', 'Redux Toolkit', 'SCSS'],
+        key: "pixem",
+        technologies: ["Next", "React", "React Bootstrap", "Redux Toolkit", "SCSS"],
         date: "2022-08-15",
         image: "pixem.webp",
         demoLink: "https://pixem.vercel.app/",
-        git: 'https://github.com/12Aleks/pixem'
+        git: "https://github.com/12Aleks/pixem"
     },
     {
         id: 3,
-        name: "Weather pet project",
-        description: "Wielojęzyczna aplikacja pogodowa, wykorzystująca dane z openweathermap.org. Zbudowana w React, Mobx i SCSS.",
-        technologies: ['React', 'React Bootstrap', 'Mobx', 'SCSS'],
+        key: "weather",
+        technologies: ["React", "React Bootstrap", "Mobx", "SCSS"],
         date: "2020-09",
-        image: 'weather.webp',
+        image: "weather.webp",
         demoLink: "https://weather-97994.web.app/",
-        git: 'https://github.com/12Aleks/Weather-app'
+        git: "https://github.com/12Aleks/Weather-app"
     },
     {
         id: 4,
-        name: "Departments",
-        description: "Aplikacja do zarządzania wynagrodzeniami w zespołach. Zbudowana w Vue 2 i Firebase.",
-        technologies: ['Vue 2', 'Vue-cli', 'vuex', 'SCSS', 'Firebase'],
+        key: "departments",
+        technologies: ["Vue 2", "Vue-cli", "vuex", "SCSS", "Firebase"],
         date: "2019-09",
         image: "departments.webp",
         demoLink: "https://departments-1c007.web.app/login?message=logout",
-        git: 'https://github.com/12Aleks/organizational_department'
-    },
+        git: "https://github.com/12Aleks/organizational_department"
+    }
 ];
+
+
 
 export const BtnList = [
     {label: "Home", link: "/", icon: "home", newTab: false},

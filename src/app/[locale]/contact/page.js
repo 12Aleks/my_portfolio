@@ -7,12 +7,14 @@ import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import {BambooModel} from "@/components/model/BambooModel";
 import {PineModel} from "@/components/model/PineModel";
-import bg from '../../../public/background/japan_castel2_gradient.webp'
+import bg from '../../../../public/background/japan_castel2_gradient.webp'
+import {useTranslations} from "next-intl";
 
 
 const ContactPage = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const isNight = useDayNightMode();
+    const t = useTranslations("contact");
 
     useEffect(() => {
         // Добавляем небольшую задержку для плавности
@@ -46,10 +48,9 @@ const ContactPage = () => {
 
             <article
                 className="relative flex flex-col items-center justify-center space-y-2 3xl:space-y-8 text-white">
-                <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl text-amber-600 mb-5 2xl:mb-10 3xl:mb-20">Kontakt</h1>
+                <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl text-amber-600 mb-5 2xl:mb-10 3xl:mb-20">{t('title')}</h1>
                 <div className="flex flex-col items-center justify-center space-y-6 w-full sm:w-3/4">
-                    <p className="text-center text-light">Jeśli masz pytania lub sugestie dotyczące współpracy, możesz
-                        przesłać je do mnie za pomocą poniższego formularza kontaktowego.</p>
+                    <p className="text-center text-light">{t('description')}</p>
                 </div>
                 <FormComponent/>
             </article>

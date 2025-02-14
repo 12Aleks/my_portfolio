@@ -3,11 +3,12 @@ import Image from "next/image";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
-import bg from '../../../public/background/japan_castel3.webp'
+import bg from '../../../../public/background/japan_castel3.webp'
 import {useEffect, useState} from "react";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import dynamic from "next/dynamic";
+import {useTranslations} from "next-intl";
 
 const PaperLantern = dynamic(() => import("@/components/model/PaperLantern")
     .then(mod => mod.PaperLantern), {
@@ -17,6 +18,7 @@ const PaperLantern = dynamic(() => import("@/components/model/PaperLantern")
 const ProjectsPage = () => {
     const isNight = useDayNightMode();
     const [isLoaded, setIsLoaded] = useState(false);
+    const t = useTranslations("navigation");
 
     useEffect(() => {
         // Добавляем небольшую задержку для плавности
@@ -24,10 +26,9 @@ const ProjectsPage = () => {
         return () => clearTimeout(timeout);
     }, []);
 
-    return (
 
-            <div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32  py-20 relative">
 
+    return (<div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32  py-20 relative">
                 <div
                     className={clsx(isNight ? 'opacity-8': 'opacity-[.12]',"absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 opacity-8 z-0 ")}/>
                 <Image
@@ -39,7 +40,7 @@ const ProjectsPage = () => {
                 />
 
                 <div className="relative w-full flex lex-col items-center justify-center my-10  2xl:my-10 3xl:my-20">
-                    <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl text-amber-600">Projekty</h1>
+                    <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl text-amber-600">{t('projects')}</h1>
                 </div>
 
                 {/* Project List */}

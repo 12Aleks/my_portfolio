@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.frontendpolska.pl
+
+# Sitemaps
+Sitemap: https://www.frontendpolska.pl/sitemap.xml

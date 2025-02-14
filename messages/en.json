@@ -1,6 +1,181 @@
 {
+  "navigation": {
   "home": "Home",
   "projects": "Projects",
   "about": "About",
   "contact": "Contact"
+   },
+  "cookieBanner": {
+    "message": "We use cookies to improve our website performance.",
+    "learnMore": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "cookiesPolicy": {
+    "title": "Cookies Usage Policy",
+    "description": "We use cookies to improve the functionality of our website. Cookies help us analyze how users interact with our site and allow us to enhance it. Cookies may also be used for marketing and content personalization purposes.",
+    "types": {
+      "title": "What types of cookies do we use?",
+      "necessary": "Necessary cookies (e.g., for user authentication).",
+      "analytics": "Analytical cookies (e.g., for traffic analysis using Google Analytics).",
+      "preferences": "Preference cookies (e.g., saving language and user preferences).",
+      "marketing": "Marketing cookies (e.g., for displaying personalized ads)."
+    },
+    "management": {
+      "title": "How to manage cookies",
+      "description": "You can change your cookie settings in your browser at any time or use the cookie management options available on our website (if such functionality is provided)."
+    },
+    "moreInfo": "If you want to learn more about how we process data, check our",
+    "privacyPolicyLink": "privacy policy"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "description": "We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and protect your data while using our website.",
+    "dataCollection": {
+      "title": "What data do we collect",
+      "description": "We collect the following types of data:",
+      "technicalData": "Technical data: IP address, browser, device, and analytical data from Google Analytics."
+    },
+    "dataUsage": {
+      "title": "Purpose of data collection",
+      "description": "We use your data for:",
+      "analytics": "Traffic analysis using Google Analytics to improve the website.",
+      "improvement": "Enhancing the quality and functionality of our website."
+    },
+    "cookiesUsage": {
+      "title": "Use of cookies",
+      "description": "Our website uses cookies to analyze traffic using Google Analytics. You can configure your browser to reject cookies, but this may affect website functionality."
+    },
+    "policyChanges": {
+      "title": "Changes to the Privacy Policy",
+      "description": "We reserve the right to update this policy. Any changes will be published on this page, including in relation to the use of analytical tools such as Google Analytics."
+    }
+  },
+  "home": {
+    "title": "Hi! I'm Oleksii, a Front-End Developer from Poland, currently looking for a full-time remote job. Most of the projects in my portfolio are built on CMS Drupal, but I also have commercial experience in developing web applications using Next.js and React."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "If you have any questions or suggestions regarding cooperation, you can send them to me using the contact form below.",
+    "name": "Full Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send",
+    "required": "This field is required!",
+    "messageMin": "Your text is too short, the minimum length is 3 characters.",
+    "messageMax": "Your text is too long, the maximum length is 60 characters.",
+    "messageEmail": "Please enter a valid email address.",
+    "messageMinText": "Your text is too short, the minimum length is 20 characters.",
+    "messageMaxText": "Your text is too long, the maximum length is 400 characters.",
+    "statusStart": "Sending",
+    "statusEnd": "Send"
+  },
+  "about": {
+    "title": "About Me",
+    "first": {
+      "title": "General Information",
+      "description": "I am a mid-level Full Stack Developer (or Front-End Developer) with solid experience in technologies such as JavaScript, SCSS, and HTML. I have also worked with TypeScript, React, Next.js, Nest.js, and Tailwind CSS. I have practical experience working with CMS systems, including Drupal (versions 7-10) and partially with WordPress. I combine programming skills with UX/UI knowledge, allowing me to create intuitive, aesthetic, and efficient websites and applications."
+    },
+    "second": {
+      "title": "Years",
+      "description": "of experience in the IT."
+    },
+    "three": {
+      "description": "For many years, I have worked with the Drupal CMS, gaining experience in creating and customizing websites. I have worked with various Drupal versions (from 7 to 10), which has allowed me to master both building custom themes and modules and managing content. Thanks to Drupal's flexibility, I have been able to implement projects of varying complexity, adapting them to the unique needs of clients."
+    },
+    "four": {
+      "title": "Worked with"
+    },
+    "five": {
+      "title": "Language Proficiency",
+      "pol": "Polish",
+      "levelPol": "Advanced",
+      "eng": "English",
+      "levelEng": "Basic",
+      "rus": "Russian",
+      "levelRus": "Native",
+      "ukr": "Ukrainian",
+      "levelUkr": "Native"
+    }
+  },
+  "petProjects": {
+    "apartments": {
+      "name": "Apartments",
+      "description": "A web platform for selling apartments, with filtering, listing, and management features. Built with Next.js, React, Prisma, and Tailwind."
+    },
+    "pixem": {
+      "name": "Pixem",
+      "description": "A pet project for automatic value conversion, e.g., px to rem, built with Next.js and React."
+    },
+    "weather": {
+      "name": "Weather Pet Project",
+      "description": "A multilingual weather app using openweathermap.org data. Built with React, MobX, and SCSS."
+    },
+    "departments": {
+      "name": "Departments",
+      "description": "An application for managing team salaries. Built with Vue 2 and Firebase."
+    }
+  },
+  "workProjects": {
+    "newTermaheat": {
+      "name": "New corporate website for Termaheat (heating products)",
+      "description": "I am responsible for the frontend and selected backend functionalities in creating the website, based on Figma layouts."
+    },
+    "testingApp": {
+      "name": "Web application for testing and knowledge assessment",
+      "description": "I designed and implemented a knowledge assessment system after courses, allowing test creation, result analysis, and report generation for Polkar."
+    },
+    "contactTermaheat": {
+      "name": "Corporate website TermaHeat (heating products)",
+      "description": "I worked on the frontend of contact subpages in various language versions based on Figma layouts, implementing an interactive map of Poland and Germany."
+    },
+    "termaplay": {
+      "name": "Corporate website Termaplay (medical products)",
+      "description": "Responsible for the full implementation of the project – frontend and backend, multilingual support, CMS Drupal 9 integration, and adding a Google map with location and device filtering."
+    },
+    "termaReh": {
+      "name": "Corporate website TermaReh (rehabilitation devices)",
+      "description": "Full project implementation – frontend, backend, multilingual support, CMS Drupal 9 integration, and Google map implementation with device filtering."
+    },
+    "newTermaMed": {
+      "name": "Corporate website TermaMed",
+      "description": "I completed the frontend and backend, implementing multilingual support and integration with CMS Drupal 9."
+    },
+    "termaServices": {
+      "name": "Corporate website TermaServices",
+      "description": "Responsible for the full project implementation – frontend and backend, multilingual support, CMS Drupal 8 integration, and update to Drupal 10."
+    },
+    "termaDrilling": {
+      "name": "Corporate website TermaDrilling (construction machines)",
+      "description": "Full project implementation – frontend and backend, multilingual support, CMS Drupal 9 integration, and update to Drupal 10."
+    },
+    "termaFiber": {
+      "name": "Corporate website TermaFiber (construction machines)",
+      "description": "Multilingual website built in Vue 2 based on a Figma layout. I completed the project independently."
+    },
+    "termaSmart": {
+      "name": "Landing page TermaSmart",
+      "description": "Created a multilingual landing page based on a Figma layout. I completed the project independently."
+    },
+    "oldTermaMed": {
+      "name": "Corporate website TermaMed",
+      "description": "I completed the frontend and backend, including the redevelopment of product subpages and product lists, with partial backend modifications."
+    },
+    "lux2": {
+      "name": "Product subpage Lux2",
+      "description": "I worked on the frontend of the subpage according to the Figma layout."
+    },
+    "ue": {
+      "name": "European Union Grants subpage",
+      "description": "I worked on the frontend of the 'Who we are' and 'EU Grants' subpages."
+    },
+    "dropShip": {
+      "name": "Product subpage DROP SHIP Heating Elements",
+      "description": "I completed the frontend of the subpage based on Figma layouts."
+    },
+    "fundacion": {
+      "name": "Website of the Pomorska Fundacja Bracia Mniejsi",
+      "description": "I completed the full website – frontend and backend, creating it on WordPress."
+    }
+  }
 }

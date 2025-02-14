@@ -6,11 +6,13 @@ import RenderModel from "@/components/RenderModel";
 import {BambooModel} from "@/components/model/BambooModel";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import clsx from "clsx";
-import bg from '../../../public/background/japan_castel.webp'
+import bg from '../../../../public/background/japan_castel.webp'
+import {useTranslations} from "next-intl";
 
 const AboutPage = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const isNight = useDayNightMode();
+    const t = useTranslations("about");
 
     useEffect(() => {
         const timeout = setTimeout(() => setIsLoaded(true), 500);
@@ -32,7 +34,7 @@ const AboutPage = () => {
             />
 
             <div className="relative w-full flex lex-col items-center justify-center my-10  2xl:my-10 3xl:my-20">
-                <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl text-amber-600">O mnie
+                <h1 className="font-bold text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl text-amber-600">{t('title')}
                 </h1>
             </div>
 

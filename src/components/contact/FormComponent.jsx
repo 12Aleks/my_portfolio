@@ -3,6 +3,8 @@ import {useForm} from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Toaster, toast } from 'sonner';
 import { motion } from "framer-motion";
+import {useTranslations} from "next-intl";
+
 
 const container = {
     hidden: { opacity: 0 },
@@ -16,6 +18,7 @@ const container = {
 };
 
 const FormComponent = () => {
+    const t = useTranslations("contact");
     const {
         register,
         handleSubmit,
@@ -67,16 +70,16 @@ const FormComponent = () => {
                 <div className="w-full">
                     <input
                         type="text"
-                        placeholder="Imię i nazwisko"
+                        placeholder={t('name')}
                         {...register("name", {
-                            required: 'To pole jest obowiązkowe!',
+                            required: `${t('required')}`,
                             minLength: {
                                 value: 3,
-                                message: "Twój tekst jest za krótki, minimalna długość to 3 znaków."
+                                message: `${t('messageMin')}`
                             },
                             maxLength: {
                                 value: 60,
-                                message: "Twój tekst jest za długi, maksymalna długość to 60 znaków."
+                                message: `${t('messageMax')}`
                             }
                         })}
                         className="text-white appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
@@ -88,16 +91,16 @@ const FormComponent = () => {
                 <div className="w-full">
                     <input
                         type="email"
-                        placeholder="Email"
+                        placeholder={t('email')}
                         {...register("email", {
-                            required: "To pole jest obowiązkowe!",
+                            required: `${t('required')}`,
                             pattern: {
                                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                message: "Podaj poprawny adres email."
+                                message: `${t('messageEmail')}`
                             },
                             minLength: {
                                 value: 3,
-                                message: "Twój tekst jest za krótki, minimalna długość to 3 znaki."
+                                message: `${t('messageMin')}`
                             }
                         })}
                         className="text-white appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
@@ -109,16 +112,16 @@ const FormComponent = () => {
                 </div>
                 <div className="w-full">
             <textarea
-                placeholder="Wiadomość"
+                placeholder={t('message')}
                 {...register("message", {
-                    required: 'To pole jest obowiązkowe!',
+                    required: `${t('required')}`,
                     minLength: {
                         value: 20,
-                        message: "Twój tekst jest za krótki, minimalna długość to 20 znaków."
+                        message: `${t('messageMinText')}`
                     },
                     maxLength: {
                         value: 400,
-                        message: "Twój tekst jest za długi, maksymalna długość to 400 znaków."
+                        message: `${t('messageMaxText')}`
                     }
                 })}
                 className="h-32 2xl:h-32 3xl:h-40 appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600 text-white"
@@ -131,7 +134,7 @@ const FormComponent = () => {
                 <input
                     type="submit"
                     disabled={isSubmitting}
-                    value={isSubmitting ? "Wysyłanie..." : "Wyślij"}
+                    value={isSubmitting ? `${t('statusStart')}...` : `${t('statusEnd')}`}
                     className={`cursor-pointer px-10 py-3 rounded-md shadow-lg border border-amber-700 transition-all focus:outline-none duration-500 ${
                         isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-amber-600 hover:bg-amber-700 "
                     }`}

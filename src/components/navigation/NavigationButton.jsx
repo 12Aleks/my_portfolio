@@ -31,7 +31,7 @@ const item = {
     hidden: { scale: 0 },
     show: { scale: 1 },
 };
-const NavLink = motion(Link);
+const NavLink =  motion.create(Link);
 
 const NavigationButton = ({x, y, label, link, icon, newTab, rotation, labelDirection = 'right'}) => {
     const iconRotation = (x === "0px" ? 0 : 180) - rotation;

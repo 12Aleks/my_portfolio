@@ -1,6 +1,181 @@
 {
-  "home": "Strona główna",
-  "projects": "Projekty",
-  "about": "O mnie",
-  "contact": "Kontakt"
+  "navigation": {
+    "home": "Strona główna",
+    "projects": "Projekty",
+    "about": "O mnie",
+    "contact": "Kontakt"
+  },
+  "cookieBanner": {
+    "message": "Używamy plików cookies w celu poprawy działania naszej strony.",
+    "learnMore": "Dowiedz się więcej",
+    "accept": "Zaakceptuj",
+    "decline": "Odrzuć"
+  },
+  "cookiesPolicy": {
+    "title": "Polityka używania plików cookies",
+    "description": "Używamy plików cookies w celu poprawy funkcjonalności naszej strony. Pliki cookies pomagają nam analizować, jak użytkownicy wchodzą w interakcję z naszą stroną i pozwalają na jej ulepszanie. Cookies mogą być również używane w celach marketingowych oraz personalizacji treści.",
+    "types": {
+      "title": "Jakie pliki cookies używamy",
+      "necessary": "Niezbędne pliki cookies (np. do autentykacji użytkowników).",
+      "analytics": "Analityczne pliki cookies (np. do analizy ruchu za pomocą Google Analytics).",
+      "preferences": "Pliki cookies do ustawień i personalizacji (np. zapisywanie języka, preferencji użytkownika).",
+      "marketing": "Pliki cookies marketingowe (np. do wyświetlania spersonalizowanych reklam)."
+    },
+    "management": {
+      "title": "Jak zarządzać plikami cookies",
+      "description": "W każdej chwili możesz zmienić ustawienia plików cookies w swojej przeglądarce lub skorzystać z opcji zarządzania cookies dostępnych na naszej stronie (jeśli taka funkcjonalność została udostępniona)."
+    },
+    "moreInfo": "Jeśli chcesz dowiedzieć się więcej o tym, jak przetwarzamy dane, zapoznaj się z naszą",
+    "privacyPolicyLink": "polityką prywatności"
+  },
+  "privacyPolicy": {
+    "title": "Polityka Prywatności",
+    "description": "Szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, jak zbieramy, wykorzystujemy i chronimy Twoje dane podczas korzystania z naszej strony internetowej.",
+    "dataCollection": {
+      "title": "Jakie dane zbieramy",
+      "description": "Zbieramy następujące rodzaje danych:",
+      "technicalData": "Dane techniczne: adres IP, przeglądarka, urządzenie, a także dane analityczne z Google Analytics."
+    },
+    "dataUsage": {
+      "title": "Cele zbierania danych",
+      "description": "Twoje dane wykorzystujemy do:",
+      "analytics": "Analizy ruchu na stronie za pomocą Google Analytics w celu udoskonalenia strony.",
+      "improvement": "Poprawy jakości i funkcjonalności naszej strony internetowej."
+    },
+    "cookiesUsage": {
+      "title": "Wykorzystanie plików cookies",
+      "description": "Nasza strona internetowa wykorzystuje pliki cookies w celu analizy ruchu za pomocą Google Analytics. Możesz skonfigurować przeglądarkę w taki sposób, aby odrzucała pliki cookies, jednak może to wpłynąć na funkcjonalność strony."
+    },
+    "policyChanges": {
+      "title": "Zmiany w Polityce Prywatności",
+      "description": "Zastrzegamy sobie prawo do aktualizacji niniejszej polityki. Wszelkie zmiany będą publikowane na tej stronie, w tym w odniesieniu do wykorzystywania narzędzi analitycznych takich jak Google Analytics."
+    }
+  },
+  "home": {
+    "title": "Cześć! Jestem Oleksii, Front End Developerem z Polski, obecnie poszukuję pełnoetatowej pracy zdalnej. Większość projektów w moim portfolio to projekty zbudowane na CMS Drupal, ale mam także komercyjne doświadczenie w tworzeniu aplikacji webowych z użyciem Next.js i React."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Jeśli masz pytania lub sugestie dotyczące współpracy, możesz przesłać je do mnie za pomocą poniższego formularza kontaktowego.",
+    "name": "Imię i nazwisko",
+    "email": "Email",
+    "message": "Wiadomość",
+    "submit": "Wyślij",
+    "required": "To pole jest obowiązkowe!",
+    "messageMin": "Twój tekst jest za krótki, minimalna długość to 3 znaki.",
+    "messageMax": "Twój tekst jest za długi, maksymalna długość to 60 znaków.",
+    "messageEmail": "Podaj poprawny adres email.",
+    "messageMinText": "Twój tekst jest za krótki, minimalna długość to 20 znaków.",
+    "messageMaxText": "Twój tekst jest za długi, maksymalna długość to 400 znaków.",
+    "statusStart": "Wysyłanie",
+    "statusEnd": "Wyślij"
+  },
+  "about": {
+    "title": "O mnie",
+    "first": {
+      "title": "Ogólna informacja",
+      "description": "Jestem Full Stack Developerem (lub Front-End Developerem) na poziomie mid, z solidnym doświadczeniem w technologiach takich jak JavaScript, SCSS i HTML. Pracowałem również z TypeScript, React, Next.js, Nest.js oraz Tailwind CSS. Mam praktyczne doświadczenie w pracy z systemami CMS, w tym z Drupala (wersje 7-10) oraz częściowo z WordPressem. Łączę umiejętności programowania z wiedzą o UX/UI, co pozwala mi tworzyć intuicyjne, estetyczne i wydajne strony internetowe oraz aplikacje."
+    },
+    "second": {
+      "title": "lat",
+      "description": "doświadczenia w branży IT."
+    },
+    "three": {
+      "description": "dPrzez wiele lat pracowałem z systemem CMS Drupal, zdobywając doświadczenie w tworzeniu i dostosowywaniu stron internetowych. Pracowałem z różnymi wersjami Drupala (od 7 do 10), co pozwoliło mi opanować zarówno budowanie niestandardowych motywów i modułów, jak i zarządzanie treścią. Dzięki elastyczności Drupala mogłem realizować projekty o różnym stopniu złożoności, dostosowując je do unikalnych potrzeb klientów."
+    },
+    "four": {
+      "title": "Pracowałem z"
+    },
+    "five": {
+      "title": "Znajomość języków",
+      "pol": "Polski",
+      "levelPol": "zaawansowany",
+      "eng": "Angielski",
+      "levelEng": "podstawowy",
+      "rus": "Rosyjski",
+      "levelRus": "ojczysty",
+      "ukr": "Ukraiński",
+      "levelUkr": "ojczysty"
+    }
+  },
+  "petProjects": {
+    "apartments": {
+      "name": "Apartamenty",
+      "description": "Platforma internetowa do sprzedaży mieszkań z funkcją filtrowania, dodawania ogłoszeń i zarządzania ofertami. Wykonana w Next.js, React, Prisma i Tailwind."
+    },
+    "pixem": {
+      "name": "Pixem",
+      "description": "Pet project do automatycznej konwersji wartości, np. z px na rem, zbudowany w Next.js i React."
+    },
+    "weather": {
+      "name": "Projekt pogodowy",
+      "description": "Wielojęzyczna aplikacja pogodowa wykorzystująca dane z openweathermap.org. Stworzona w React, MobX i SCSS."
+    },
+    "departments": {
+      "name": "Departamenty",
+      "description": "Aplikacja do zarządzania wynagrodzeniami zespołów. Zbudowana w Vue 2 i Firebase."
+    }
+  },
+  "workProjects": {
+    "newTermaheat": {
+      "name": "Nowa strona korporacyjna Termaheat (produkty grzewcze)",
+      "description": "Odpowiadam za frontend oraz wybrane funkcjonalności backendowe w tworzeniu strony, opierając się na layoutach z Figmy."
+    },
+    "testingApp": {
+      "name": "Aplikacja webowa do testowania i oceny wiedzy",
+      "description": "Zaprojektowałem i wdrożyłem system oceny wiedzy po kursach, umożliwiający tworzenie testów, analizowanie wyników oraz generowanie raportów dla firmy Polkar."
+    },
+    "contactTermaheat": {
+      "name": "Strona korporacyjna TermaHeat (produkty grzewcze)",
+      "description": "Pracowałem nad frontendem podstron kontaktowych w różnych wersjach językowych na podstawie layoutów z Figmy, implementując interaktywną mapę Polski i Niemiec."
+    },
+    "termaplay": {
+      "name": "Strona korporacyjna Termaplay (produkty medyczne)",
+      "description": "Odpowiedzialny za pełną realizację projektu – frontend i backend, wielojęzyczność, integracja CMS Drupal 9, oraz dodanie mapy Google z lokalizacją i filtrem urządzeń."
+    },
+    "termaReh": {
+      "name": "Strona korporacyjna TermaReh (urządzenia rehabilitacyjne)",
+      "description": "Pełna realizacja projektu – frontend, backend, wielojęzyczność, integracja CMS Drupal 9 oraz implementacja mapy Google z filtrem urządzeń."
+    },
+    "newTermaMed": {
+      "name": "Strona korporacyjna TermaMed",
+      "description": "Zrealizowałem frontend i backend, implementując wielojęzyczność i integrację z CMS Drupal 9."
+    },
+    "termaServices": {
+      "name": "Strona korporacyjna TermaServices",
+      "description": "Odpowiedzialny za pełną realizację projektu – frontend i backend, wielojęzyczność, integracja CMS Drupal 8 oraz aktualizacja do Drupal 10."
+    },
+    "termaDrilling": {
+      "name": "Strona korporacyjna TermaDrilling (maszyny budowlane)",
+      "description": "Pełna realizacja projektu – frontend i backend, wielojęzyczność, integracja CMS Drupal 9 oraz aktualizacja strony do Drupal 10."
+    },
+    "termaFiber": {
+      "name": "Strona korporacyjna TermaFiber (maszyny budowlane)",
+      "description": "Wielojęzyczna strona zbudowana w Vue 2 na podstawie layoutu z Figmy. Projekt wykonałem w całości samodzielnie."
+    },
+    "termaSmart": {
+      "name": "Strona docelowa TermaSmart",
+      "description": "Stworzenie wielojęzycznej strony docelowej na podstawie layoutu z Figmy. Projekt wykonałem samodzielnie."
+    },
+    "oldTermaMed": {
+      "name": "Strona korporacyjna TermaMed",
+      "description": "Zrealizowałem frontend i backend, w tym przebudowę podstron produktów oraz listy produktów, z częściowymi zmianami w backendzie."
+    },
+    "lux2": {
+      "name": "Podstrona produktowa Lux2",
+      "description": "Pracowałem nad frontendem podstrony zgodnie z layoutem z Figmy."
+    },
+    "ue": {
+      "name": "Podstrona Dotacje Unii Europejskiej",
+      "description": "Pracowałem nad frontendem podstrony Kim jesteśmy, Dotacje Unijne."
+    },
+    "dropShip": {
+      "name": "Podstrona produktowa DROP SHIP Heating Elements",
+      "description": "Zrealizowałem frontend podstrony, opierając się na layoutach z Figmy."
+    },
+    "fundacion": {
+      "name": "Strona www Pomorska Fundacja Bracia Mniejsi",
+      "description": "Zrealizowałem pełną stronę – frontend i backend, tworząc ją na WordPressie."
+    }
+  }
 }
