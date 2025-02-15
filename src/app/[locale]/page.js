@@ -56,9 +56,10 @@ export default function Home() {
                             alt="loading"
                             fill
                             sizes="100vw"
+                            priority
                             className="object-cover"
                         />
-                    </div>  : <Petals />}
+                    </div> : <Petals />}
 
                 <Navigation />
 

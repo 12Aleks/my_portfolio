@@ -19,13 +19,17 @@ const container = {
 const Navigation = () => {
     const size = useScreen();
     const [screenSize, setScreenSize] = useState(null);
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        setScreenSize(size);
+        if (size) {
+            setScreenSize(size);
+            const timer = setTimeout(() => setIsReady(true), 500);
+            return () => clearTimeout(timer);
+        }
     }, [size]);
 
-
-    if (screenSize === null) return null; // Ждём, пока размер экрана не определится
+    if (screenSize === null) return null;
 
     const angleIncrement = 360 / BtnList.length;
     const isExtraLarge = size >= 1700;
@@ -56,10 +60,7 @@ const Navigation = () => {
                         })}
                     </motion.div>
 
-                ) : (
-
-
-                        <div className="fixed h-screen flex items-center justify-between w-full z-30 sm:hidden">
+                ) : (<div className="fixed h-screen flex items-center justify-between w-full z-30 sm:hidden">
                             <motion.div
                                 initial={{ scale: 0 }}
                                 animate={{ scale: 1 }}
@@ -79,7 +80,6 @@ const Navigation = () => {
                                 ))}
                             </motion.div>
                         </div>
-
                 )
             }
         </ResponsiveComponent>

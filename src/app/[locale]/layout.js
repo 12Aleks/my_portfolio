@@ -43,7 +43,8 @@ export const metadata = {
 export default function RootLayout({ children, params }) {
     return (
         <html lang={params.locale}>
-        <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}>
+        <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}
+        >
         <I18nProvider locale={params.locale}>
             <CookieConsent />
             <Navbar />

@@ -40,7 +40,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className={`fixed w-full top-0 left-0 text-white p-4 transition-all duration-300 ease-in-out z-50 ${isOpen ? "bg-[#333]/95 backdrop-blur-[10px]" : "bg-[#333]/0"} md:bg-[#333]/0`}>
+        <nav className={`fixed w-full top-0 left-0 text-white p-4 transition-all duration-300 ease-in-out z-50 backdrop-blur-[10px] ${isOpen ? "bg-[#333]/95" : "bg-[#333]/0"} md:bg-[#333]/0`}>
             <div className="max-w-full mx-auto flex items-center justify-between">
                 <Link href="/" className="cursor-pointer flex items-center z-20">
                     <Image src={logo} alt="logo" width={45} height={40} className="mr-4" />
