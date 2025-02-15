@@ -14,3 +14,5 @@ For the development of the portfolio, I used the following technology stack:
 ## Links
 - [Portfolio (Polish version)](https://www.frontendpolska.pl/pl)  
 - [Portfolio (English version)](https://www.frontendpolska.pl/en)
+
+  ![Portfolio homepage Screenshot](https://private-user-images.githubusercontent.com/29119498/413571716-eb4d98db-2b8e-471c-9d8d-f958ebb89749.png)
