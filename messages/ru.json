@@ -1,4 +1,7 @@
-{
+{"metadata": {
+  "title": "Алексей Коба • Портфолио Frontend & Full Stack разработчика",
+  "description": "Портфолио Алексея Кобы, Frontend разработчика с опытом Full Stack, специализирующегося на React, Next.js и CMS Drupal."
+},
   "navigation": {
     "home": "Главная",
     "projects": "Проекты",

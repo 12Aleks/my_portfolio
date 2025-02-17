@@ -7,7 +7,9 @@ import dynamic from "next/dynamic";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
 import GoogleTagManagerScript from "@/components/GoogleTagManagerScript";
-import I18nProvider from "../i18nProvider"; // Импорт провайдера
+import I18nProvider from "../i18nProvider";
+import {getTranslatedMetadata} from "@/app/[locale]/metadata";
+
 
 
 const Sound = dynamic(() => import("@/components/Sound"));
@@ -18,27 +20,9 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
-export const metadata = {
-    title: "Oleksii Koba • Full Stack Developer Portfolio",
-    description: "Portfolio of Oleksii Koba, Full Stack Developer specializing in React, Next.js, and Drupal.",
-    openGraph: {
-        title: "Oleksii Koba • Full Stack Developer Portfolio",
-        description: "Portfolio of Oleksii Koba, Full Stack Developer specializing in React, Next.js, and Drupal.",
-        images: ["/imageMeta.png"],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Oleksii Koba - Full Stack Developer",
-        description: "Portfolio of Oleksii Koba, a Full Stack Developer specializing in React, Next.js, and Drupal.",
-        image: "/imageMeta.png",
-    },
-    icons: {
-        icon: "/favicone/favicon.ico",
-    },
-    verification: {
-        google: "v_-x7X5kpJOUjhB5nobmzbxTYpI5xR99uzAXWLs14aU",
-    },
-};
+export async function generateMetadata({ params }) {
+    return getTranslatedMetadata(params.locale);
+}
 
 export default function RootLayout({ children, params }) {
     return (

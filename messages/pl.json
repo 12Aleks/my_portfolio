@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Oleksii Koba • Portfolio Frontend & Full Stack Developera",
+    "description": "Portfolio Oleksiia Koby, Frontend Developera z doświadczeniem Full Stack, specjalizującego się w React, Next.js i CMS Drupal."
+  },
   "navigation": {
     "home": "Strona główna",
     "projects": "Projekty",

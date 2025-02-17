@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Олексій Коба • Портфоліо Frontend & Full Stack розробника",
+    "description": "Портфоліо Олексія Коби, Frontend розробника з досвідом Full Stack, що спеціалізується на React, Next.js та CMS Drupal."
+  },
   "navigation": {
     "home": "Головна",
     "projects": "Проєкти",
