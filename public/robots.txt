@@ -5,5 +5,10 @@ Allow: /
 # Host
 Host: https://www.frontendpolska.pl
 
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
 # Sitemaps
 Sitemap: https://www.frontendpolska.pl/sitemap.xml
