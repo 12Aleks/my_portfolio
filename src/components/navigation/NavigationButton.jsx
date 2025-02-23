@@ -40,27 +40,18 @@ const NavigationButton = ({x, y, label, link, icon, newTab, rotation, labelDirec
     const locale = useLocale();
     const delay = index * 0.3;
 
-    const localizedLink = link.startsWith("/") && !link.endsWith(".pdf") && !link.startsWith(`/${locale}`)
-        ? `/${locale}${link}`
-        : link;
-
+    const localizedLink = link.startsWith("/") && !link.startsWith(`/${locale}`) ? `/${locale}${link}` : link;
 
     return (
         <ResponsiveComponent>
-
-            {
-                ({size}) => {
+            {({size}) => {
                     return size && size >= 639 ?
-                        <div
-
-                            className="absolute cursor-pointer z-50"
-                            style={{transform: `translate(${x}, ${y})`}}
-                        >
+                        <div className="absolute cursor-pointer z-50" style={{transform: `translate(${x}, ${y})`}}>
                             <motion.div
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 0.2 , delay }}
-                                viewport={{ once: true }}
+                                initial={{scale: 0, opacity: 0}}
+                                whileInView={{scale: 1, opacity: 1}}
+                                transition={{duration: 0.2, delay}}
+                                viewport={{once: true}}
                             >
                                 <Link
                                     href={localizedLink}
@@ -71,17 +62,16 @@ const NavigationButton = ({x, y, label, link, icon, newTab, rotation, labelDirec
                                     prefetch={false}
                                     scroll={false}
                                 >
-              <span className="relative w-13 h-13 p-2.5 2xl:w-13 2xl:h-13 2xl:p-2.5 3xl:w-14 3xl:h-14 3xl:p-3 transition-all
-                 animate-rotate-icons
+              <span className="relative w-13 h-13 2xl:w-13 2xl:h-13 3xl:w-14 3xl:h-14 transition-all
+                 duration-500 animate-rotate-icons
                  bg-background/20 backdrop-blur-[6px] rounded-full
-                 duration-500 p-3 2xl:hover:p-3 3xl:hover:p-3.5 hover:text-amber-600
+                 p-2.5 2xl:p-2.5 3xl:p-3 2xl:hover:p-3 3xl:hover:p-3.5 hover:text-amber-600
                  group-hover:pause
-                   border-1 border-neutral-300 text-neutral-300 hover:border-amber-600 border">
+                 border-1 border-neutral-300 text-neutral-300 hover:border-amber-600 border">
                 {getIcon(icon)}
                   <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
-
-                <span
-                    className="absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
+                  <span
+                      className="absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background text-foreground text-sm rounded-md shadow-lg whitespace-nowrap">
                   {label}
                 </span>
               </span>

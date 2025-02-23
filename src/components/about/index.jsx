@@ -18,7 +18,7 @@ const AboutBlocks = () => {
                 </ItemLayout>
 
                 <ItemLayout className="col-span-12 md:col-span-4 flex-col items-center px-5 py-4 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:px-10 lg:py-7">
-                    <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-amber-600">8+ {t('second.title')}</h2>
+                    <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-amber-600">7+ {t('second.title')}</h2>
                     <p className="md:text-xl lg:text-2xl font-light text-center"> {t('second.description')}</p>
                 </ItemLayout>
 

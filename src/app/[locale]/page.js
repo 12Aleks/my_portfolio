@@ -30,8 +30,10 @@ export default function Home() {
     }, []);
 
 
+
+
     return (
-        <main className="flex w-full min-h-screen flex-col items-center justify-between relative">
+        <main className="w-full min-h-screen flex items-center justify-center overflow-hidden">
             <div className={clsx(isNight ? 'opacity-8': 'opacity-[.12]', "absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 opacity-10")} />
             <Image
                 src="/background/japan_gradient.webp"

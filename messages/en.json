@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Oleksii Koba • Frontend & Full Stack Developer Portfolio",
-    "description": "Portfolio of Oleksii Koba, Frontend Developer with Full Stack experience, specializing in React, Next.js, and CMS Drupal."
+    "description": "Professional Front-End Developer – Creating Modern Interfaces, Optimization, and Scalable Solutions. I am an experienced Front-End Developer with over 7 years of experience working on modern web applications and websites. I specialize in CMS Drupal 8/9/10, Twig, JavaScript, Bootstrap, SCSS, and HTML, as well as building dynamic interfaces using React, Next.js, TypeScript, and Tailwind CSS. My projects are always responsive, performance-optimized, and SEO-friendly, designed with a user-centric approach and modern trends in mind. I have experience both in independent project development and working in a team, collaborating closely with UX/UI designers, backend developers, and SEO specialists. I create intelligent and aesthetically pleasing solutions that meet business requirements and provide an excellent user experience. My skills also include API integration, code optimization, improving Core Web Vitals, and adapting websites to WCAG and digital accessibility standards. Additionally, I work on modernizing and migrating existing systems, aligning them with current technological standards. If you are looking for an experienced Front-End Developer who combines aesthetics, functionality, and modern technologies – feel free to contact me!"
   },
   "navigation": {
   "home": "Home",
@@ -78,7 +78,7 @@
     "title": "About Me",
     "first": {
       "title": "General Information",
-      "description": "I am a mid-level Full Stack Developer (or Front-End Developer) with solid experience in technologies such as JavaScript, SCSS, and HTML. I have also worked with TypeScript, React, Next.js, Nest.js, and Tailwind CSS. I have practical experience working with CMS systems, including Drupal (versions 7-10) and partially with WordPress. I combine programming skills with UX/UI knowledge, allowing me to create intuitive, aesthetic, and efficient websites and applications."
+      "description": "I am a Mid-Level Front-End Developer with over 7 years of experience working with CMS Drupal 8/9/10, Twig, JavaScript, Bootstrap, SCSS, and HTML. I create modern, responsive, and efficient interfaces, focusing on aesthetics and functionality. I have also worked with TypeScript, React, Next.js, and Tailwind CSS, building both traditional websites and advanced web applications. My goal is to grow in front-end architecture and deepen my knowledge of React and Next.js\nto create intuitive and scalable solutions."
     },
     "second": {
       "title": "Years",
