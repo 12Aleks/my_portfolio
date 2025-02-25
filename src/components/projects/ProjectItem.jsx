@@ -39,8 +39,8 @@ const ProjectItem = ({ project, index, type }) => {
             <Image
                 src={`/projects/${translatedProject.image}`}
                 alt={translatedProject.name}
-                width={260}
-                height={250}
+                width={320}
+                height={220}
                 className="rounded-md h-auto w-full sm:h-auto sm:w-full lg:w-full xl:w-auto md:max-w-full lg:max-w-full xl:max-w-[300px] 3xl:max-w-[320px] mb-2 xl:mb-0"
                 loading="lazy"
             />

@@ -28,6 +28,8 @@ const AboutBlocks = () => {
                         alt="github status"
                         loading="lazy"
                         className="w-full h-auto"
+                        width="369"
+                        height="350"
                     />
                 </ItemLayout>
 
@@ -37,12 +39,14 @@ const AboutBlocks = () => {
                         alt="github status"
                         loading="lazy"
                         className="w-full h-auto"
+                        width="804"
+                        height="335"
                     />
                 </ItemLayout>
                 <ItemLayout className="col-span-12 flex-col px-5 py-4 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:px-10 lg:py-7">
                     <h2 className="text-white text-2xl mb-2 sm:mb-3">CMS:</h2>
                     <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row  items-center gap-10">
-                        <Image src={drupal_icon} alt="drupal icon" loading="lazy" width={100} height={100} />
+                        <Image src={drupal_icon} alt="drupal icon" loading="lazy" width={100} height={145} />
                         <p className="font-light leading-normal">
                             {t('three.description')}
                         </p>
@@ -56,6 +60,8 @@ const AboutBlocks = () => {
                         alt="github status"
                         loading="lazy"
                         className="w-full h-auto"
+                        width="1166"
+                        height="145"
                     />
                 </ItemLayout>
                 <ItemLayout className="col-span-12 flex-col px-5 py-4 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:px-10 lg:py-7">
