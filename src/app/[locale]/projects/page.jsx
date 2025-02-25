@@ -4,7 +4,6 @@ import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
 import bg from '../../../../public/background/japan_castel3.webp'
-import {useEffect, useState} from "react";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import dynamic from "next/dynamic";
@@ -17,15 +16,7 @@ const PaperLantern = dynamic(() => import("@/components/model/PaperLantern")
 
 const ProjectsPage = () => {
     const isNight = useDayNightMode();
-    const [isLoaded, setIsLoaded] = useState(false);
     const t = useTranslations("navigation");
-
-    useEffect(() => {
-        // Добавляем небольшую задержку для плавности
-        const timeout = setTimeout(() => setIsLoaded(true), 500);
-        return () => clearTimeout(timeout);
-    }, []);
-
 
 
     return (<div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32  py-20 relative">
@@ -48,7 +39,7 @@ const ProjectsPage = () => {
 
                 {/* Left 3D Model */}
                 <div
-                    className={`flex items-center justify-center fixed top-0 -left-20 md:left-20 -xl:left-20 2xl:left-0 3xl:left-44 h-screen -z-50 duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+                    className="flex items-center justify-center fixed top-0 -left-20 md:left-20 -xl:left-20 2xl:left-0 3xl:left-44 h-screen -z-50 duration-1000">
                     <RenderModel light={'night'}>
                         <PaperLantern config={{
                             floatAmplitude: 0.01,
@@ -65,7 +56,7 @@ const ProjectsPage = () => {
 
                 {/* Right 3D Model */}
                 <div
-                    className={`flex items-center justify-center fixed top-10 left-1/2 md:left-3/4 xl:left-3/4 2xl:left-3/4 3xl:left-3/4 h-screen -z-50 duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+                    className="flex items-center justify-center fixed top-10 left-1/2 md:left-3/4 xl:left-3/4 2xl:left-3/4 3xl:left-3/4 h-screen -z-50 duration-1000">
                     <RenderModel light={'night'}>
                         <PaperLantern config={{
                             floatAmplitude: 0.005,
