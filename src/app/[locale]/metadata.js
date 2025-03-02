@@ -1,5 +1,3 @@
-import { getRequestConfig } from 'next-intl/server';
-
 export async function getTranslatedMetadata(locale) {
     let messages;
     try {
@@ -11,6 +9,7 @@ export async function getTranslatedMetadata(locale) {
     return {
         title: messages.metadata.title,
         description: messages.metadata.description,
+        keywords: messages.metadata.keywords,
         openGraph: {
             title: messages.metadata.title,
             description: messages.metadata.description,
