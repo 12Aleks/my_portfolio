@@ -1,10 +1,9 @@
 "use client";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
 export default function CookieConsent() {
-    // Pobranie zgody z localStorage tylko raz, bez konieczności opóźniania renderowania
     const storedConsent = useMemo(() => {
         return typeof window !== "undefined" ? localStorage.getItem("cookie_consent") : null;
     }, []);
