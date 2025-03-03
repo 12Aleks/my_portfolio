@@ -53,7 +53,8 @@ export default function Home() {
 
             <div className="w-full min-h-screen flex items-center justify-center relative">
                 {/* Экран загрузки */}
-                <div className={clsx(containerClasses, 'absolute' ,  isModelLoaded ? "opacity-0 invisible" : "opacity-100 visible")}>
+                <div className={clsx(containerClasses, 'absolute', isModelLoaded ? "opacity-0 invisible" : "opacity-100 visible")}
+                     style={{ minHeight: "390px", minWidth: "400px" }}>
                     <Image src="/screen_v5.webp" alt="loading" fill sizes="100vw" priority className="object-cover" />
                 </div>
 
