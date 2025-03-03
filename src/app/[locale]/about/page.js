@@ -14,7 +14,7 @@ const AboutPage = () => {
 
     return (
         <div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32 py-20 relative">
-            <div className={clsx(isNight ? 'opacity-8' : 'opacity-[.12]', "absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 z-0")} />
+
             <Image
                 src={bg}
                 alt="background"

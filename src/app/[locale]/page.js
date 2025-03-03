@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Navigation from "@/components/navigation";
 import dynamic from "next/dynamic";
@@ -16,27 +16,24 @@ export default function Home() {
     const isNight = useDayNightMode();
     const t = useTranslations("home");
 
-    const containerClasses = useMemo(
-        () =>
-            clsx(
-                "overflow-hidden z-10 transition-opacity duration-700",
-                "min-h-[390px] min-w-[400px] h-[360px] w-[390px]",
-                "xxs:w-[400px] xxs:h-[390px] xs:w-[550px] xs:h-[500px]",
-                "sm:w-[400px] sm:h-[350px] lg:w-[400px] lg:h-[370px]",
-                "2xl:w-[400px] 2xl:h-[390px] 3xl:w-[600px] 3xl:md:h-[550px] mb-0 sm:mb-14"
-            ),
-        []
+    useEffect(() => {
+        const { documentElement, body } = document;
+        [documentElement, body].forEach(el => el.style.overflow = "hidden");
+        return () => {
+            [documentElement, body].forEach(el => el.style.overflow = "");
+        };
+    }, []);
+
+    const containerClasses = clsx(
+        "relative flex items-center justify-center",
+        "min-h-[390px] min-w-[400px] h-[360px] w-[390px]",
+        "xxs:w-[400px] xxs:h-[390px] xs:w-[550px] xs:h-[500px]",
+        "sm:w-[400px] sm:h-[350px] lg:w-[400px] lg:h-[370px]",
+        "2xl:w-[400px] 2xl:h-[390px] 3xl:w-[600px] 3xl:md:h-[550px]"
     );
 
     return (
-        <main className="w-full min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Фоновый градиент */}
-            <div
-                className={clsx(
-                    isNight ? "opacity-8" : "opacity-[.12]",
-                    "absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-400 to-stone-950 opacity-10"
-                )}
-            />
+        <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
             <Image
                 src="/background/japan_gradient.webp"
                 alt="background"
@@ -45,30 +42,39 @@ export default function Home() {
                 priority
                 className={clsx(
                     isNight ? "opacity-8" : "opacity-[.12]",
-                    "fixed object-cover w-full h-screen opacity-8 bg-fixed z-0 blur-sm"
+                    "fixed object-cover w-full h-screen bg-fixed z-0 blur-sm max-h-screen"
                 )}
             />
 
             <h1 className="sr-only">{t("title")}</h1>
 
-            <div className="w-full min-h-screen flex items-center justify-center relative">
-                {/* Экран загрузки */}
-                <div className={clsx(containerClasses, 'absolute', isModelLoaded ? "opacity-0 invisible" : "opacity-100 visible")}
-                     style={{ minHeight: "390px", minWidth: "400px" }}>
-                    <Image src="/screen_v5.webp" alt="loading" fill sizes="100vw" priority className="object-cover" />
-                </div>
+            <div className="w-full flex items-center justify-center relative">
+                <div className={clsx(containerClasses, "relative")}>
+                    <div
+                        className={clsx(
+                            "absolute inset-0 flex items-center justify-center transition-opacity duration-500",
+                            isModelLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
+                        )}
+                    >
+                        <Image src="/screen_v5.webp" alt="loading" fill sizes="100vw" priority className="object-cover" />
+                    </div>
 
-                {isModelLoaded && <Petals />}
+                    {isModelLoaded && <Petals />}
 
-                <Navigation />
+                    <Navigation />
 
-                {/* 3D-модель */}
-                <div className={clsx(containerClasses, 'relative' ,  isModelLoaded ? "opacity-100" : "opacity-0")}>
-                    <RenderModel light="city">
-                        <TreeModel onLoadComplete={() => setIsModelLoaded(true)} />
-                    </RenderModel>
+                    <div
+                        className={clsx(
+                            "absolute inset-0 flex items-center justify-center transition-opacity duration-700",
+                            isModelLoaded ? "opacity-100" : "opacity-0 pointer-events-none"
+                        )}
+                    >
+                        <RenderModel light="city">
+                            <TreeModel onLoadComplete={() => setIsModelLoaded(true)} />
+                        </RenderModel>
+                    </div>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }

@@ -8,6 +8,7 @@ import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
 import GoogleTagManagerScript from "@/components/GoogleTagManagerScript";
 import I18nProvider from "../i18nProvider";
 import {getTranslatedMetadata} from "@/app/[locale]/metadata";
+import Background from "@/components/Background";
 
 
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"));
@@ -29,11 +30,12 @@ export default function RootLayout({ children, params }) {
         <body className={clsx(inter.variable, "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}
         >
         <I18nProvider locale={params.locale}>
-            <CookieConsent />
+            <Background />
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            <main>{children}</main>
             <FireFlies />
             <Sound />
+            <CookieConsent />
             <Footer />
             <GoogleTagManagerScript />
             <GoogleAnalyticsScript />
