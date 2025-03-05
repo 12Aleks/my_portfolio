@@ -7,13 +7,14 @@ import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import { useTranslations } from "next-intl";
 
-
+export const revalidate = 0;
 const Navigation = dynamic(() => import("@/components/navigation"), { ssr: false });
 const Petals = dynamic(() => import("@/components/Petals"), { ssr: false });
 const RenderModel = dynamic(() => import("@/components/RenderModel"), { ssr: false });
 const TreeModel = dynamic(() => import("@/components/model/TreeModel"), { ssr: false });
 
 export default function Home() {
+
     const [isModelLoaded, setIsModelLoaded] = useState(false);
     const isNight = useDayNightMode();
     const t = useTranslations("home");
