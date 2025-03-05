@@ -1,12 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Navigation from "@/components/navigation";
+//import Navigation from "@/components/navigation";
 import dynamic from "next/dynamic";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import { useTranslations } from "next-intl";
 
+
+const Navigation = dynamic(() => import("@/components/navigation"), { ssr: false });
 const Petals = dynamic(() => import("@/components/Petals"), { ssr: false });
 const RenderModel = dynamic(() => import("@/components/RenderModel"), { ssr: false });
 const TreeModel = dynamic(() => import("@/components/model/TreeModel"), { ssr: false });

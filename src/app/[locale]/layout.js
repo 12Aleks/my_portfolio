@@ -21,7 +21,7 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
     return getTranslatedMetadata(params.locale);
 }
 

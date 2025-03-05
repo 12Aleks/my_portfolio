@@ -1,10 +1,19 @@
-export async function getTranslatedMetadata(locale) {
-    let messages;
-    try {
-        messages = (await import(`../../../messages/${locale}.json`)).default;
-    } catch (error) {
-        messages = (await import('../../../messages/pl.json')).default;
-    }
+import plMessages from "../../../messages/pl.json";
+import enMessages from "../../../messages/en.json"; // добавьте другие языки при необходимости
+import deMessages from "../../../messages/de.json"; // добавьте другие языки при необходимости
+import ruMessages from "../../../messages/ru.json"; // добавьте другие языки при необходимости
+import uaMessages from "../../../messages/ua.json"; // добавьте другие языки при необходимости
+
+const messagesMap = {
+    pl: plMessages,
+    en: enMessages,
+    de: deMessages,
+    ru: ruMessages,
+    ua: uaMessages,
+};
+
+export function getTranslatedMetadata(locale) {
+    const messages = messagesMap[locale] || plMessages;
 
     return {
         title: messages.metadata.title,
