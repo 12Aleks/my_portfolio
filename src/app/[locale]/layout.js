@@ -9,6 +9,7 @@ import GoogleTagManagerScript from "@/components/GoogleTagManagerScript";
 import I18nProvider from "../i18nProvider";
 import {getTranslatedMetadata} from "@/app/[locale]/metadata";
 import Background from "@/components/Background";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"));
@@ -37,6 +38,7 @@ export default function RootLayout({ children, params }) {
             <Sound />
             <CookieConsent />
             <Footer />
+            <SpeedInsights />
             <GoogleTagManagerScript />
             <GoogleAnalyticsScript />
         </I18nProvider>
