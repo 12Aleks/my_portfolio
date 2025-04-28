@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 import drupal_icon from '../../../public/drupal.webp'
 import ItemLayout from "@/components/about/ItemLayout";
 import {useLocale, useTranslations} from "next-intl";
@@ -72,6 +73,17 @@ const AboutBlocks = () => {
                         <li className="flex">{t('five.rus')} <div className="self-end flex-1 mx-2 mb-1 bg-transparent border-b border-dashed border-muted" /> {t('five.levelRus')}</li>
                         <li className="flex">{t('five.ukr')} <div className="self-end flex-1 mx-2 mb-1 bg-transparent border-b border-dashed border-muted" /> {t('five.levelUkr')}</li>
                     </ul>
+                </ItemLayout>
+                <ItemLayout className="col-span-12 flex-col px-5 py-4 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:px-10 lg:py-7">
+                    <Link href="https://www.codewars.com/users/12Aleks" target="_blank" rel="noopener noreferrer">
+                        <h2 className="text-white text-2xl mb-4 sm:mb-5">Codewars:</h2>
+                        <img
+                            src="https://www.codewars.com/users/12Aleks/badges/large"
+                            alt="Codewars Profile Badge"
+                            width="500"
+                            height="100"
+                        />
+                    </Link>
                 </ItemLayout>
             </div>
         </section>

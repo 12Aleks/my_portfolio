@@ -12,7 +12,10 @@ const nextConfig = {
                 ],
             },
         ];
-    }
+    },
+    images: {
+        domains: ['www.codewars.com'],
+    },
 };
 
 export default nextConfig;
