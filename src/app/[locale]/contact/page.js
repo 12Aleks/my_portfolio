@@ -8,7 +8,6 @@ import {BambooModel} from "@/components/model/BambooModel";
 import {PineModel} from "@/components/model/PineModel";
 import bg from '../../../../public/background/japan_castel2_gradient.webp';
 import {useTranslations} from "next-intl";
-import Background from "@/components/Background";
 
 const ContactPage = () => {
     const isNight = useDayNightMode();

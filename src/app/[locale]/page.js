@@ -1,82 +1,166 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
-//import Navigation from "@/components/navigation";
 import dynamic from "next/dynamic";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import { useTranslations } from "next-intl";
+import { MoonModel } from "@/components/model/Moonmodel";
+import Link from "next/link";
+import { useLocale } from "next-intl";
+import SocialButton from "@/components/navigation/SocialButton";
+import { Links } from "@/app/data";
 
-const Navigation = dynamic(() => import("@/components/navigation"), { ssr: false });
-const Petals = dynamic(() => import("@/components/Petals"), { ssr: false });
 const RenderModel = dynamic(() => import("@/components/RenderModel"), { ssr: false });
-const TreeModel = dynamic(() => import("@/components/model/TreeModel"), { ssr: false });
 
 export default function Home() {
-
-    const [isModelLoaded, setIsModelLoaded] = useState(false);
+    const [isModelVisible, setIsModelVisible] = useState(false);
     const isNight = useDayNightMode();
     const t = useTranslations("home");
+    const locale = useLocale();
 
     useEffect(() => {
-        const { documentElement, body } = document;
-        [documentElement, body].forEach(el => el.style.overflow = "hidden");
-        return () => {
-            [documentElement, body].forEach(el => el.style.overflow = "");
-        };
-    }, []);
+        if (isModelVisible) {
+            document.body.style.overflow = "auto";
+        }
+    }, [isModelVisible]);
 
-    const containerClasses = clsx(
-        "relative flex items-center justify-center",
-        "min-h-[390px] min-w-[400px] h-[360px] w-[390px]",
-        "xxs:w-[400px] xxs:h-[390px] xs:w-[550px] xs:h-[500px]",
-        "sm:w-[400px] sm:h-[350px] lg:w-[400px] lg:h-[370px]",
-        "2xl:w-[400px] 2xl:h-[390px] 3xl:w-[600px] 3xl:md:h-[550px]"
-    );
+    const buttonBaseClass =
+        "backdrop-blur text-center border border-amber-500 text-amber-500 px-6 py-1.5 sm:py-2 uppercase transition duration-200 hover:bg-amber-600 hover:text-black";
+
+    const moonGradientMask = {
+        WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+        maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskSize: "100% 100%",
+        maskSize: "100% 100%",
+    };
 
     return (
-        <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <div className="relative w-full max-h-screen flex flex-col items-center justify-center overflow-hidden">
+
             <Image
-                src="/background/japan_gradient.webp"
+                src="/background/japan_castel2_gradient.webp"
                 alt="background"
                 fill
                 sizes="100vw"
                 priority
                 className={clsx(
-                    isNight ? "opacity-8" : "opacity-[.12]",
-                    "fixed object-cover w-full h-screen bg-fixed z-0 blur-sm max-h-screen"
+                    "fixed object-cover top-0 left-0 w-full max-h-screen -z-10 blur-[1px]",
+                    isNight ? "opacity-7" : "opacity-10"
                 )}
             />
+            <Image
+                src="/abstract-red-background-wavy-lines.png"
+                alt="background"
+                width={800}
+                height={500}
+                className="hidden 2xl:block fixed left-0 -bottom-5 -z-50 brightness-50 -rotate-2
+                blur-[1px] h-auto 2xl-only:w-[600px] 3xl:w-[800px]"
+            />
 
-            <h1 className="sr-only">{t("title")}</h1>
 
-            <div className="w-full flex items-center justify-center relative">
-                <div className={clsx(containerClasses, "relative")}>
-                    <div
-                        className={clsx(
-                            "absolute inset-0 flex items-center justify-center transition-opacity duration-500",
-                            isModelLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
-                        )}
-                    >
-                        <Image src="/screen_v5.webp" alt="loading" fill sizes="100vw" priority className="object-cover" />
+            <section className="relative w-full h-screen overflow-hidden text-white font-sans">
+                <h1 className="sr-only">{t("title")}</h1>
+
+                <div className="w-full 3xl:w-5/6 4xl:w-3/4 min-h-screen mx-auto flex flex-row items-end
+                 2xl:items-center justify-between px-3 lg:px-6 py-12 sm:py-16 lg:py-20 gap-10">
+
+                    <div className="w-full 2xl:w-1/2 flex">
+                        <div className="block text-center 2xl:text-left w-full lg:w-4/5 3xl:w-5/6
+                        mx-auto tracking-wide 3xl:tracking-wider">
+                            <div className="mb-[2vh] sm:mb-[4vh] md:mb-[6vh] lg:mb-[8vh] 3xl-only:mb-[10vh] 4xl:mb-[12vh]">
+                                <h2 className="font-marker text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl
+                                4xl:text-6xl font-bold mb-2 sm:mb-3 lg:mb-6 tracking-[2px] sm:tracking-[4px]">
+                                    Front End Developer
+                                </h2>
+                                <p className="text-md lg:text-lg 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
+                                    Nowoczesne, szybkie i responsywne strony oraz aplikacje internetowe.
+                                </p>
+                                <p className="hidden lg:block lg:text-lg 4xl:text-xl leading-relaxed lg:mb-6
+                                 3xl:mb-10 text-gray-300">
+                                    Specjalizacja: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.
+                                </p>
+
+
+                                <div className="flex flex-col justify-center 2xl:justify-start md:flex-row
+                                gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm 2xl-only:text-md
+                                3xl:text-lg px-8 sm:px-3 lg:p-0">
+                                    <Link href={`${locale}/projects`} className={buttonBaseClass}>
+                                        Zobacz realizacje
+                                    </Link>
+                                    <Link href={`${locale}/contact`} className={buttonBaseClass}>
+                                        Podejmij współpracę
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* Social Buttons on large screens */}
+                            <div className="hidden 2xl:flex flex-row gap-10">
+                                {Links?.map((data) => (
+                                    <SocialButton key={data.label} {...data} />
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
-                    {isModelLoaded && <Petals />}
 
-                    <Navigation />
-
-                    <div
-                        className={clsx(
-                            "absolute inset-0 flex items-center justify-center transition-opacity duration-700",
-                            isModelLoaded ? "opacity-100" : "opacity-0 pointer-events-none"
-                        )}
-                    >
-                        <RenderModel light="city">
-                            <TreeModel onLoadComplete={() => setIsModelLoaded(true)} />
-                        </RenderModel>
+                    <div className="absolute w-full left-1/2 top-1/2 transform -translate-x-1/2
+                    -translate-y-1/2 flex justify-between 2xl:hidden">
+                        <div className="flex flex-col gap-4 sm:gap-6 m-3">
+                            {Links?.slice(0, 2).map((data) => (
+                                <SocialButton key={data.label} {...data} />
+                            ))}
+                        </div>
+                        <div className="flex flex-col gap-4 sm:gap-6 m-3">
+                            {Links?.slice(2, 4).map((data) => (
+                                <SocialButton key={data.label} {...data} />
+                            ))}
+                        </div>
                     </div>
+
+                    <div className="w-full 2xl:w-1/2 h-full flex flex-col items-center justify-center
+                     absolute 2xl:relative -z-10">
+                        <Image
+                            src="/samurai.webp"
+                            alt="Samurai"
+                            width={512}
+                            height={927}
+                            className="w-full h-auto max-h-screen max-w-[10rem] sm:max-w-[16rem]
+                            2xl-only:max-w-[22rem] 3xl-only:max-w-[30rem] 4xl:max-w-lg
+                            -z-10 brightness-75 blur-[.3px]"
+                            style={moonGradientMask}
+                        />
+
+                        <div className="absolute aspect-square flex items-center justify-center
+                        w-[300px] sm:w-[400px] 2xl-only:w-[500px] 3xl:w-[600px] 4xl:w-[650px] blur-[1.5px]
+                        -z-20 brightness-90 me-[6vw] 2xl:ms-[10vw] 3xl:ms-[15vw] mb-[35vh]">
+                            <Image
+                                src="/redmoon.webp"
+                                alt="Red Moon placeholder"
+                                width={700}
+                                height={700}
+                                className={clsx(
+                                    "absolute transition-opacity duration-700 ease-in-out !w-full !h-full p-2",
+                                    !isModelVisible ? "opacity-100" : "opacity-0"
+                                )}
+                            />
+                            <RenderModel
+                                light="forest"
+                                className={clsx(
+                                    "absolute transition-opacity duration-700 ease-in-out w-full h-full",
+                                    isModelVisible ? "opacity-100" : "opacity-0"
+                                )}
+                            >
+                                <MoonModel onLoaded={() => setIsModelVisible(true)} />
+                            </RenderModel>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

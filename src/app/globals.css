@@ -57,6 +57,7 @@
 /* Internet Explorer & Edge */
 body {
   -ms-overflow-style: none; /* Скрыть стандартный скроллбар */
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar {

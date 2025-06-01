@@ -12,7 +12,7 @@ export const workProjects = [
     {
         id: 2,
         key: "testingApp",
-        technologies: ['Next', 'Nest', 'React', 'Mongoose', 'SCSS'],
+        technologies: ['Next', 'Nest', 'React', 'Mongoose', 'SCSS','React Bootstrap', 'AWS S3', 'Heroku'],
         date: "2023-09",
         image: 'polcar.webp',
         demoLink: "https://testing-client-application.herokuapp.com/",
@@ -21,7 +21,7 @@ export const workProjects = [
     {
         id: 3,
         key: "contactTermaheat",
-        technologies: ['CMS Drupal 7', 'Bootstrap 4', 'JavaScript', 'SCSS', 'HTML'],
+        technologies: ['CMS Drupal 7', 'Bootstrap', 'JavaScript', 'JQuery', 'SCSS', 'HTML'],
         image: 'oldtermaheat.webp',
         date: "2023-04",
         demoLink: "https://www.termaheat.pl/formularz-kontakowy",
@@ -29,7 +29,7 @@ export const workProjects = [
     {
         id: 4,
         key: "termaplay",
-        technologies: ['CMS Drupal 9', 'Bootstrap 5', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
+        technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Google Maps', 'Figma'],
         date: "2022-10",
         image: 'termaplay.webp',
         demoLink: "https://termaplay.pl/pl",
@@ -37,7 +37,7 @@ export const workProjects = [
     {
         id: 5,
         key: "termaReh",
-        technologies: ['CMS Drupal 9', 'Bootstrap 5', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
+        technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Google Maps', 'Figma'],
         date: "2022-10",
         image: "termareh.webp",
         demoLink: "https://termareh.pl/pl",
@@ -127,7 +127,7 @@ export const petProjects = [
     {
         id: 1,
         key: "apartments",
-        technologies: ["Next", "React", "Kinde", "Prisma", "Tailwind"],
+        technologies: ["Next", "React", "Kinde", "Prisma", "Tailwind CSS", 'Vercel'],
         date: "2024-09",
         image: "applicataioAppartmets.webp",
         demoLink: "https://apartments-pied.vercel.app/",
@@ -136,7 +136,7 @@ export const petProjects = [
     {
         id: 2,
         key: "pixem",
-        technologies: ["Next", "React", "React Bootstrap", "Redux Toolkit", "SCSS"],
+        technologies: ["Next", "React", "React Bootstrap", "Redux Toolkit", "SCSS", 'Vercel'],
         date: "2022-08-15",
         image: "pixem.webp",
         demoLink: "https://pixem.vercel.app/",
@@ -145,7 +145,7 @@ export const petProjects = [
     {
         id: 3,
         key: "weather",
-        technologies: ["React", "React Bootstrap", "Mobx", "SCSS"],
+        technologies: ["React", "React Bootstrap", "Mobx", "SCSS", 'Vercel'],
         date: "2020-09",
         image: "weather.webp",
         demoLink: "https://weather-97994.web.app/",
@@ -163,12 +163,7 @@ export const petProjects = [
 ];
 
 
-
-export const BtnList = [
-    {label: "Home", link: "/", icon: "home", newTab: false},
-    {label: "About", link: "/about", icon: "about", newTab: false},
-    {label: "Projects", link: "/projects", icon: "projects", newTab: false},
-    {label: "Contact", link: "/contact", icon: "contact", newTab: false},
+export const Links = [
     {
         label: "Github",
         link: "https://github.com/12Aleks",
@@ -185,36 +180,6 @@ export const BtnList = [
         label: "Facebook",
         link: "https://www.facebook.com/profile.php?id=100002408135162",
         icon: "facebook",
-        newTab: true,
-    },
-    {
-        label: "Resume",
-        link: "/CV_Oleksii_Koba.pdf",
-        icon: "resume",
-        newTab: true,
-    },
-];
-
-export const BtnListSmallLeft = [
-    {
-        label: "LinkedIn",
-        link: "https://www.linkedin.com/in/leszek-koba-78130b140/",
-        icon: "linkedin",
-        newTab: true,
-    },
-    {
-        label: "Facebook",
-        link: "https://www.facebook.com/profile.php?id=100002408135162",
-        icon: "facebook",
-        newTab: true,
-    }
-];
-
-export const BtnListSmallRight = [
-    {
-        label: "Github",
-        link: "https://github.com/12Aleks",
-        icon: "github",
         newTab: true,
     },
     {

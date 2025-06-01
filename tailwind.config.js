@@ -7,12 +7,20 @@ module.exports = {
     ],
     theme: {
         extend: {
-            fontFamily: {inter: 'var(--font-inter)'},
+            fontFamily: {
+                inter: ['var(--font-inter)'],
+                marker: ['var(--font-permanent-marker)'],
+            },
             screens: {
                 'xxs': {min: '414px', max: '479.98px'},
                 'xs': {min: '480px', max: '639.98px'},
+                '1xl': {min: '64rem', max: '80rem'},
+                '2xl-only': {min: '1280px', max: '1699.98px'},
                 '3xl': {min: '1700px'},
-                '3xl-only': {min: '1700px', max: '1920px'},
+                '3xl-only': {min: '1700px', max: '1919.98px'},
+                '4xl': {min: '1920px'},
+                'landscape': {'raw': '(orientation: landscape)'},
+                'portrait': {'raw': '(orientation: portrait)'},
             },
             colors: {
                 background: 'rgb(var(--background))',
@@ -25,14 +33,20 @@ module.exports = {
                 'fire-gradient': 'radial-gradient(circle, rgba(255,165,0,0.8) 20%, rgba(255,0,0,0.2) 60%, transparent 70%)',
             },
             opacity: {
+                '6': '0.06',
+                '7': '0.07',
                 '8': '0.08',
                 '9': '0.09',
-
             },
             keyframes: {
-                'spin-reverse':{
+                'spin-reverse': {
                     '0%': {transform: 'rotate(0deg)'},
                     '100%': {transform: 'rotate(-360deg)'}
+                },
+                'blur': {
+                    '0%': {filter: 'blur(1.5px)'},
+                    '50%': {filter: 'blur(2.5px)'},
+                    '100%': {filter: 'blur(1.5px)'},
                 },
                 'petals': {
                     '0%': {top: '-10%', opacity: '0'},
@@ -58,7 +72,8 @@ module.exports = {
                 'rotate-icons': 'spin-reverse 300s infinite linear',
                 'fadeIn': 'fadeIn 1s ease-out forwards',
                 'petals': 'petals linear infinite, sway ease-in-out infinite',
-                'fire': ' flicker 0.1s infinite alternate'
+                'fire': ' flicker 0.1s infinite alternate',
+                'blur-pulsation': 'blur 3s ease-out infinite',
             }
         },
 

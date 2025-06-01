@@ -82,7 +82,7 @@ const FormComponent = () => {
                                 message: `${t('messageMax')}`
                             }
                         })}
-                        className="text-white appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
+                        className="text-white appearance-none w-full p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
                     />
                     {
                         errors.name && <span className="text-amber-600 self-start inline-block mt-1">{errors.name.message}</span>
@@ -103,7 +103,7 @@ const FormComponent = () => {
                                 message: `${t('messageMin')}`
                             }
                         })}
-                        className="text-white appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
+                        className="text-white appearance-none w-full p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
                     />
                     {
                         errors.email &&
@@ -124,7 +124,7 @@ const FormComponent = () => {
                         message: `${t('messageMaxText')}`
                     }
                 })}
-                className="h-32 2xl:h-32 3xl:h-40 appearance-none w-full p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600 text-white"
+                className="h-32 2xl:h-32 3xl:h-40 appearance-none w-full p-2  shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600 text-white"
             />
                     {
                         errors.message &&
@@ -135,8 +135,8 @@ const FormComponent = () => {
                     type="submit"
                     disabled={isSubmitting}
                     value={isSubmitting ? `${t('statusStart')}...` : `${t('statusEnd')}`}
-                    className={`cursor-pointer px-10 py-3 rounded-md shadow-lg border border-amber-700 transition-all focus:outline-none duration-500 ${
-                        isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-amber-600 hover:bg-amber-700 "
+                    className={`cursor-pointer text-center border border-amber-500 text-amber-500 px-6 py-2 uppercase  hover:text-black transition duration-200 ${
+                        isSubmitting ? "bg-gray-400 cursor-not-allowed" : "hover:bg-amber-600"
                     }`}
                 />
             </motion.form>

@@ -6,14 +6,14 @@ Source: https://sketchfab.com/3d-models/japanese-black-pine-f0cb4705f1c446c7bc39
 Title: Japanese Black Pine
 */
 "use client"
-import {useMemo, useRef} from 'react'
+import {useEffect, useMemo, useRef} from 'react'
 import {useGLTF} from '@react-three/drei';
 import {useFrame, useLoader} from "@react-three/fiber";
 import * as THREE from "three";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 
-export function PineModel({ config = {} }) {
+export function PineModel({ config = {}, onLoadComplete }) {
     const modelRef = useRef();
     const lightRef = useRef();
     const moonRef = useRef();
@@ -33,6 +33,12 @@ export function PineModel({ config = {} }) {
     });
 
     const randomPhaseShift = useMemo(() => Math.random() * Math.PI * 2, []);
+
+    useEffect(() => {
+        if (onLoadComplete) {
+            onLoadComplete();
+        }
+    }, [onLoadComplete]);
 
     useFrame((state) => {
         const time = state.clock.elapsedTime;

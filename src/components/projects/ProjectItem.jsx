@@ -34,7 +34,9 @@ const ProjectItem = ({ project, index, type }) => {
                 "flex flex-col text-white sm:flex-col md:flex-col lg:flex-col items-center justify-between relative rounded-lg w-full p-3 sm:p-3 md:p-5 lg:p-5 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
             )}
         >
-            <p className="pb-3 ml-auto block lg:block xl:hidden font-light text-sm">{getDate(translatedProject.date)}</p>
+            <p className="pb-3 ml-auto block lg:block xl:hidden font-light text-sm">
+                {/*{getDate(translatedProject.date)}*/}
+            </p>
 
             <Image
                 src={`/projects/${translatedProject.image}`}
@@ -52,7 +54,7 @@ const ProjectItem = ({ project, index, type }) => {
                 )}
             >
                 <p className={clsx(index % 2 === 0 ? "ml-auto" : "mr-auto", "text-sm font-light hidden sm:hidden lg:hidden xl:block")}>
-                    {getDate(translatedProject.date)}
+                    {/*{getDate(translatedProject.date)}*/}
                 </p>
                 <h2 className="text-lg mt-3 mb-2">{translatedProject.name}</h2>
                 <p className="text-sm font-light mb-2 xl:mb-3 2xl:mb-3">{translatedProject.description}</p>
