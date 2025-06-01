@@ -74,7 +74,7 @@ export default function Home() {
                             <div className="mb-[2vh] sm:mb-[4vh] md:mb-[6vh] lg:mb-[8vh] 3xl-only:mb-[10vh] 4xl:mb-[12vh]">
                                 <h2 className="font-marker text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl
                                 4xl:text-6xl font-bold mb-2 sm:mb-3 lg:mb-6 tracking-[2px] sm:tracking-[4px]">
-                                    Front End Developer
+                                    Front End Polska
                                 </h2>
                                 <p className="text-md lg:text-lg 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
                                     Nowoczesne, szybkie i responsywne strony oraz aplikacje internetowe.
