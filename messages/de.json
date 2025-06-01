@@ -56,7 +56,11 @@
     }
   },
   "home": {
-    "title": "Hallo! Ich bin Oleksii, ein Front-End-Entwickler aus Polen und derzeit auf der Suche nach einer Vollzeit-Remote-Stelle. Die meisten Projekte in meinem Portfolio basieren auf dem CMS Drupal, aber ich habe auch kommerzielle Erfahrung in der Entwicklung von Webanwendungen mit Next.js und React."
+    "title": "Hallo! Ich bin Oleksii, ein Front-End-Entwickler aus Polen und derzeit auf der Suche nach einer Vollzeit-Remote-Stelle. Die meisten Projekte in meinem Portfolio basieren auf dem CMS Drupal, aber ich habe auch kommerzielle Erfahrung in der Entwicklung von Webanwendungen mit Next.js und React.",
+    "firstSubtitle": "Moderne, schnelle und responsive Websites und Webanwendungen.",
+    "secondSubtitle": "Spezialisierung: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.",
+    "leftButton": "Projekte ansehen",
+    "rightButton": "Zusammenarbeit starten"
   },
   "contact": {
     "title": "Kontakt",

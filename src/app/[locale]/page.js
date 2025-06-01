@@ -77,22 +77,21 @@ export default function Home() {
                                     Front End Polska
                                 </h2>
                                 <p className="text-md lg:text-lg 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
-                                    Nowoczesne, szybkie i responsywne strony oraz aplikacje internetowe.
+                                    {t("firstSubtitle")}
                                 </p>
                                 <p className="hidden lg:block lg:text-lg 4xl:text-xl leading-relaxed lg:mb-6
                                  3xl:mb-10 text-gray-300">
-                                    Specjalizacja: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.
+                                    {t("secondSubtitle")}
                                 </p>
-
 
                                 <div className="flex flex-col justify-center 2xl:justify-start md:flex-row
                                 gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm 2xl-only:text-md
                                 3xl:text-lg px-8 sm:px-3 lg:p-0">
                                     <Link href={`${locale}/projects`} className={buttonBaseClass}>
-                                        Zobacz realizacje
+                                        {t("leftButton")}
                                     </Link>
                                     <Link href={`${locale}/contact`} className={buttonBaseClass}>
-                                        Podejmij współpracę
+                                        {t("rightButton")}
                                     </Link>
                                 </div>
                             </div>

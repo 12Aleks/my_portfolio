@@ -57,7 +57,11 @@
     }
   },
   "home": {
-    "title": "Cześć! Jestem Oleksii, Front End Developerem z Polski, obecnie poszukuję pełnoetatowej pracy zdalnej. Większość projektów w moim portfolio to projekty zbudowane na CMS Drupal, ale mam także komercyjne doświadczenie w tworzeniu aplikacji webowych z użyciem Next.js i React."
+    "title": "Cześć! Jestem Oleksii, Front End Developerem z Polski, obecnie poszukuję pełnoetatowej pracy zdalnej. Większość projektów w moim portfolio to projekty zbudowane na CMS Drupal, ale mam także komercyjne doświadczenie w tworzeniu aplikacji webowych z użyciem Next.js i React.",
+    "firstSubtitle": "Nowoczesne, szybkie i responsywne strony oraz aplikacje internetowe.",
+    "secondSubtitle": "Specjalizacja: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.",
+    "leftButton": "Zobacz realizacje",
+    "rightButton": "Podejmij współpracę"
   },
   "contact": {
     "title": "Kontakt",

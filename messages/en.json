@@ -57,7 +57,11 @@
     }
   },
   "home": {
-    "title": "Hi! I'm Oleksii, a Front-End Developer from Poland, currently looking for a full-time remote job. Most of the projects in my portfolio are built on CMS Drupal, but I also have commercial experience in developing web applications using Next.js and React."
+    "title": "Hi! I'm Oleksii, a Front-End Developer from Poland, currently looking for a full-time remote job. Most of the projects in my portfolio are built on CMS Drupal, but I also have commercial experience in developing web applications using Next.js and React.",
+    "firstSubtitle": "Modern, fast, and responsive websites and web applications.",
+    "secondSubtitle": "Specialization: React, Next.js, TypeScript, Drupal CMS, Tailwind CSS, Bootstrap.",
+    "leftButton": "See projects",
+    "rightButton": "Start collaboration"
   },
   "contact": {
     "title": "Contact",
