@@ -140,6 +140,7 @@ export default function Home() {
                                 alt="Red Moon placeholder"
                                 width={700}
                                 height={700}
+                                priority
                                 className={clsx(
                                     "absolute transition-opacity duration-700 ease-in-out !w-full !h-full p-2",
                                     !isModelVisible ? "opacity-100" : "opacity-0"
