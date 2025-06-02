@@ -30,7 +30,7 @@ export async function getTranslatedMetadata(locale) {
             title: messages.metadata.title,
             description: messages.metadata.description,
             images: [
-                { url: "/firstscreen.png", width: 1200, height: 750, alt: "Oleksii Koba - Full Stack Developer" },
+                { url: "/imageMeta.webp", width: 1200, height: 750, alt: "Oleksii Koba - Full Stack Developer" },
                 { url: "/logo_bg.png", width: 290, height: 290, alt: "Oleksii Koba Logo" }
             ],
         },
@@ -38,7 +38,7 @@ export async function getTranslatedMetadata(locale) {
             card: "summary_large_image",
             title: messages.metadata.title,
             description: messages.metadata.description,
-            image: "/imageMeta.png",
+            image: "/imageMeta.webp",
         },
         icons: {
             icon: "/favicone/favicon.ico",

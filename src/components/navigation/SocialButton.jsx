@@ -1,3 +1,4 @@
+import {memo} from 'react';
 import {motion} from "framer-motion";
 import Link from "next/link";
 import {Facebook, File, Github, Linkedin} from "lucide-react";
@@ -15,15 +16,13 @@ const getIcon = iconName => {
         case "resume":
             return <File className="w-full h-auto" strokeWidth={1.5}/>;
         default:
-            ""
+            return null;
     }
 }
 
 const SocialButton = (data) => {
     const {label, link, icon, newTab} = data;
     const locale = useLocale();
-
-
 
     return (
         <motion.div
@@ -33,17 +32,17 @@ const SocialButton = (data) => {
             viewport={{once: true}}
         >
             <Link
-                href={`/${locale}${link}`}
-                target={newTab ? "_blank" : "_self"}
+                href={icon.includes('resume') ? `/${locale}${link}` : link}
+                target={newTab ? '_blank' : '_self'}
                 className="rounded-full flex items-center justify-center"
                 aria-label={label}
                 name={label}
                 prefetch={false}
                 scroll={false}
             >
-                 <span className="relative w-[45px] 2xl:w-14 aspect-squere transition-al duration-500
+                 <span className="relative w-[45px] 2xl:w-14 aspect-square transition-al duration-500
                  bg-background/20 backdrop-blur-[6px] p-2 hover:p-2.5 2xl:p-3 2xl:hover:p-3.5
-                 text-red-900 hover:text-amber-600 text-neutral-300 hover:border-amber-600
+                 text-red-900 hover:text-amber-600 hover:border-amber-600
                  border border-1 border-red-900 rounded-full ">
                 {getIcon(icon)}
                      <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
@@ -60,4 +59,4 @@ const SocialButton = (data) => {
     );
 };
 
-export default SocialButton;
+export default memo(SocialButton);

@@ -53,7 +53,7 @@ export default function Home() {
                 )}
             />
             <Image
-                src="/abstract-red-background-wavy-lines.png"
+                src="/abstract-red-background-wavy-lines.webp"
                 alt="background"
                 width={800}
                 height={500}
@@ -96,7 +96,6 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            {/* Social Buttons on large screens */}
                             <div className="hidden 2xl:flex flex-row gap-10">
                                 {Links?.map((data) => (
                                     <SocialButton key={data.label} {...data} />

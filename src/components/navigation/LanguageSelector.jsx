@@ -1,5 +1,5 @@
 "use client"
-import {useState} from 'react';
+import {memo, useState} from 'react';
 import {ChevronDown} from "lucide-react";
 
 
@@ -35,4 +35,4 @@ const LanguageSelector = ({ currentLocale, onChange, languages }) => {
     );
 };
 
-export default LanguageSelector;
+export default memo(LanguageSelector);
