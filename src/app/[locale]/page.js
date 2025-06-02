@@ -75,16 +75,16 @@ export default function Home() {
                                 4xl:text-6xl font-bold mb-2 sm:mb-3 lg:mb-6 tracking-[2px] sm:tracking-[4px]">
                                     Front End Polska
                                 </h2>
-                                <p className="text-md lg:text-lg 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
+                                <p className="text-sm lg:text-base 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
                                     {t("firstSubtitle")}
                                 </p>
-                                <p className="hidden lg:block lg:text-lg 4xl:text-xl leading-relaxed lg:mb-6
+                                <p className="hidden lg:block lg:text-base 4xl:text-xl leading-relaxed lg:mb-6
                                  3xl:mb-10 text-gray-300">
                                     {t("secondSubtitle")}
                                 </p>
 
                                 <div className="flex flex-col justify-center 2xl:justify-start md:flex-row
-                                gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm 2xl-only:text-md
+                                gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm 2xl-only:text-base
                                 3xl:text-lg px-8 sm:px-3 lg:p-0">
                                     <Link href={`${locale}/projects`} className={buttonBaseClass}>
                                         {t("leftButton")}

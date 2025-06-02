@@ -55,7 +55,7 @@ export default function Navbar() {
 
                 <div className="hidden md:flex space-x-6 mr-3 items-center">
                     {navLinks.map(({ path, key }) => (
-                        <Link key={key} href={`/${locale}${path}`} className={`transition-colors duration-200 text-sm tracking-widest ${pathname === `/${locale}${path}` ? "text-amber-500" : "hover:text-amber-500"}`}>
+                        <Link key={key} href={`/${locale}${path}`} className={`transition-colors duration-200 text-sm 2xl:text-base tracking-widest ${pathname === `/${locale}${path}` ? "text-amber-500" : "hover:text-amber-500"}`}>
                             {t(key)}
                         </Link>
                     ))}
