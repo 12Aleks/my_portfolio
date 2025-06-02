@@ -46,7 +46,6 @@ export default function Home() {
                 alt="background"
                 fill
                 sizes="100vw"
-                priority
                 className={clsx(
                     "fixed object-cover top-0 left-0 w-full max-h-screen -z-10 blur-[1px]",
                     isNight ? "opacity-7" : "opacity-10"

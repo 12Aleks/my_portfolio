@@ -1,10 +1,16 @@
 "use client"
-import {memo, useState} from 'react';
+import {memo, useState, useEffect} from 'react';
 import {ChevronDown} from "lucide-react";
 
 
 const LanguageSelector = ({ currentLocale, onChange, languages }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    useEffect(() => {
+        if (onChange) {
+            document.body.style.overflow = "auto";
+        }
+    }, [onChange]);
 
     return (
         <div className="relative">
