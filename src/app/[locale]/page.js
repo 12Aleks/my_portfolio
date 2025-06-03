@@ -65,26 +65,26 @@ export default function Home() {
                 <h1 className="sr-only">{t("title")}</h1>
 
                 <div className="w-full 3xl:w-5/6 4xl:w-3/4 min-h-screen mx-auto flex flex-row items-end
-                 2xl:items-center justify-between px-3 lg:px-6 py-12 sm:py-16 lg:py-20 gap-10">
+                 xl:items-center justify-between px-3 lg:px-6 py-12 sm:py-16 lg:py-20 gap-10">
 
-                    <div className="w-full 2xl:w-1/2 flex">
-                        <div className="block text-center 2xl:text-left w-full lg:w-4/5 3xl:w-5/6
+                    <div className="w-full xl:w-1/2 flex">
+                        <div className="block text-center xl:text-left w-full lg:w-4/5 3xl:w-5/6
                         mx-auto tracking-wide 3xl:tracking-wider">
                             <div className="mb-[2vh] sm:mb-[4vh] md:mb-[6vh] lg:mb-[8vh] 3xl-only:mb-[10vh] 4xl:mb-[12vh]">
                                 <h2 className="font-marker text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl
                                 4xl:text-6xl font-bold mb-2 sm:mb-3 lg:mb-6 tracking-[2px] sm:tracking-[4px]">
                                     Front End Polska
                                 </h2>
-                                <p className="text-sm lg:text-base 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
+                                <p className="text-sm 2xl:text-base 4xl:text-xl leading-relaxed mb-4 lg:mb-1 text-gray-300">
                                     {t("firstSubtitle")}
                                 </p>
-                                <p className="hidden lg:block lg:text-base 4xl:text-xl leading-relaxed lg:mb-6
+                                <p className="text-sm 2xl:text-base 4xl:text-xl leading-relaxed hidden lg:block lg:mb-6
                                  3xl:mb-10 text-gray-300">
                                     {t("secondSubtitle")}
                                 </p>
 
-                                <div className="flex flex-col justify-center 2xl:justify-start md:flex-row
-                                gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm 2xl-only:text-base
+                                <div className="flex flex-col justify-center xl:justify-start md:flex-row
+                                gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm xl-only:text-base
                                 3xl:text-lg px-8 sm:px-3 lg:p-0">
                                     <Link href={`${locale}/projects`} className={buttonBaseClass}>
                                         {t("leftButton")}
@@ -95,7 +95,7 @@ export default function Home() {
                                 </div>
                             </div>
 
-                            <div className="hidden 2xl:flex flex-row gap-10">
+                            <div className="hidden xl:flex flex-row gap-10">
                                 {Links?.map((data) => (
                                     <SocialButton key={data.label} {...data} />
                                 ))}
@@ -103,9 +103,8 @@ export default function Home() {
                         </div>
                     </div>
 
-
                     <div className="absolute w-full left-1/2 top-1/2 transform -translate-x-1/2
-                    -translate-y-1/2 flex justify-between 2xl:hidden">
+                    -translate-y-1/2 flex justify-between xl:hidden">
                         <div className="flex flex-col gap-4 sm:gap-6 m-3">
                             {Links?.slice(0, 2).map((data) => (
                                 <SocialButton key={data.label} {...data} />
@@ -118,8 +117,8 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="w-full 2xl:w-1/2 h-full flex flex-col items-center justify-center
-                     absolute 2xl:relative -z-10">
+                    <div className="w-full xl:w-1/2 h-full flex flex-col items-center justify-center
+                     absolute xl:relative -z-10">
                         <Image
                             src="/samurai.webp"
                             alt="Samurai"
