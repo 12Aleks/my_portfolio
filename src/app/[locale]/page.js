@@ -52,7 +52,7 @@ export default function Home() {
                 )}
             />
             <Image
-                src="/abstract-red-background-wavy-lines.webp"
+                src="/frontpage/abstract-red-background-wavy-lines.webp"
                 alt="background"
                 width={800}
                 height={500}
@@ -120,7 +120,7 @@ export default function Home() {
                     <div className="w-full xl:w-1/2 h-full flex flex-col items-center justify-center
                      absolute xl:relative -z-10">
                         <Image
-                            src="/samurai.webp"
+                            src="/frontpage/samurai.webp"
                             alt="Samurai"
                             width={512}
                             height={927}
@@ -134,7 +134,7 @@ export default function Home() {
                         w-[300px] sm:w-[400px] 2xl-only:w-[500px] 3xl:w-[600px] 4xl:w-[650px] blur-[1.5px]
                         -z-20 brightness-90 me-[6vw] 2xl:ms-[10vw] 3xl:ms-[15vw] mb-[35vh]">
                             <Image
-                                src="/redmoon.webp"
+                                src="/frontpage/redmoon.webp"
                                 alt="Red Moon placeholder"
                                 width={700}
                                 height={700}
