@@ -6,19 +6,22 @@ import dynamic from "next/dynamic";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import { useTranslations } from "next-intl";
-import { MoonModel } from "@/components/model/Moonmodel";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import SocialButton from "@/components/navigation/SocialButton";
 import { Links } from "@/app/data";
 
-const RenderModel = dynamic(() => import("@/components/RenderModel"), { ssr: false });
+const RenderModel = dynamic(() => import("@/components/RenderModel"),
+    { ssr: false });
+const MoonModel = dynamic(() => import("@/components/model/Moonmodel"),
+    { ssr: false });
 
 export default function Home() {
     const [isModelVisible, setIsModelVisible] = useState(false);
     const isNight = useDayNightMode();
     const t = useTranslations("home");
     const locale = useLocale();
+
 
     useEffect(() => {
         if (isModelVisible) {
