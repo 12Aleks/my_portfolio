@@ -10,10 +10,9 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import SocialButton from "@/components/navigation/SocialButton";
 import { Links } from "@/app/data";
+import {MoonModel} from "@/components/model/Moonmodel";
 
 const RenderModel = dynamic(() => import("@/components/RenderModel"),
-    { ssr: false });
-const MoonModel = dynamic(() => import("@/components/model/Moonmodel"),
     { ssr: false });
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
     const t = useTranslations("home");
     const locale = useLocale();
 
-
     useEffect(() => {
         if (isModelVisible) {
             document.body.style.overflow = "auto";
@@ -30,7 +28,8 @@ export default function Home() {
     }, [isModelVisible]);
 
     const buttonBaseClass =
-        "backdrop-blur text-center border border-amber-500 text-amber-500 px-6 py-1.5 sm:py-2 uppercase transition duration-200 hover:bg-amber-600 hover:text-black";
+        "backdrop-blur text-center border border-amber-500 text-amber-500 px-6 py-1.5 sm:py-2 " +
+        "uppercase transition duration-200 hover:bg-amber-600 hover:text-black";
 
     const moonGradientMask = {
         WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
