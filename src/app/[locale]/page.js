@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -22,9 +21,7 @@ export default function Home() {
     const locale = useLocale();
 
     useEffect(() => {
-        if (isModelVisible) {
-            document.body.style.overflow = "auto";
-        }
+        if (isModelVisible) document.body.style.overflow = "auto";
     }, [isModelVisible]);
 
     const buttonBaseClass =
@@ -53,15 +50,6 @@ export default function Home() {
                     isNight ? "opacity-7" : "opacity-10"
                 )}
             />
-            <Image
-                src="/frontpage/abstract-red-background-wavy-lines.webp"
-                alt="background"
-                width={800}
-                height={500}
-                className="hidden 2xl:block fixed left-0 -bottom-5 -z-50 brightness-50 -rotate-2
-                blur-[1px] h-auto 2xl-only:w-[600px] 3xl:w-[800px]"
-            />
-
 
             <section className="relative w-full h-screen overflow-hidden text-white font-sans">
                 <h1 className="sr-only">{t("title")}</h1>
@@ -88,10 +76,10 @@ export default function Home() {
                                 <div className="flex flex-col justify-center xl:justify-start md:flex-row
                                 gap-3 sm:gap-4 text-[12px] tracking-[1px] sm:text-sm xl-only:text-base
                                 3xl:text-lg px-8 sm:px-3 lg:p-0">
-                                    <Link href={`${locale}/projects`} className={buttonBaseClass}>
+                                    <Link href={locale + '/projects'} className={buttonBaseClass}>
                                         {t("leftButton")}
                                     </Link>
-                                    <Link href={`${locale}/contact`} className={buttonBaseClass}>
+                                    <Link href={locale + '/contact'} className={buttonBaseClass}>
                                         {t("rightButton")}
                                     </Link>
                                 </div>
@@ -159,6 +147,15 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <Image
+                src="/frontpage/abstract-red-background-wavy-lines.webp"
+                alt="background"
+                width={800}
+                height={500}
+                className="hidden 2xl:block fixed left-0 -bottom-5 -z-50 brightness-50 -rotate-2
+                blur-[1px] h-auto 2xl-only:w-[600px] 3xl:w-[800px]"
+            />
         </div>
     );
 }

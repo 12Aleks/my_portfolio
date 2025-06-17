@@ -42,8 +42,8 @@ const SocialButton = (data) => {
             >
                  <span className="relative w-[45px] 2xl:w-14 aspect-square transition-al duration-500
                  bg-background/20 backdrop-blur-[6px] p-2 hover:p-2.5 2xl:p-3 2xl:hover:p-3.5
-                 text-red-900 hover:text-amber-600 hover:border-amber-600
-                 border border-1 border-red-900 rounded-full ">
+                 text-red-800 hover:text-amber-600 hover:border-amber-600
+                 border-2 border-red-800 rounded-full ">
                 {getIcon(icon)}
                      <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
                   <span
