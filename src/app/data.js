@@ -130,7 +130,7 @@ export const petProjects = [
         technologies: ["Next", "React", "React Query", "Chart.js","Tailwind CSS", 'Vercel', "Nest", "Heroku"],
         date: "2024-09",
         image: "exchanger.webp",
-        demoLink: "https://exchanger-in4n1ei4h-12aleks-projects.vercel.app/",
+        demoLink: "https://exchanger-rho.vercel.app/",
         git: "https://github.com/12Aleks/exchanger-client"
     },
     {

@@ -157,7 +157,6 @@ export default function Home() {
                             </RenderModel>
                         </div>
                     </div>
-
                 </div>
             </section>
         </div>
