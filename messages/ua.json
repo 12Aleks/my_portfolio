@@ -108,6 +108,10 @@
     }
   },
   "petProjects": {
+    "exchanger": {
+      "name": "Exchanger",
+      "description": "Додаток для перегляду валютних курсів, історії обміну та цін на золото на основі офіційних даних НБП. Розроблений з використанням Next.js, React, Tailwind та Nest.js."
+    },
     "apartments": {
       "name": "Apartments",
       "description": "Веб-платформа для продажу квартир з фільтрацією, розміщенням оголошень та управлінням пропозиціями. Створена з використанням Next.js, React, Prisma та Tailwind."

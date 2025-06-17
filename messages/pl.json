@@ -108,6 +108,10 @@
     }
   },
   "petProjects": {
+    "exchanger": {
+      "name": "Exchanger",
+      "description": "Aplikacja do sprawdzania kursów walut, historii wymiany oraz cen złota na podstawie oficialnych danych NBP. Zbudowana w Next.js, React, Tailwind, Nest.js."
+    },
     "apartments": {
       "name": "Apartamenty",
       "description": "Platforma internetowa do sprzedaży mieszkań z funkcją filtrowania, dodawania ogłoszeń i zarządzania ofertami. Wykonana w Next.js, React, Prisma i Tailwind."

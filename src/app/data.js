@@ -126,15 +126,24 @@ export const workProjects = [
 export const petProjects = [
     {
         id: 1,
+        key: "exchanger",
+        technologies: ["Next", "React", "React Query", "Chart.js","Tailwind CSS", 'Vercel', "Nest", "Heroku"],
+        date: "2024-09",
+        image: "exchanger.webp",
+        demoLink: "https://exchanger-in4n1ei4h-12aleks-projects.vercel.app/",
+        git: "https://github.com/12Aleks/exchanger-client"
+    },
+    {
+        id: 2,
         key: "apartments",
-        technologies: ["Next", "React", "Kinde", "Prisma", "Tailwind CSS", 'Vercel'],
+        technologies: ["Next", "React", "Kinde", "Prisma", "Tailwind CSS", "Superbase", 'Vercel'],
         date: "2024-09",
         image: "applicataioAppartmets.webp",
         demoLink: "https://apartments-pied.vercel.app/",
         git: "https://github.com/12Aleks/apartments"
     },
     {
-        id: 2,
+        id: 3,
         key: "pixem",
         technologies: ["Next", "React", "React Bootstrap", "Redux Toolkit", "SCSS", 'Vercel'],
         date: "2022-08-15",
@@ -143,7 +152,7 @@ export const petProjects = [
         git: "https://github.com/12Aleks/pixem"
     },
     {
-        id: 3,
+        id: 4,
         key: "weather",
         technologies: ["React", "React Bootstrap", "Mobx", "SCSS", 'Vercel'],
         date: "2020-09",
@@ -152,7 +161,7 @@ export const petProjects = [
         git: "https://github.com/12Aleks/Weather-app"
     },
     {
-        id: 4,
+        id: 5,
         key: "departments",
         technologies: ["Vue 2", "Vue-cli", "vuex", "SCSS", "Firebase"],
         date: "2019-09",

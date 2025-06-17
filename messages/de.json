@@ -108,6 +108,10 @@
   },
 
   "petProjects": {
+    "exchanger": {
+      "name": "Exchanger",
+      "description": "Eine Anwendung zur Überprüfung von Wechselkursen, Umtauschhistorie und Goldpreisen basierend auf offiziellen Daten der NBP. Erstellt mit Next.js, React, Tailwind und Nest.js."
+    },
     "apartments": {
       "name": "Apartments",
       "description": "Eine Webplattform für den Verkauf von Wohnungen mit Filterung, Anzeigenschaltung und Angebotsverwaltung. Erstellt mit Next.js, React, Prisma und Tailwind."
