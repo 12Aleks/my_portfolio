@@ -8,10 +8,10 @@ import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
 import GoogleTagManagerScript from "@/components/GoogleTagManagerScript";
 import I18nProvider from "../i18nProvider";
 import {getTranslatedMetadata} from "@/app/[locale]/metadata";
-import Background from "@/components/Background";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-
+const Background = dynamic(() => import("@/components/Background"),
+    { ssr: false })
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"),
     { ssr: false });
 const Sound = dynamic(() => import("@/components/Sound"),

@@ -27,7 +27,7 @@ const ProjectItem = ({ project, index, type }) => {
         <motion.div
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
             className={clsx(
                 index % 2 === 0 ? "xl:flex-row 2xl:flex-row" : "xl:flex-row-reverse 2xl:flex-row-reverse",

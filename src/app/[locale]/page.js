@@ -47,11 +47,13 @@ export default function Home() {
                 sizes="100vw"
                 className={clsx(
                     "fixed object-cover top-0 left-0 w-full max-h-screen -z-10 blur-[1px]",
-                    isNight ? "opacity-7" : "opacity-10"
+                    isNight ? "opacity-5" : "opacity-10"
                 )}
             />
 
-            <section className="relative w-full h-screen overflow-hidden text-white font-sans">
+            <section className="relative w-full h-screen overflow-hidden text-white font-sans"
+                     aria-labelledby="frontpage-title"
+            >
                 <h1 className="sr-only">{t("title")}</h1>
 
                 <div className="w-full 3xl:w-5/6 4xl:w-3/4 min-h-screen mx-auto flex flex-row items-end
@@ -69,7 +71,7 @@ export default function Home() {
                                     {t("firstSubtitle")}
                                 </p>
                                 <p className="text-sm 2xl:text-base 4xl:text-xl leading-relaxed hidden lg:block lg:mb-6
-                                 3xl:mb-10 text-gray-300">
+                                 3xl:mb-10 text-gray-300 ">
                                     {t("secondSubtitle")}
                                 </p>
 
@@ -153,7 +155,7 @@ export default function Home() {
                 alt="background"
                 width={800}
                 height={500}
-                className="hidden 2xl:block fixed left-0 -bottom-5 -z-50 brightness-50 -rotate-2
+                className="hidden 3xl:block fixed left-0 -bottom-5 -z-50 brightness-50 -rotate-2
                 blur-[1px] h-auto 2xl-only:w-[600px] 3xl:w-[800px]"
             />
         </div>
