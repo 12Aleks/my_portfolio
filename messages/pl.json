@@ -130,6 +130,10 @@
     }
   },
   "workProjects": {
+    "stanrad": {
+      "name": "Strona firmowa Stanrad (szkolenia BHP, SEP, UDT, pomiary termowizyjne)",
+      "description": "Stworzyłem prostą stronę firmową opartą na WordPressie z użyciem Bootstrapa, SCSS i JavaScriptu, wdrażając layout zgodny z wymaganiami klienta oraz integrując niezbędne wtyczki."
+    },
     "newTermaheat": {
       "name": "Nowa strona korporacyjna Termaheat (produkty grzewcze)",
       "description": "Odpowiadałem za frontend oraz wybrane funkcjonalności backendowe na początkowym etapie tworzenia strony, opierając się na layoutach z Figmy."

@@ -3,6 +3,14 @@
 export const workProjects = [
     {
         id: 1,
+        key: "stanrad",
+        technologies: ['CMS Wordpress', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML', 'SEO'],
+        date: "2024-08-15",
+        image: 'stanrad_www.webp',
+        demoLink: "https://stanrad.pl/",
+    },
+    {
+        id: 2,
         key: "newTermaheat",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2024-08-15",
@@ -10,7 +18,7 @@ export const workProjects = [
         demoLink: "https://beta.termaheat.pl/",
     },
     {
-        id: 2,
+        id: 3,
         key: "testingApp",
         technologies: ['Next', 'Nest', 'React', 'Mongoose', 'SCSS','React Bootstrap', 'AWS S3', 'Heroku'],
         date: "2023-09",
@@ -19,7 +27,7 @@ export const workProjects = [
         git: ''
     },
     {
-        id: 3,
+        id: 4,
         key: "contactTermaheat",
         technologies: ['CMS Drupal 7', 'Bootstrap', 'JavaScript', 'JQuery', 'SCSS', 'HTML'],
         image: 'oldtermaheat.webp',
@@ -27,7 +35,7 @@ export const workProjects = [
         demoLink: "https://www.termaheat.pl/formularz-kontakowy",
     },
     {
-        id: 4,
+        id: 5,
         key: "termaplay",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Google Maps', 'Figma'],
         date: "2022-10",
@@ -35,7 +43,7 @@ export const workProjects = [
         demoLink: "https://termaplay.pl/pl",
     },
     {
-        id: 5,
+        id: 6,
         key: "termaReh",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Google Maps', 'Figma'],
         date: "2022-10",
@@ -43,7 +51,7 @@ export const workProjects = [
         demoLink: "https://termareh.pl/pl",
     },
     {
-        id: 6,
+        id: 7,
         key: "newTermaMed",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         image: "betatermamed.webp",
@@ -51,7 +59,7 @@ export const workProjects = [
         demoLink: "https://beta9.termamed.pl/",
     },
     {
-        id: 7,
+        id: 8,
         key: "termaServices",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2022-01",
@@ -59,7 +67,7 @@ export const workProjects = [
         demoLink: "https://termaservices.pl/",
     },
     {
-        id: 8,
+        id: 9,
         key: "termaDrilling",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2021-08",
@@ -67,7 +75,7 @@ export const workProjects = [
         demoLink: "https://termadrilling.com/",
     },
     {
-        id: 9,
+        id: 10,
         key: "termaFiber",
         technologies: ['Vue2', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML'],
         date: "2020-05",
@@ -75,7 +83,7 @@ export const workProjects = [
         demoLink: "https://termafiber.pl/pl",
     },
     {
-        id: 10,
+        id: 11,
         key: "termaSmart",
         technologies: ['JavaScript', 'SCSS', 'HTML', 'Bootstrap'],
         date: "2019-08",
@@ -83,7 +91,7 @@ export const workProjects = [
         demoLink: "https://termasmart.pl/",
     },
     {
-        id: 11,
+        id: 12,
         key: "oldTermaMed",
         technologies: ['CMS Drupal 7', 'Bootstrap 4', 'JavaScript', 'SCSS', 'HTML'],
         date: "2019-05",
@@ -91,14 +99,14 @@ export const workProjects = [
         demoLink: "https://termamed.pl/pl",
     },
     {
-        id: 12,
+        id: 13,
         key: "lux2",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-06",
         image: "lux.webp",
         demoLink: "https://www.terma24.pl/lux2",
     }, {
-        id: 13,
+        id: 14,
         key: "ue",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-05",
@@ -106,7 +114,7 @@ export const workProjects = [
         demoLink: "https://www.termagroup.pl/whowearepages/dotacje-unijne",
     },
     {
-        id: 14,
+        id: 15,
         key: "dropShip",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-04",
@@ -114,9 +122,9 @@ export const workProjects = [
         demoLink: "https://en.termaheat.com/uk-drop-ship-accessories",
     },
     {
-        id: 15,
+        id: 16,
         key: "fundacion",
-        technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML'],
+        technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML', "SEO"],
         date: "2017-04",
         image: "pomorska.webp",
         demoLink: "https://bracia-mniejsi.pl/",

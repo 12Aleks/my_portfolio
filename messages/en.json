@@ -130,6 +130,10 @@
     }
   },
   "workProjects": {
+    "stanrad": {
+      "name": "Stanrad Company Website (BHP, SEP, UDT training, thermal imaging inspections)",
+      "description": "I created a simple company website based on WordPress, using Bootstrap, SCSS, and JavaScript. I implemented a layout based on the client's requirements and integrated essential plugins."
+    },
     "newTermaheat": {
       "name": "New corporate website for Termaheat (heating products)",
       "description": "I was responsible for the frontend and selected backend functionalities at the initial stage of website development, based on layouts from Figma."

@@ -130,6 +130,10 @@
     }
   },
   "workProjects": {
+    "stanrad": {
+      "name": "Firmenwebsite von Stanrad (BHP-, SEP-, UDT-Schulungen, Thermografie-Messungen)",
+      "description": "Ich habe eine einfache Firmenwebsite auf Basis von WordPress erstellt, unter Verwendung von Bootstrap, SCSS und JavaScript. Das Layout wurde gemäß den Anforderungen des Kunden umgesetzt und notwendige Plugins wurden integriert."
+    },
     "newTermaheat": {
       "name": "Neue Unternehmenswebsite für Termaheat (Heizprodukte)",
       "description": "Ich war in der Anfangsphase der Website-Entwicklung für das Frontend und ausgewählte Backend-Funktionalitäten verantwortlich und arbeitete dabei auf Grundlage von Layouts aus Figma."
