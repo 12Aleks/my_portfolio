@@ -4,7 +4,7 @@ export const workProjects = [
     {
         id: 1,
         key: "stanrad",
-        technologies: ['CMS Wordpress', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML', 'SEO'],
+        technologies: ['CMS Wordpress', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML', 'SEO', "RWD"],
         date: "2024-08-15",
         image: 'stanrad_www.webp',
         demoLink: "https://stanrad.pl/",
@@ -124,7 +124,7 @@ export const workProjects = [
     {
         id: 16,
         key: "fundacion",
-        technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML', "SEO"],
+        technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML', "SEO", "RWD"],
         date: "2017-04",
         image: "pomorska.webp",
         demoLink: "https://bracia-mniejsi.pl/",
