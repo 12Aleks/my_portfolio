@@ -46,7 +46,8 @@ export default function Home() {
                 fill
                 sizes="100vw"
                 className={clsx(
-                    "fixed object-cover top-0 left-0 w-full max-h-screen -z-10 blur-[1px]",
+                    "fixed object-cover top-0 left-0 w-full max-h-screen -z-10 blur-[1px] " +
+                    "[mask-image:linear-gradient(to_top,transparent_10%,rgba(0,0,0,0.5)_50%,black_80%)]",
                     isNight ? "opacity-5" : "opacity-10"
                 )}
             />

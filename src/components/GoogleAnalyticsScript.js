@@ -1,24 +1,28 @@
 "use client";
-import { useEffect } from "react";
+import Script from "next/script";
 
 export default function GoogleAnalyticsScript() {
-    useEffect(() => {
-        if (typeof window !== "undefined" && localStorage.getItem("cookie_consent") === "granted") {
-            const script = document.createElement("script");
-            script.src = `https://www.googletagmanager.com/gtag/js?id=G-06E4K2RH3H`;
-            script.async = true;
-            document.head.appendChild(script);
+    if (typeof window === "undefined") return null;
 
-            script.onload = () => {
-                window.dataLayer = window.dataLayer || [];
-                window.gtag = function () {
-                    window.dataLayer.push(arguments);
-                };
-                window.gtag("js", new Date());
-                window.gtag("config", "G-06E4K2RH3H");
-            };
-        }
-    }, []);
+    // chack consent
+    if (localStorage.getItem("cookie_consent") !== "granted") {
+        return null;
+    }
 
-    return null;
+    return (
+        <>
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-06E4K2RH3H"
+                strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-06E4K2RH3H');
+        `}
+            </Script>
+        </>
+    );
 }

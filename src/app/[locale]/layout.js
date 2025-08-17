@@ -10,6 +10,8 @@ import I18nProvider from "../i18nProvider";
 import {getTranslatedMetadata} from "@/app/[locale]/metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+
+
 const Background = dynamic(() => import("@/components/Background"),
     { ssr: false })
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"),
@@ -29,8 +31,6 @@ const permanentMarker = Permanent_Marker({
     subsets: ["latin"],
     variable: "--font-permanent-marker",
 });
-
-
 
 export function generateMetadata({ params }) {
     return getTranslatedMetadata(params.locale);

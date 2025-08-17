@@ -1,21 +1,36 @@
-"use client"
-import { useEffect } from "react";
+"use client";
+import Script from "next/script";
 
 export default function GoogleTagManagerScript() {
-    useEffect(() => {
-        if (typeof window !== "undefined" && localStorage.getItem("cookie_consent") === "granted") {
-            // Загружаем Google Tag Manager только если согласие дано
-            const script = document.createElement("script");
-            script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-59ZKV4TH";
-            script.async = true;
-            document.head.appendChild(script);
+    if (typeof window === "undefined") return null;
 
-            // Версия для Noscript
-            const noscript = document.createElement("noscript");
-            noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59ZKV4TH" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
-            document.body.appendChild(noscript);
-        }
-    }, []);
+    if (localStorage.getItem("cookie_consent") !== "granted") {
+        return null;
+    }
 
-    return null;
+    return (
+        <>
+            <Script id="gtm-init" strategy="afterInteractive">
+                {`
+          (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-59ZKV4TH');
+        `}
+            </Script>
+            <noscript>
+                <iframe
+                    src="https://www.googletagmanager.com/ns.html?id=GTM-59ZKV4TH"
+                    height="0"
+                    width="0"
+                    style={{ display: "none", visibility: "hidden" }}
+                ></iframe>
+            </noscript>
+        </>
+    );
 }
