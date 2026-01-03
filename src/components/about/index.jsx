@@ -25,7 +25,7 @@ const AboutBlocks = () => {
 
                 <ItemLayout className="col-span-12 md:col-span-4 flex-col items-center px-0 py-0 sm:px-0 sm:py-0 md:px-1 md:py-1 lg:px-3 lg:py-3">
                     <img
-                        src={`https://github-readme-stats.vercel.app/api/top-langs?username=12Aleks&show_icons=true&hide=php&theme=transparent&hide_border=true&title_color=d97706&text_color=ffffff&icon_color=b45309&text_bold=false&locale=${local !== 'ua'? local : 'en'}`}
+                        src={`https://github-readme-stats.zcy.dev/api/top-langs?username=12Aleks&show_icons=true&hide=php&theme=transparent&hide_border=true&title_color=d97706&text_color=ffffff&icon_color=b45309&text_bold=false&locale=${local !== 'ua'? local : 'en'}`}
                         alt="github status"
                         loading="lazy"
                         className="w-full h-auto"
@@ -36,7 +36,7 @@ const AboutBlocks = () => {
 
                 <ItemLayout className="col-span-12 md:col-span-8 flex-col items-center px-0 py-3 sm:px-1 sm:py-3 md:px-1 md:py-3 lg:px-2 lg:py-3">
                     <img
-                        src={`https://github-readme-stats.vercel.app/api?username=12Aleks&show_icons=true&theme=transparent&hide_border=true&title_color=d97706&text_color=ffffff&icon_color=b45309&text_bold=false&locale=${local !== 'ua'? local : 'en'}`}
+                        src={`https://github-readme-stats.zcy.dev/api?username=12Aleks&show_icons=true&theme=transparent&hide_border=true&title_color=d97706&text_color=ffffff&icon_color=b45309&text_bold=false&locale=${local !== 'ua'? local : 'en'}`}
                         alt="github status"
                         loading="lazy"
                         className="w-full h-auto"
@@ -57,7 +57,7 @@ const AboutBlocks = () => {
                 <ItemLayout className="col-span-12 flex-col px-5 py-4 sm:px-5 sm:py-4 md:px-6 md:py-5 lg:px-10 lg:py-7">
                     <h2 className="text-white text-2xl mb-2 sm:mb-3">{t('four.title')}:</h2>
                     <img
-                        src="https://skillicons.dev/icons?i=js,ts,jquery,nextjs,nestjs,react,redux,threejs,html,css,sass,tailwind,bootstrap,prisma,postman,npm,heroku,vercel,github,webstorm,windows)](https://skillicons.dev"
+                        src="https://skillicons.dev/icons?i=js,ts,jquery,nextjs,react,redux,nestjs,mongodb,postgres,postman,html,css,sass,tailwind,bootstrap,npm,heroku,vercel,aws,github,gitlab,docker,figma,webstorm,windows,wordpress)](https://skillicons.dev"
                         alt="github status"
                         loading="lazy"
                         className="w-full h-auto"

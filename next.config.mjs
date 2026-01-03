@@ -66,6 +66,7 @@ const nextConfig = {
     },
     images: {
         domains: ['www.codewars.com'],
+
     },
 };
 
