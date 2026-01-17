@@ -55,7 +55,7 @@ export default function Navbar() {
 
                 <div className="hidden md:flex space-x-6 mr-3 items-center">
                     {navLinks.map(({ path, key }) => (
-                        <Link key={key} href={`/${locale}${path}`} className={`transition-colors duration-200 text-sm 2xl:text-base tracking-widest ${pathname === `/${locale}${path}` ? "text-amber-500" : "hover:text-amber-500"}`}>
+                        <Link key={key} href={`/${locale}${path}`} className={`transition-colors uppercase duration-200 text-sm 2xl:text-base tracking-widest ${pathname === `/${locale}${path}` ? "text-amber-500" : "hover:text-amber-500"}`}>
                             {t(key)}
                         </Link>
                     ))}
@@ -68,7 +68,7 @@ export default function Navbar() {
             <div className={`fixed left-0 right-0 bottom-0 top-[74px] transform ${isOpen ? "translate-x-0 z-50" : "-translate-x-full"} transition-transform duration-300 ease-in-out`}>
                 <div className="flex flex-col items-center justify-center h-auto space-y-6 sm:space-y-8 bg-[#333]/95 backdrop-blur-[10px] rounded-lg p-8 z-50">
                     {navLinks.map(({ path, key }) => (
-                        <Link key={key} href={`/${locale}${path}`} onClick={() => setIsOpen(false)} className={`transition-colors duration-200 tracking-widest ${pathname === `/${locale}${path}` ? "text-gray-400" : "hover:text-gray-400"}`}>
+                        <Link key={key} href={`/${locale}${path}`} onClick={() => setIsOpen(false)} className={`uppercase transition-colors duration-200 tracking-widest ${pathname === `/${locale}${path}` ? "text-gray-400" : "hover:text-gray-400"}`}>
                             {t(key)}
                         </Link>
                     ))}
