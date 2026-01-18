@@ -8,6 +8,7 @@ import clsx from "clsx";
 import bg from '../../../../public/background/japan_castel.webp';
 import {useTranslations} from "next-intl";
 
+
 const AboutPage = () => {
     const isNight = useDayNightMode();
     const t = useTranslations("about");

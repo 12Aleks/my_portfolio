@@ -138,6 +138,10 @@
       "name": "New corporate website for Termaheat (heating products)",
       "description": "I was responsible for the frontend and selected backend functionalities at the initial stage of website development, based on layouts from Figma."
     },
+    "mido": {
+      "name": "Mido Corporate Website",
+      "description": "Performed optimization and rebranding of the existing corporate website, including fixing CSS-related issues, enhancing responsive design (RWD), and improving SEO metadata."
+    },
     "testingApp": {
       "name": "Web application for testing and knowledge assessment",
       "description": "I designed and implemented a knowledge assessment system after courses, allowing test creation, result analysis, and report generation for Polkar."

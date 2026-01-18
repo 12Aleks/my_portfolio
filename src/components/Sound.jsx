@@ -25,7 +25,7 @@ const Sound = () => {
     };
 
     return (
-        <div className="fixed top-20 right-3 xs:right-4 xl:right-7 2xl:right-7 3xl:right-7 z-30 group">
+        <div className="fixed top-20 right-3 xs:right-4 xl:right-7 z-30 group">
             <audio ref={audioRef} loop>
                 <source src={"/audio/Ancient Traditional Japanese Music - Mountain Pass.mp3"} type="audio/mpeg" />
                 Twoja przeglądarka nie obsługuje elementu audio!
@@ -36,18 +36,26 @@ const Sound = () => {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 1 }}
-                className="relative w-11 h-11 sm:w-11 sm:h-11 3xl:w-14 3xl:h-14 p-2 sm:p-2 3xl:p-3 transition-all
-                 bg-background/20 backdrop-blur-[6px] rounded-full
-                 duration-500 hover:p-3.5 hover:text-amber-600
-                 group-hover:pause
-                   border-1 border-neutral-400 text-neutral-400 hover:border-amber-600 border"
-                aria-label="Sound control button"
+                whileTap={{ scale: 0.9 }}
+                aria-pressed={isPlaying}
+                aria-label={isPlaying ? "Mute sound" : "Enable sound"}
+                className="relative
+                 w-11 h-11 3xl:w-14 3xl:h-14
+                 p-2 3xl:p-3
+                 rounded-full
+                 bg-background/20 backdrop-blur-md
+                 transition-all duration-300
+                 hover:p-3.5
+                 cursor-pointer
+                 border border-neutral-400
+                 hover:border-amber-600
+                 [&_svg]:text-neutral-400
+                 [&_svg]:group-hover:text-amber-600"
             >
-                {isPlaying ? (
-                    <Volume2 className="w-full h-full text-neutral-400 hover:text-amber-600 group-hover:text-amber-600" strokeWidth={1.5} />
-                ) : (
-                    <VolumeX className="w-full h-full text-neutral-400 hover:text-amber-600 group-hover:text-amber-600" strokeWidth={1.5} />
-                )}
+                {isPlaying ?
+                    <Volume2 className="w-full h-full" strokeWidth={1.5}/> :
+                    <VolumeX className="w-full h-full" strokeWidth={1.5}/>
+                }
             </motion.button>
         </div>
     );

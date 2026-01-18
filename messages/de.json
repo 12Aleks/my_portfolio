@@ -138,6 +138,10 @@
       "name": "Neue Unternehmenswebsite für Termaheat (Heizprodukte)",
       "description": "Ich war in der Anfangsphase der Website-Entwicklung für das Frontend und ausgewählte Backend-Funktionalitäten verantwortlich und arbeitete dabei auf Grundlage von Layouts aus Figma."
     },
+    "mido": {
+      "name": "Unternehmenswebsite Mido",
+      "description": "Durchführung der Optimierung und des Rebrandings der bestehenden Unternehmenswebsite, einschließlich der Behebung von CSS-bezogenen Fehlern, der Verbesserung der responsiven Darstellung (RWD) sowie der Optimierung der SEO-Metadaten."
+    },
     "testingApp": {
       "name": "Webanwendung zur Prüfung und Wissensbewertung",
       "description": "Ich habe ein System zur Wissensbewertung nach Kursen entworfen und implementiert, das das Erstellen von Tests, die Analyse von Ergebnissen und die Erstellung von Berichten für Polkar ermöglicht."

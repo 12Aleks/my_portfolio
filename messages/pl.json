@@ -138,6 +138,10 @@
       "name": "Nowa strona korporacyjna Termaheat (produkty grzewcze)",
       "description": "Odpowiadałem za frontend oraz wybrane funkcjonalności backendowe na początkowym etapie tworzenia strony, opierając się na layoutach z Figmy."
     },
+    "mido": {
+      "name": "Strona korporacyjna Mido",
+      "description": "Przeprowadzenie optymalizacji i rebrandingu istniejącej strony www, korekta błędów w stylach SCSS, poprawa responsywności (RWD) oraz optymalizacja metadanych SEO."
+    },
     "testingApp": {
       "name": "Aplikacja webowa do testowania i oceny wiedzy",
       "description": "Zaprojektowałem i wdrożyłem system oceny wiedzy po kursach, umożliwiający tworzenie testów, analizowanie wyników oraz generowanie raportów dla firmy Polkar."

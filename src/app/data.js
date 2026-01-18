@@ -19,6 +19,14 @@ export const workProjects = [
     },
     {
         id: 3,
+        key: "mido",
+        technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'SCSS', 'HTML', 'Figma'],
+        date: "2024-08-15",
+        image: 'mido.webp',
+        demoLink: "https://mido.net.pl/",
+    },
+    {
+        id: 4,
         key: "testingApp",
         technologies: ['Next', 'Nest', 'React', 'Mongoose', 'SCSS','React Bootstrap', 'AWS S3', 'Heroku'],
         date: "2023-09",
@@ -27,7 +35,7 @@ export const workProjects = [
         git: ''
     },
     {
-        id: 4,
+        id: 5,
         key: "contactTermaheat",
         technologies: ['CMS Drupal 7', 'Bootstrap', 'JavaScript', 'JQuery', 'SCSS', 'HTML'],
         image: 'oldtermaheat.webp',
@@ -35,7 +43,7 @@ export const workProjects = [
         demoLink: "https://www.termaheat.pl/formularz-kontakowy",
     },
     {
-        id: 5,
+        id: 6,
         key: "termaplay",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Google Maps', 'Figma'],
         date: "2022-10",
@@ -43,7 +51,7 @@ export const workProjects = [
         demoLink: "https://termaplay.pl/pl",
     },
     {
-        id: 6,
+        id: 7,
         key: "termaReh",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Google Maps', 'Figma'],
         date: "2022-10",
@@ -51,7 +59,7 @@ export const workProjects = [
         demoLink: "https://termareh.pl/pl",
     },
     {
-        id: 7,
+        id: 8,
         key: "newTermaMed",
         technologies: ['CMS Drupal 9', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         image: "betatermamed.webp",
@@ -59,7 +67,7 @@ export const workProjects = [
         demoLink: "https://beta9.termamed.pl/",
     },
     {
-        id: 8,
+        id: 9,
         key: "termaServices",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2022-01",
@@ -67,7 +75,7 @@ export const workProjects = [
         demoLink: "https://termaservices.pl/",
     },
     {
-        id: 9,
+        id: 10,
         key: "termaDrilling",
         technologies: ['CMS Drupal 10', 'Bootstrap', 'Twig', 'JavaScript', 'SCSS', 'HTML', 'Figma'],
         date: "2021-08",
@@ -75,7 +83,7 @@ export const workProjects = [
         demoLink: "https://termadrilling.com/",
     },
     {
-        id: 10,
+        id: 11,
         key: "termaFiber",
         technologies: ['Vue2', 'Bootstrap', 'JavaScript', 'SCSS', 'HTML'],
         date: "2020-05",
@@ -83,7 +91,7 @@ export const workProjects = [
         demoLink: "https://termafiber.pl/pl",
     },
     {
-        id: 11,
+        id: 12,
         key: "termaSmart",
         technologies: ['JavaScript', 'SCSS', 'HTML', 'Bootstrap'],
         date: "2019-08",
@@ -91,7 +99,7 @@ export const workProjects = [
         demoLink: "https://termasmart.pl/",
     },
     {
-        id: 12,
+        id: 13,
         key: "oldTermaMed",
         technologies: ['CMS Drupal 7', 'Bootstrap 4', 'JavaScript', 'SCSS', 'HTML'],
         date: "2019-05",
@@ -99,14 +107,14 @@ export const workProjects = [
         demoLink: "https://termamed.pl/pl",
     },
     {
-        id: 13,
+        id: 14,
         key: "lux2",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-06",
         image: "lux.webp",
         demoLink: "https://www.terma24.pl/lux2",
     }, {
-        id: 14,
+        id: 15,
         key: "ue",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-05",
@@ -114,7 +122,7 @@ export const workProjects = [
         demoLink: "https://www.termagroup.pl/whowearepages/dotacje-unijne",
     },
     {
-        id: 15,
+        id: 16,
         key: "dropShip",
         technologies: ['Bootstrap 4', 'SCSS', 'HTML'],
         date: "2018-04",
@@ -122,7 +130,7 @@ export const workProjects = [
         demoLink: "https://en.termaheat.com/uk-drop-ship-accessories",
     },
     {
-        id: 16,
+        id: 17,
         key: "fundacion",
         technologies: ['WordPress', 'Bootstrap', 'SCSS', 'HTML', "SEO", "RWD"],
         date: "2017-04",
