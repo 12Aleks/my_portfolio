@@ -135,9 +135,9 @@ const FormComponent = () => {
                     type="submit"
                     disabled={isSubmitting}
                     value={isSubmitting ? `${t('statusStart')}...` : `${t('statusEnd')}`}
-                    className={`tracking-[1px] sm:text-sm cursor-pointer text-center border border-amber-500 text-amber-500
-                     px-6 py-2 uppercase hover:text-black transition duration-200 ${
-                        isSubmitting ? "bg-gray-400 cursor-not-allowed" : "hover:bg-amber-600"
+                    className={`rounded-sm tracking-[1px] sm:text-sm cursor-pointer text-center border border-amber-600 bg-amber-500 text-[#272728]
+                     px-6 py-2 uppercase hover:text-amber-600 transition duration-200 ${
+                        isSubmitting ? "bg-gray-400 cursor-not-allowed" : "hover:bg-[#272728] "
                     }`}
                 />
             </motion.form>

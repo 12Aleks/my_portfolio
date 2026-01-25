@@ -3,7 +3,7 @@ import Image from "next/image";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
-import bg from '../../../../public/background/japan_castel3.webp'
+import bg from '../../../../public/background/japan_castle_3.webp'
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import dynamic from "next/dynamic";

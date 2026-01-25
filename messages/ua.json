@@ -61,7 +61,16 @@
     "firstSubtitle": "Сучасні, швидкі та адаптивні вебсайти та вебзастосунки.",
     "secondSubtitle": "Спеціалізація: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.",
     "leftButton": "Переглянути проєкти",
-    "rightButton": "Розпочати співпрацю"
+    "rightButton": "Розпочати співпрацю",
+    "firstBlockTitle": "Сучасні технології",
+    "firstBlockSubTitle": "Next.js, React",
+    "firstBlockDescription": "Я створюю масштабовані та повторно використовувані інтерфейси на основі компонентів React.",
+    "secondBlockTitle": "Швидкість та SEO",
+    "secondBlockSubTitle": "Інтерактивний UI",
+    "secondBlockDescription": "Додатки, оптимізовані для SEO, продуктивності та сучасних веб-стандартів.",
+    "thirdBlockTitle": "Адаптивний дизайн",
+    "thirdBlockSubTitle": "Tailwind CSS, Bootstrap",
+    "thirdBlockDescription": "Сучасний, послідовний UI, створений за підходом utility-first."
   },
   "contact": {
     "title": "Контакт",

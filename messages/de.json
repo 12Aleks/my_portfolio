@@ -60,7 +60,16 @@
     "firstSubtitle": "Moderne, schnelle und responsive Websites und Webanwendungen.",
     "secondSubtitle": "Spezialisierung: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.",
     "leftButton": "Projekte ansehen",
-    "rightButton": "Zusammenarbeit starten"
+    "rightButton": "Zusammenarbeit starten",
+    "firstBlockTitle": "Moderne Technologien",
+    "firstBlockSubTitle": "Next.js, React",
+    "firstBlockDescription": "Ich erstelle skalierbare und wiederverwendbare Schnittstellen auf Basis von React-Komponenten.",
+    "secondBlockTitle": "Geschwindigkeit & SEO",
+    "secondBlockSubTitle": "Interaktive UI",
+    "secondBlockDescription": "Anwendungen optimiert für SEO, Leistung und moderne Webstandards.",
+    "thirdBlockTitle": "Responsives Design",
+    "thirdBlockSubTitle": "Tailwind CSS, Bootstrap",
+    "thirdBlockDescription": "Modernes, konsistentes UI, erstellt mit einem Utility-First-Ansatz."
   },
   "contact": {
     "title": "Kontakt",

@@ -56,12 +56,41 @@
       "description": "Zastrzegamy sobie prawo do aktualizacji niniejszej polityki. Wszelkie zmiany będą publikowane na tej stronie, w tym w odniesieniu do wykorzystywania narzędzi analitycznych takich jak Google Analytics."
     }
   },
+  "technologies": [
+    {
+      "key": "technology",
+      "title": "Nowoczesne technologie",
+      "subtitle": "Next.js, React",
+      "description": "Tworzę skalowalne i reużywalne interfejsy oparte na komponentach React."
+    },
+    {
+      "key": "speed",
+      "title": "Szybkość i SEO",
+      "subtitle": "Interaktywny UI",
+      "description": "Aplikacje zoptymalizowane pod SEO, wydajność i nowoczesne standardy webowe."
+    },
+    {
+      "key": "responsive",
+      "title": "Responsywny design",
+      "subtitle": "Tailwind CSS, Bootstrap",
+      "description": "Nowoczesny, spójny UI tworzony w podejściu utility-first."
+    }
+  ],
   "home": {
     "title": "Cześć! Jestem Oleksii, Front End Developerem z Polski, obecnie poszukuję pełnoetatowej pracy zdalnej. Większość projektów w moim portfolio to projekty zbudowane na CMS Drupal, ale mam także komercyjne doświadczenie w tworzeniu aplikacji webowych z użyciem Next.js i React.",
     "firstSubtitle": "Nowoczesne, szybkie i responsywne strony oraz aplikacje internetowe.",
     "secondSubtitle": "Specjalizacja: React, Next.js, TypeScript, CMS Drupal, Tailwind CSS, Bootstrap.",
     "leftButton": "Zobacz realizacje",
-    "rightButton": "Podejmij współpracę"
+    "rightButton": "Podejmij współpracę",
+    "firstBlockTitle": "Nowoczesne technologie",
+    "firstBlockSubTitle": "Next.js, React",
+    "firstBlockDescription": "Tworzę skalowalne i reużywalne interfejsy oparte na komponentach React.",
+    "secondBlockTitle": "Szybkość i SEO",
+    "secondBlockSubTitle": "Interaktywny UI",
+    "secondBlockDescription": "Aplikacje zoptymalizowane pod SEO, wydajność i nowoczesne standardy webowe.",
+    "thirdBlockTitle": "Responsywny design",
+    "thirdBlockSubTitle": "Tailwind CSS, Bootstrap",
+    "thirdBlockDescription": "Nowoczesny, spójny UI tworzony w podejściu utility-first."
   },
   "contact": {
     "title": "Kontakt",

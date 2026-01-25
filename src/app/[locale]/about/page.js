@@ -5,7 +5,7 @@ import RenderModel from "@/components/RenderModel";
 import {BambooModel} from "@/components/model/BambooModel";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import clsx from "clsx";
-import bg from '../../../../public/background/japan_castel.webp';
+import bg from '../../../../public/background/japan_castle.webp';
 import {useTranslations} from "next-intl";
 
 

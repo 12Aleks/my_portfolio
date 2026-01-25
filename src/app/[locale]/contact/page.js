@@ -6,7 +6,7 @@ import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import {BambooModel} from "@/components/model/BambooModel";
 import {PineModel} from "@/components/model/PineModel";
-import bg from '../../../../public/background/japan_castel2_gradient.webp';
+import bg from '../../../../public/background/japan_castle_1.webp';
 import {useTranslations} from "next-intl";
 
 const ContactPage = () => {
