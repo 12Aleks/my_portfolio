@@ -65,8 +65,13 @@ const nextConfig = {
         ];
     },
     images: {
-        domains: ['www.codewars.com'],
-
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'www.codewars.com',
+                pathname: '/**',
+            }
+        ],
     },
 };
 

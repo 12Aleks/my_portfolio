@@ -1,12 +1,23 @@
 "use client";
+import { useState, useEffect } from "react";
 import Script from "next/script";
 
 export default function GoogleTagManagerScript() {
-    if (typeof window === "undefined") return null;
+    const [hasConsent, setHasConsent] = useState(false);
 
-    if (localStorage.getItem("cookie_consent") !== "granted") {
-        return null;
-    }
+
+    useEffect(() => {
+        const consent = localStorage.getItem("cookie_consent") === "granted";
+        setHasConsent(consent);
+    }, []);
+
+    if (!hasConsent) return null;
+
+    // if (typeof window === "undefined") return null;
+    //
+    // if (localStorage.getItem("cookie_consent") !== "granted") {
+    //     return null;
+    // }
 
     return (
         <>

@@ -7,7 +7,7 @@ import useDayNightMode from "@/app/customHook/useDayNightMode";
 import SocialButton from "@/components/navigation/SocialButton";
 import { Links } from "@/app/data";
 import {MoonModel} from "@/components/model/Moonmodel";
-import MainContent from "@/app/[locale]/MainContent";
+import MainContent from "@/app/[locale]/mainContent";
 
 const RenderModel = dynamic(() => import("@/components/RenderModel"),
     { ssr: false });
@@ -75,6 +75,7 @@ export default function Home() {
                             alt="Samurai"
                             width={512}
                             height={927}
+                            priority
                             className="w-full h-auto max-h-screen max-w-[10rem] sm:max-w-[16rem]
                             2xl-only:max-w-[22rem] 3xl-only:max-w-[30rem] 4xl:max-w-lg
                             -z-10 brightness-75 blur-[.3px]"
@@ -110,12 +111,22 @@ export default function Home() {
             </section>
 
             <Image
-                src="/frontpage/abstract-red-background-wavy-lines.webp"
+                src="/frontpage/abstract-red-background-left.webp"
                 alt="background"
                 width={800}
                 height={500}
-                className="hidden 3xl:block fixed left-0 -bottom-5 -z-50 brightness-50 -rotate-2
-                blur-[1px] h-auto 2xl-only:w-[600px] 3xl:w-[800px]"
+                loading="lazy"
+                className="hidden 3xl:block fixed left-0 -bottom-5 z-[-100] brightness-50
+                blur-[1px] h-auto w-[550px] 4xl:w-[800px]"
+            />
+            <Image
+                src="/frontpage/abstract-red-background-right.webp"
+                alt="background"
+                loading="lazy"
+                width={800}
+                height={500}
+                className="hidden 3xl:block fixed right-0 -bottom-5 z-[-100] brightness-50
+                blur-[1px] h-auto w-[550px] 4xl:w-[800px]"
             />
         </div>
     );
