@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import {useState, useEffect, useMemo} from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import clsx from "clsx";
@@ -7,7 +7,7 @@ import useDayNightMode from "@/app/customHook/useDayNightMode";
 import SocialButton from "@/components/navigation/SocialButton";
 import { Links } from "@/app/data";
 import {MoonModel} from "@/components/model/Moonmodel";
-import MainContent from "@/app/[locale]/mainContent";
+import MainContent from "@/components/home/mainContent";
 
 const RenderModel = dynamic(() => import("@/components/RenderModel"),
     { ssr: false });
@@ -17,19 +17,34 @@ export default function Home() {
     const isNight = useDayNightMode();
 
 
+
     useEffect(() => {
-        if (isModelVisible) document.body.style.overflow = "auto";
+        const prevOverflow = document.body.style.overflow;
+
+        document.body.style.overflow = isModelVisible ? "auto" : "hidden";
+
+        return () => {
+            document.body.style.overflow = prevOverflow;
+        };
     }, [isModelVisible]);
 
 
-    const moonGradientMask = {
-        WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-        maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
-        WebkitMaskRepeat: "no-repeat",
-        maskRepeat: "no-repeat",
-        WebkitMaskSize: "100% 100%",
-        maskSize: "100% 100%",
-    };
+    const moonGradientMask = useMemo(
+        () => ({
+            WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+            maskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskSize: "100% 100%",
+            maskSize: "100% 100%",
+        }),
+        []
+    );
+
+    const leftLinks = useMemo(() => Links?.slice(0, 2) ?? [], []);
+    const rightLinks = useMemo(() => Links?.slice(2, 4) ?? [], []);
 
     return (
         <div className="relative w-full max-h-screen flex flex-col items-center justify-center overflow-hidden">
@@ -57,12 +72,12 @@ export default function Home() {
                     <div className="absolute w-full left-1/2 top-1/2 transform -translate-x-1/2
                     -translate-y-1/2 flex justify-between xl:hidden">
                         <div className="flex flex-col gap-4 sm:gap-6 m-3">
-                            {Links?.slice(0, 2).map((data) => (
+                            {leftLinks.map((data) => (
                                 <SocialButton key={data.label} {...data} />
                             ))}
                         </div>
                         <div className="flex flex-col gap-4 sm:gap-6 m-3">
-                            {Links?.slice(2, 4).map((data) => (
+                            {rightLinks.map((data) => (
                                 <SocialButton key={data.label} {...data} />
                             ))}
                         </div>
@@ -73,8 +88,8 @@ export default function Home() {
                         <Image
                             src="/frontpage/samurai_ronin_1.webp"
                             alt="Samurai"
-                            width={512}
-                            height={927}
+                            width={520}
+                            height={930}
                             priority
                             className="w-full h-auto max-h-screen max-w-[10rem] sm:max-w-[16rem]
                             2xl-only:max-w-[22rem] 3xl-only:max-w-[30rem] 4xl:max-w-lg

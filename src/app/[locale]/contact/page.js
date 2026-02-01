@@ -1,17 +1,43 @@
 "use client";
 import Image from "next/image";
 import FormComponent from "@/components/contact/FormComponent";
-import RenderModel from "@/components/RenderModel";
+// import RenderModel from "@/components/RenderModel";
 import clsx from "clsx";
 import useDayNightMode from "@/app/customHook/useDayNightMode";
 import {BambooModel} from "@/components/model/BambooModel";
 import {PineModel} from "@/components/model/PineModel";
 import bg from '../../../../public/background/japan_castle_1.webp';
 import {useTranslations} from "next-intl";
+import {useMemo} from "react";
+import dynamic from "next/dynamic";
+
+const RenderModel = dynamic(() => import("@/components/RenderModel"), {ssr: false});
 
 const ContactPage = () => {
     const isNight = useDayNightMode();
     const t = useTranslations("contact");
+
+    const bambooConfig = useMemo(
+        () => ({
+            floatAmplitude: 0.01,
+            floatSpeed: 0.4,
+            swayAmplitude: 0.004,
+            swaySpeed: 0.5,
+        }),
+        []
+    );
+
+    const pineConfig = useMemo(
+        () => ({
+            floatAmplitude: 0.01,
+            floatSpeed: 0.56,
+            swayAmplitude: 0.005,
+            swaySpeed: 0.5,
+            rotateY: 0,
+            light: 1,
+        }),
+        []
+    );
 
     return (
         <div className="flex min-h-screen h-full w-full flex-col items-center justify-center px-8 xs:px-16 lg:px-32 py-20 relative">
@@ -31,12 +57,7 @@ const ContactPage = () => {
             {/* Первая 3D-модель (Bamboo) */}
             <div className="fixed hidden sm:hidden md:block md:top-80 lg:top-0 w-full -left-[42vw] h-4/5 sm:h-4/5 md:h-4/5 lg:h-screen -z-50">
                 <RenderModel light="night">
-                    <BambooModel config={{
-                        floatAmplitude: 0.01,
-                        floatSpeed: 0.4,
-                        swayAmplitude: 0.004,
-                        swaySpeed: 0.5,
-                    }} />
+                    <BambooModel config={bambooConfig} />
                 </RenderModel>
             </div>
 
@@ -53,14 +74,7 @@ const ContactPage = () => {
             {/* Вторая 3D-модель (Pine) */}
             <div className="w-full fixed top-36 sm:top-30 md:top-0 lg:top-0 left-[5vw] sm:left-[10vw] md:left-[42vw] lg:left-[42vw] h-[85vh] lg:h-screen -z-30">
                 <RenderModel light="night">
-                    <PineModel config={{
-                        floatAmplitude: 0.01,
-                        floatSpeed: 0.56,
-                        swayAmplitude: 0.005,
-                        swaySpeed: 0.5,
-                        rotateY: 0,
-                        light: 1
-                    }} />
+                    <PineModel config={pineConfig} />
                 </RenderModel>
             </div>
         </div>

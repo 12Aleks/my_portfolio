@@ -8,10 +8,10 @@ import useDelayedRender from "@/app/customHook/useDelayedRender";
 const RenderModel = ({children, className, light}) => {
     const isLoaded = useDelayedRender(500);
 
-
-
     return (
         <Canvas
+            dpr={[1, 1.5]}
+            gl={{ antialias: true, powerPreference: "high-performance" }}
             className={clsx(
                 "w-screen h-screen -z-10 relative transition-opacity duration-1000",
                 className,
