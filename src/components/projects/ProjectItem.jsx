@@ -16,12 +16,12 @@ const ProjectItem = ({ project, index, type }) => {
         description: project.key ? t(`${project.key}.description`, { fallback: project.description }) : project.description
     };
 
-    function getDate(date) {
-        return new Date(date).toLocaleDateString(locale, {
-            month: "long",
-            year: "numeric"
-        });
-    }
+    // function getDate(date) {
+    //     return new Date(date).toLocaleDateString(locale, {
+    //         month: "long",
+    //         year: "numeric"
+    //     });
+    // }
 
     return (
         <motion.div
@@ -31,19 +31,24 @@ const ProjectItem = ({ project, index, type }) => {
             viewport={{ once: true }}
             className={clsx(
                 index % 2 === 0 ? "xl:flex-row 2xl:flex-row" : "xl:flex-row-reverse 2xl:flex-row-reverse",
-                "flex flex-col text-white sm:flex-col md:flex-col lg:flex-col items-center justify-between relative rounded-lg w-full p-3 sm:p-3 md:p-5 lg:p-5 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
+                "group flex flex-col text-white sm:flex-col md:flex-col lg:flex-col items-center justify-between relative rounded-sm w-full p-3 sm:p-3 md:p-5 lg:p-5 transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600/80"
             )}
         >
-            <p className="pb-3 ml-auto block lg:block xl:hidden font-light text-sm">
+            <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
+                duration-300 bg-gradient-to-b from-amber-500/10 via-transparent to-transparent"
+                />
+
+            {/*<p className="pb-3 ml-auto block lg:block xl:hidden font-light text-sm">*/}
                 {/*{getDate(translatedProject.date)}*/}
-            </p>
+            {/*</p>*/}
 
             <Image
                 src={`/projects/${translatedProject.image}`}
                 alt={translatedProject.name}
                 width={320}
                 height={220}
-                className="rounded-md h-auto w-full sm:h-auto sm:w-full lg:w-full xl:w-auto md:max-w-full lg:max-w-full xl:max-w-[300px] 3xl:max-w-[320px] mb-2 xl:mb-0"
+                className="rounded-sm h-auto w-full sm:h-auto sm:w-full lg:w-full xl:w-auto md:max-w-full lg:max-w-full xl:max-w-[300px] 3xl:max-w-[320px] mb-2 xl:mb-0"
                 loading="lazy"
             />
 
@@ -63,7 +68,9 @@ const ProjectItem = ({ project, index, type }) => {
                     {translatedProject.technologies.map((tech) => (
                         <span
                             key={tech}
-                            className="inset-0 bg-gray-700/35 backdrop-blur-md whitespace-nowrap transition-all duration-500 text-amber-500 text-sm hover:text-amber-600 opacity-80 px-2 py-0.5 rounded-lg border border-amber-500 hover:border-amber-600"
+                            className="inset-0 bg-gray-700/35 backdrop-blur-md whitespace-nowrap transition-all
+                            duration-500 text-amber-500 text-sm hover:text-amber-600 opacity-80 px-2 py-0.5 rounded-sm
+                            border border-amber-500 hover:border-amber-600"
                         >
                             {tech}
                         </span>
@@ -75,7 +82,7 @@ const ProjectItem = ({ project, index, type }) => {
                         <Link
                             href={translatedProject.demoLink}
                             target="_blank"
-                            className="px-2 py-0.5 bg-white rounded-lg mr-2 text-gray-500 hover:text-gray-700"
+                            className="px-2 py-0.5 bg-white rounded-sm mr-2 text-gray-500 hover:text-gray-700"
                         >
                             Live
                         </Link>
@@ -85,7 +92,7 @@ const ProjectItem = ({ project, index, type }) => {
                         <Link
                             href={translatedProject.git}
                             target="_blank"
-                            className="px-2 py-0.5 bg-white rounded-lg text-gray-500 hover:text-gray-700"
+                            className="px-2 py-0.5 bg-white rounded-sm text-gray-500 hover:text-gray-700"
                         >
                             Code
                         </Link>
