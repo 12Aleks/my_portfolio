@@ -35,7 +35,7 @@ const ProjectItem = ({ project, index, type }) => {
             )}
         >
             <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
+                className="absolute -z-10 inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                 duration-300 bg-gradient-to-b from-amber-500/10 via-transparent to-transparent"
                 />
 
@@ -92,7 +92,7 @@ const ProjectItem = ({ project, index, type }) => {
                         <Link
                             href={translatedProject.git}
                             target="_blank"
-                            className="px-2 py-0.5 bg-white rounded-sm text-gray-500 hover:text-gray-700 "
+                            className="px-2 py-0.5 bg-white rounded-sm text-gray-500 hover:text-gray-700"
                         >
                             Code
                         </Link>
