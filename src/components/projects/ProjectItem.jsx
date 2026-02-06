@@ -82,7 +82,7 @@ const ProjectItem = ({ project, index, type }) => {
                         <Link
                             href={translatedProject.demoLink}
                             target="_blank"
-                            className="px-2 py-0.5 bg-white rounded-sm mr-2 text-gray-500 hover:text-gray-700"
+                            className="px-2 py-0.5 bg-white rounded-sm mr-2 text-gray-500 hover:text-gray-700 relative z-10"
                         >
                             Live
                         </Link>
@@ -92,7 +92,7 @@ const ProjectItem = ({ project, index, type }) => {
                         <Link
                             href={translatedProject.git}
                             target="_blank"
-                            className="px-2 py-0.5 bg-white rounded-sm text-gray-500 hover:text-gray-700"
+                            className="px-2 py-0.5 bg-white rounded-sm text-gray-500 hover:text-gray-700 "
                         >
                             Code
                         </Link>
