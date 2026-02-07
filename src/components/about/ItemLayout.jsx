@@ -11,7 +11,8 @@ const ItemLayout = ({children, className}) => {
             viewport={{ once: true }}
             className={clsx(
                 className,
-                "rounded-sm flex space-y-5 justify-center transition-all bg-background/20 backdrop-blur-[6px] duration-500 border border-1 border-white hover:border-amber-600"
+                "rounded-sm flex space-y-5 justify-center transition-all bg-background/20 backdrop-blur-[6px] " +
+                "duration-500 border border-1 border-white hover:border-amber-600"
             )}
         >
             {children}
