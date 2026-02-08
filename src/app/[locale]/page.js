@@ -1,14 +1,9 @@
 import Image from "next/image";
-import SocialButton from "@/components/navigation/SocialButton";
-import { Links } from "@/app/data";
 import MainContent from "@/components/home/MainContent";
-import SamuraiImage from "@/components/home/SamuraiImage";
-import MoonScene from "@/components/home/MoonScene";
+import HomeClient from "@/components/home/HomeClient";
+
 
 export default function Home() {
-    const leftLinks = Links?.slice(0, 2) ?? [];
-    const rightLinks = Links?.slice(2, 4) ?? [];
-
     return (
         <div className="relative w-full flex flex-col items-center justify-center overflow-hidden">
 
@@ -32,26 +27,7 @@ export default function Home() {
 
                     <MainContent />
 
-                    <div className="absolute w-full left-1/2 top-1/2 transform -translate-x-1/2
-                    -translate-y-1/2 flex justify-between xl:hidden">
-                        <div className="flex flex-col gap-4 sm:gap-6 m-3">
-                            {leftLinks.map((data) => (
-                                <SocialButton key={data.label} {...data} />
-                            ))}
-                        </div>
-                        <div className="flex flex-col gap-4 sm:gap-6 m-3">
-                            {rightLinks.map((data) => (
-                                <SocialButton key={data.label} {...data} />
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="w-full xl:w-1/2 h-full flex flex-col items-center justify-center
-                     absolute xl:relative -z-10">
-                        <SamuraiImage />
-
-                        <MoonScene />
-                    </div>
+                    <HomeClient />
                 </div>
             </section>
 
