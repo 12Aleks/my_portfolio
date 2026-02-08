@@ -37,11 +37,13 @@ export function generateMetadata({ params }) {
 }
 
 export default function RootLayout({ children, params }) {
+    const {locale} = params;
+
     return (
-        <html lang={params.locale}>
+        <html lang={locale}>
         <body className={clsx(inter.variable, permanentMarker.variable , "font-inter bg-background text-foreground min-h-screen flex flex-col relative")}
         >
-        <I18nProvider locale={params.locale}>
+        <I18nProvider locale={locale}>
             <Background />
             <Navbar />
             <main>{children}</main>
