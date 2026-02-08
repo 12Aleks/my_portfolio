@@ -67,9 +67,6 @@ const nextConfig = {
     },
     compress: true,
     swcMinify: true,
-    experimental: {
-        optimizeCss: true,
-    },
     images: {
         formats: ["image/avif", "image/webp"],
         remotePatterns: [
