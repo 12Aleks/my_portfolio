@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import SocialButton from "@/components/navigation/SocialButton";
 import { Links } from "@/app/data";
