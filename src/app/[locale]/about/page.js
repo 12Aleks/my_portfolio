@@ -3,14 +3,11 @@ import Image from "next/image";
 import AboutBlocks from "@/components/about";
 import RenderModel from "@/components/RenderModel";
 import {BambooModel} from "@/components/model/BambooModel";
-import useDayNightMode from "@/app/customHook/useDayNightMode";
-import clsx from "clsx";
 import bg from '../../../../public/background/japan_castle.webp';
 import {useTranslations} from "next-intl";
 
 
 const AboutPage = () => {
-    const isNight = useDayNightMode();
     const t = useTranslations("about");
 
     return (
@@ -20,8 +17,10 @@ const AboutPage = () => {
                 src={bg}
                 alt="background"
                 sizes="100vw"
-                priority
-                className={clsx(isNight ? 'opacity-8' : 'opacity-[.17]', "fixed object-cover top-0 left-0 w-full h-screen bg-fixed z-0 blur-sm")}
+                priority={false}
+                loading="lazy"
+                quality={60}
+                className= "fixed object-cover top-0 left-0 w-full h-screen bg-fixed z-0 blur-sm opacity-10"
             />
 
             <div className="relative w-full flex flex-col items-center justify-center my-10 2xl:my-10 3xl:my-20">

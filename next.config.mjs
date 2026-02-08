@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
     async headers() {
         return [
@@ -64,7 +65,13 @@ const nextConfig = {
             },
         ];
     },
+    compress: true,
+    swcMinify: true,
+    experimental: {
+        optimizeCss: true,
+    },
     images: {
+        formats: ["image/avif", "image/webp"],
         remotePatterns: [
             {
                 protocol: 'https',
@@ -74,6 +81,7 @@ const nextConfig = {
         ],
     },
 };
+
 
 export default nextConfig;
 

@@ -4,8 +4,6 @@ import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
 import RenderModel from "@/components/RenderModel";
 import bg from '../../../../public/background/japan_castle_3.webp'
-import clsx from "clsx";
-import useDayNightMode from "@/app/customHook/useDayNightMode";
 import dynamic from "next/dynamic";
 import {useTranslations} from "next-intl";
 
@@ -15,7 +13,6 @@ const PaperLantern = dynamic(() => import("@/components/model/PaperLantern")
 });
 
 const ProjectsPage = () => {
-    const isNight = useDayNightMode();
     const t = useTranslations("navigation");
 
 
@@ -27,7 +24,7 @@ const ProjectsPage = () => {
                 alt="background"
                 sizes="100vw"
                 priority
-                className={clsx(isNight ? 'opacity-8' : 'opacity-[.12]', "fixed object-cover top-0 left-0 w-full opacity-8 h-screen bg-fixed z-0 blur-sm")}
+                className="fixed object-cover top-0 left-0 w-full h-screen bg-fixed z-0 blur-sm opacity-8"
             />
 
             <div className="relative w-full flex lex-col items-center justify-center my-10  2xl:my-10 3xl:my-20">

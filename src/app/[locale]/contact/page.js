@@ -1,9 +1,6 @@
 "use client";
 import Image from "next/image";
 import FormComponent from "@/components/contact/FormComponent";
-// import RenderModel from "@/components/RenderModel";
-import clsx from "clsx";
-import useDayNightMode from "@/app/customHook/useDayNightMode";
 import {BambooModel} from "@/components/model/BambooModel";
 import {PineModel} from "@/components/model/PineModel";
 import bg from '../../../../public/background/japan_castle_1.webp';
@@ -14,7 +11,6 @@ import dynamic from "next/dynamic";
 const RenderModel = dynamic(() => import("@/components/RenderModel"), {ssr: false});
 
 const ContactPage = () => {
-    const isNight = useDayNightMode();
     const t = useTranslations("contact");
 
     const bambooConfig = useMemo(
@@ -47,11 +43,12 @@ const ContactPage = () => {
                 alt="background"
                 fill
                 sizes="100vw"
-                priority
-                className={clsx(
-                    "fixed object-cover top-0 left-0 w-full h-screen bg-fixed z-0 blur-sm",
-                    isNight ? "opacity-8" : "opacity-9"
-                )}
+                priority={false}
+                loading="lazy"
+                quality={60}
+                className=
+                    "fixed object-cover top-0 left-0 w-full h-screen bg-fixed z-0 blur-sm opacity-8"
+
             />
 
             {/* Первая 3D-модель (Bamboo) */}
