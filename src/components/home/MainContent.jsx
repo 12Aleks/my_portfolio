@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Code2, LucideMonitorSmartphone, Rocket } from "lucide-react";
 import Link from "next/link";
-import {Links} from "@/app/data";
+import { Links } from '@/app/data';
 import SocialButton from "@/components/navigation/SocialButton";
 import {useLocale, useTranslations} from "next-intl";
 
