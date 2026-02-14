@@ -17,7 +17,6 @@ export default function HomeClient() {
     const [show3D, setShow3D] = useState(false);
     const [modelReady, setModelReady] = useState(false);
 
-
     useEffect(() => {
         const t = setTimeout(() => setShow3D(true), 1500);
         return () => clearTimeout(t);

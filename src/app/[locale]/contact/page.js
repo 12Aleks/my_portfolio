@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import FormComponent from "@/components/contact/FormComponent";
-import {BambooModel} from "@/components/model/BambooModel";
-import {PineModel} from "@/components/model/PineModel";
 import bg from '../../../../public/background/japan_castle_1.webp';
 import {useTranslations} from "next-intl";
 import {useMemo} from "react";
 import dynamic from "next/dynamic";
 
 const RenderModel = dynamic(() => import("@/components/RenderModel"), {ssr: false});
+const BambooModel = dynamic(() => import("@/components/model/BambooModel").then(mod => mod.BambooModel), {ssr: false});
+const PineModel = dynamic(() => import("@/components/model/PineModel").then(mod => mod.PineModel), {ssr: false});
 
 const ContactPage = () => {
     const t = useTranslations("contact");

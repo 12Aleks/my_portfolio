@@ -8,13 +8,22 @@ const createFireFlies = () => ({
    animationDuration: `${Math.random() * 5 + 5}s`
 })
 
+const MAX_FIREFLIES = 15;
+
 const FireFlies = () => {
     const [fireFlies, setFireFlies] = useState([]);
 
     useEffect(() => {
+        // Pregenerate initial fireflies to avoid animation jank
+        const initial = Array.from({length: 3}, createFireFlies);
+        setFireFlies(initial);
+
         const intervalShow = () => {
             const newFireFlies = createFireFlies();
-            setFireFlies(currentFirefly => [...currentFirefly.slice(-14), newFireFlies])
+            setFireFlies(currentFirefly => {
+                const updated = [...currentFirefly.slice(-MAX_FIREFLIES + 1), newFireFlies];
+                return updated;
+            })
         }
         const interval = setInterval(intervalShow, 10000);
 
@@ -23,7 +32,7 @@ const FireFlies = () => {
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
             {
                 fireFlies.map((fireFly, index) => {
                     return <div key={fireFly.id}

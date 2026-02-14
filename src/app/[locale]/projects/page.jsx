@@ -2,11 +2,11 @@
 import Image from "next/image";
 import ProjectList from "@/components/projects";
 import {workProjects, petProjects} from "@/app/data";
-import RenderModel from "@/components/RenderModel";
 import bg from '../../../../public/background/japan_castle_3.webp'
 import dynamic from "next/dynamic";
 import {useTranslations} from "next-intl";
 
+const RenderModel = dynamic(() => import("@/components/RenderModel"), {ssr: false});
 const PaperLantern = dynamic(() => import("@/components/model/PaperLantern")
     .then(mod => mod.PaperLantern), {
     ssr: false

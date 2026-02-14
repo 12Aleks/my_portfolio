@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
 import AboutBlocks from "@/components/about";
-import RenderModel from "@/components/RenderModel";
-import {BambooModel} from "@/components/model/BambooModel";
+import dynamic from "next/dynamic";
 import bg from '../../../../public/background/japan_castle.webp';
 import {useTranslations} from "next-intl";
+
+const RenderModel = dynamic(() => import("@/components/RenderModel"), {ssr: false});
+const BambooModel = dynamic(() => import("@/components/model/BambooModel").then(mod => mod.BambooModel), {ssr: false});
 
 
 const AboutPage = () => {

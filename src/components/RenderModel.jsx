@@ -11,7 +11,15 @@ const RenderModel = ({children, className, light}) => {
     return (
         <Canvas
             dpr={[1, 1.5]}
-            gl={{ antialias: true, powerPreference: "high-performance" }}
+            gl={{ 
+                antialias: true, 
+                powerPreference: "high-performance",
+                precision: "mediump",
+                alpha: true,
+                stencil: false,
+                depth: true,
+                logarithmicDepthBuffer: false
+            }}
             className={clsx(
                 "w-screen h-screen -z-10 relative transition-opacity duration-1000",
                 className,

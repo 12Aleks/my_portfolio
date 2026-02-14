@@ -1,11 +1,8 @@
 import { Inter, Permanent_Marker } from "next/font/google";
 import "../globals.css";
 import clsx from "clsx";
-import FireFlies from "@/components/FireFlies";
 import Navbar from "@/components/navigation/Navbar";
 import dynamic from "next/dynamic";
-import GoogleAnalyticsScript from "@/components/GoogleAnalyticsScript";
-import GoogleTagManagerScript from "@/components/GoogleTagManagerScript";
 import I18nProvider from "../i18nProvider";
 import {getTranslatedMetadata} from "@/app/[locale]/metadata";
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -13,7 +10,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const Background = dynamic(() => import("@/components/Background"),
-    { ssr: false })
+    { ssr: false });
+const FireFlies = dynamic(() => import("@/components/FireFlies"),
+    { ssr: false });
+const GoogleAnalyticsScript = dynamic(() => import("@/components/GoogleAnalyticsScript"),
+    { ssr: false });
+const GoogleTagManagerScript = dynamic(() => import("@/components/GoogleTagManagerScript"),
+    { ssr: false });
 const CookieConsent = dynamic(() => import("@/components/CookieConsent"),
     { ssr: false });
 const Sound = dynamic(() => import("@/components/Sound"),
@@ -24,12 +27,14 @@ const Footer = dynamic(() => import("@/components/navigation/Footer"),
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-inter",
+    display: "swap",
 });
 
 const permanentMarker = Permanent_Marker({
     weight: "400",
     subsets: ["latin"],
     variable: "--font-permanent-marker",
+    display: "swap",
 });
 
 export function generateMetadata({ params }) {

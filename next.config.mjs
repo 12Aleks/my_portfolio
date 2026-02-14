@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+    compress: true,
+    swcMinify: true,
+    
     async headers() {
         return [
             {
@@ -63,10 +66,26 @@ const nextConfig = {
                     },
                 ],
             },
+            {
+                source: "/:path*",
+                headers: [
+                    {
+                        key: "X-Content-Type-Options",
+                        value: "nosniff",
+                    },
+                    {
+                        key: "X-Frame-Options",
+                        value: "SAMEORIGIN",
+                    },
+                    {
+                        key: "X-XSS-Protection",
+                        value: "1; mode=block",
+                    },
+                ],
+            },
         ];
     },
-    compress: true,
-    swcMinify: true,
+    
     images: {
         formats: ["image/avif", "image/webp"],
         remotePatterns: [
