@@ -1,0 +1,6 @@
+# ...existing code...
+mkdir .\public\fonts
+# Скопируйте туда ваши файлы, например:
+# copy "C:\Downloads\Inter-Variable.woff2" .\public\fonts\
+# copy "C:\Downloads\PermanentMarker-Regular.woff2" .\public\fonts\
+# ...existing code...

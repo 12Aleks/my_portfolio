@@ -6,17 +6,24 @@ import { useRef, useState } from "react";
 const Sound = () => {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
-    const toggle = () => {
+    const toggle = async () => {
         const newState = !isPlaying;
         setIsPlaying(newState);
 
+        if (!loaded && audioRef.current) {
+            // отложенно назначаем src, чтобы предотвратить раннюю загрузку файла
+            audioRef.current.src = "/audio/Ancient Traditional Japanese Music - Mountain Pass.mp3";
+            setLoaded(true);
+        }
+
         if (audioRef.current) {
-            audioRef.current.volume = 0.5; // Ограничиваем громкость до 50%
+            audioRef.current.volume = 0.5;
 
             if (newState) {
-                audioRef.current.play().catch((error) => {
-                    console.warn("Automatyczne odtwarzanie dźwięku zablokowane przez przeglądarkę:", error);
+                await audioRef.current.play().catch(() => {
+                    // autoplay blocked
                 });
             } else {
                 audioRef.current.pause();
@@ -26,11 +33,7 @@ const Sound = () => {
 
     return (
         <div className="fixed top-20 right-3 xs:right-4 xl:right-7 z-30 group">
-            <audio ref={audioRef} loop>
-                <source src={"/audio/Ancient Traditional Japanese Music - Mountain Pass.mp3"} type="audio/mpeg" />
-                Twoja przeglądarka nie obsługuje elementu audio!
-            </audio>
-
+            <audio ref={audioRef} loop preload="none" />
             <motion.button
                 onClick={toggle}
                 initial={{ scale: 0 }}
